@@ -1,6 +1,6 @@
 {
     "name": "EasyCheck",
-    "title": "EasyCheck jQuery plugin",
+    "title": "EasyCheck Form Validation jQuery plugin",
     "description": "The best jQuery form validation plugin——EasyCheck jQuery plugin!",
     "keywords": [
         "check",
@@ -10,7 +10,7 @@
 "fvalidator",
 "input","jquery","ui"
     ],
-    "version": "1.9.5",
+    "version": "1.9.6",
     "author": {
         "name": "Ray",
 "email": "inthinkcolor@gmail.com",
