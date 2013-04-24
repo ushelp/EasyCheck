@@ -1,0 +1,39 @@
+{
+    "name": "EasyCheck",
+    "title": "EasyCheck jQuery plugin",
+    "description": "The best jQuery form validation plugin——EasyCheck jQuery plugin！.",
+    "keywords": [
+        "check",
+        "form",
+"validate",
+"validation",
+"fvalidator",
+"input","jquery","ui"
+    ],
+    "version": "1.9.0",
+    "author": {
+        "name": "Ray",
+"email": "inthinkcolor@gmail.com",
+        "url": ""
+    },
+    "maintainers": [
+        {
+            "name": "Ray",
+            "email": "inthinkcolor@gmail.com",
+            "url": ""
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/srchulo/jQuery-Facets/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/ushelp/EasyCheck/issues",
+    "homepage": "https://github.com/ushelp/EasyCheck",
+    "docs": "https://github.com/ushelp/EasyCheck",
+    "download": "https://github.com/ushelp/EasyCheck/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
