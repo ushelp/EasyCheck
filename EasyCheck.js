@@ -31,7 +31,7 @@ var EasyCheck={
 					eo.removeClass();
 					eo.addClass("easycheck_errorInfo");
 				
-					$(o).removeClass();
+					$(o).removeClass("easycheck_okInput");
 					$(o).addClass("easycheck_errorInput");
 					
 					var info =eo.attr("info");
@@ -454,9 +454,9 @@ function easyCheckForm(eleArea){
 			
 	
 				if(fromChkInfo.chkFlag==true&&EasyCheck['easyCheckSubmitDisable']==true){		
-							$(fromChkInfo.eleArea+"[type='submit']").attr("disabled","true");
+							$(fromChkInfo.eleArea+":submit").attr("disabled","true");
 				}else{		
-							$(fromChkInfo.eleArea+"[type='submit']").removeAttr("disabled");
+							$(fromChkInfo.eleArea+":submit").removeAttr("disabled");
 				}
 				 return fromChkInfo.chkFlag;
 }
@@ -470,10 +470,10 @@ $(function(){
 	}
 
 	if(EasyCheck.removeDisable==true){
-		$("form [type='submit']").removeAttr("disabled");
+		$("form :submit").removeAttr("disabled");
 	}else{
 		for(var i=0;i<EasyCheck.removeDisableForm.length;i++){
-			$("[id='"+EasyCheck.removeDisableForm[i]+"'] [type='submit']").removeAttr("disabled");
+			$("[id='"+EasyCheck.removeDisableForm[i]+"'] :submit").removeAttr("disabled");
 		}
 	}
 	
