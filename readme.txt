@@ -1,4 +1,7 @@
-﻿1、引入EasyCheck.css，在jQuery后引入EasyCheck.js
+﻿说明：该插件与ECheck插件为同一插件，是ECheck的中文版本，提示消息和使用手册均为中文版。
+It's same to ECheck,this is Chinese language version.
+
+1、引入EasyCheck.css，在jQuery后引入EasyCheck.js
 <link rel="stylesheet" type="text/css" href="css/EasyCheck.css"/>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/EasyCheck.min.js"></script>

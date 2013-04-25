@@ -1,9 +1,9 @@
 // jQuery EasyCheck Plugin
 //
-// Version 1.8
+// Version 1.9
 //
 // Copy By RAY
-// in.think@163.com
+// inthinkcolor@gmail.com
 // 2012
 //
 var EasyCheck={
@@ -13,7 +13,7 @@ var EasyCheck={
 	    "email":/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
 	     "url":/^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i,
 	    "number":/^-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/,
-		"digits":/^\d+$/,
+		"integer":/^\d+$/,
 		"English" : /^[A-Za-z]+$/,
 		"Chinese" :  /^[\u0391-\uFFE5]+$/,
 		"Zip" : /^[1-9]\d{5}$/,
@@ -73,7 +73,7 @@ var EasyCheck={
 		},
 		"formatMsg":function(){
 			var ary = [];
- 			 for(i = 1 ; i < arguments.length ; i++){
+ 			 for(var i = 1 ; i < arguments.length ; i++){
   				 ary.push(arguments[i]);
 		  }
 		   return arguments[0].replace(/\{(\d+)\}/g,function(m ,i){
@@ -116,7 +116,7 @@ var EasyCheck={
 		"email":"邮箱格式不正确",
 		"url":"网址有误",
 		"number":"必须为数字",
-		"digits":"必须为整数",
+		"integer":"必须为整数",
 		"equalto":"输入不一致",
 		"equallength":"长度必须为{0}位",
 		"minlength][maxlength":"长度必须在{0}到{1}之间",
@@ -125,7 +125,7 @@ var EasyCheck={
 		"min][max":"值必须在{0}和{1}之间",
 		"min":"不能小于{0}",
 		"max":"不能大于{0}",
-		"regExp":"格式有误",
+		"regexp":"格式有误",
 		 "extension":"文件扩展名只能为{0}",
 		 "vc":"输入有误" //验证码
 
@@ -148,7 +148,7 @@ EasyCheck.chkList=[
 	   new EasyCheck.ChkRule("email",checkEmail),
 	   new  EasyCheck.ChkRule("url",checkUrl),
 	   new  EasyCheck.ChkRule("number",checkNumber),
-	   new  EasyCheck.ChkRule("digits",checkDigits),
+	   new  EasyCheck.ChkRule("integer",checkInteger),
 	   new  EasyCheck.ChkRule("equalto",checkEqualto,true),
 	   new  EasyCheck.ChkRule("equallength",checkEquallength,true),
 	   new  EasyCheck.ChkRule("minlength][maxlength",checkRangeLength,true),
@@ -171,7 +171,7 @@ EasyCheck.chkList=[
   EasyCheck.easyCheckEleIgnore["uservc"]=true; //如果元素名称为uservc，则只在提交表单时验证
  
   
-  //检测用户名是否存在
+  /*检测用户名是否存在
   function checkExists(o,e){
 	 	 return EasyCheck.addChkMethod(o,e,
 				 function(o){
@@ -189,7 +189,7 @@ EasyCheck.chkList=[
 					 return res;
 				},
 				EasyCheck.msg["exists"]);
-	 }
+	 }*/
 
   
  function checkVc(o,e){
@@ -213,7 +213,7 @@ EasyCheck.chkList=[
 				 var reg= new RegExp('^(?:' + $(o).attr("reg") + ')$');
 				 return !($.trim(val)!=""&&!reg.test(val));
 			},
-			EasyCheck.msg["regExp"]);
+			EasyCheck.msg["regexp"]);
   }
    //验证扩展名，多个扩展名使用英文逗号分隔
      function checkExtension(o,e){
@@ -270,13 +270,13 @@ EasyCheck.chkList=[
 				EasyCheck.msg["number"]);
 	}
 	
-	function checkDigits(o,e){
+	function checkInteger(o,e){
 		return EasyCheck.addChkMethod(o,e,
 			 function(o){
 				 var val=$(o).val();
-				 return !($.trim(val)!=""&&!EasyCheck.digits.test(val));
+				 return !($.trim(val)!=""&&!EasyCheck.integer.test(val));
 			},
-				EasyCheck.msg["digits"]);
+				EasyCheck.msg["integer"]);
 }
 
 function checkEqualto(o,e){

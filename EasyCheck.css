@@ -42,7 +42,7 @@
 	margin: 0px 0 0 10px;
 	letter-spacing: 1px;
 }
-/*验证通过的文本框样式*/
+/*验证通过的文本框样式(一般与您使用的默认文本框样式相同)*/
 .easycheck_okInput {
 	height: 23px;
 	font-size: 14px;
