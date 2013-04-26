@@ -2,7 +2,7 @@
 It's same to ECheck,this is Chinese language version.
 
 1、引入EasyCheck.css，在jQuery后引入EasyCheck.js
-在EasyCheck.css中.根据需要修改显示样式，easycheck_okInput类样式为您文本框默认样式；.easycheck_errorInput类样式为错误提示文本框样式。
+在EasyCheck.css中.根据需要修改显示样式，easycheck_okInput类样式为您文本框默认样式；.easycheck_errorInput类样式为错误提示文本框样式。或者，在页面重新定义该类样式，以替换默认样式。
 
 <link rel="stylesheet" type="text/css" href="css/EasyCheck.css"/> 
 <script type="text/javascript" src="js/jquery.js"></script>
