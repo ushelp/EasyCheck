@@ -63,7 +63,26 @@ EasyCheck.removeDisable=true; //（该参数会将所有所有from下禁用的su
 以上方法支持混合使用
 
 
-5、自定义新类验证器
+5、禁用验证失败时文本框样式
+<textarea  name=" content" class="required" style="width: 400px;height: 100px;border: 1px solid #D4D0C8;" ecss="no"></textarea>
+默认情况下验证失败时，除了显示错误提示信息外，文本框会使用.easycheck_errorInput类样式（验证未通过文本框样式）显示，如果需要禁用该显示效果，可以通过给文本框对象加入ecss =“no”属性实现禁用（EasyCheck CSS）。
+在页面元素过多时，还可通过全局参数EasyCheck.ecss设置禁用页面所有验证对象的验证未通过样式：
+EasyCheck.ecss="no";
+
+
+6、自定义消息显示位置
+（默认情况下，EasyCheck会在验证失败的文本框的后面自动显示提示消息，如果希望将提示信息显示在指定的位置，则可设置如下：
+在页面合适位置创建消息提示div，为显示消息的div指定id，命名格式必须为error_ElementName（error_验证元素的name）
+[info 属性为可选属性，如果设置了，会作为提示信息的前缀。]EasyCheck验证插件的提示消息会显示在您div指定的位置。）
+如：
+
+<div  id="error_uemail"  info="登录邮箱"></div> 
+
+<input  type="text"  name="uemail" value="" class="txt required email" size="20"  /> 
+
+
+
+7、自定义新类验证器
 //2、定义验证函数(o,e)，检测用户名是否存在
 function checkExists(o,e){
 /*

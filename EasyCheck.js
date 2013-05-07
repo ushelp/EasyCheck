@@ -1,10 +1,12 @@
 // jQuery EasyCheck Plugin
 //
-// Version 1.9
+// Version 2.0.1
 //
 // Copy By RAY
 // inthinkcolor@gmail.com
 // 2012
+//
+// http://plugins.jquery.com/EasyCheck/
 //
 var EasyCheck={
 	     "loadChk":true,//页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true
@@ -27,12 +29,15 @@ var EasyCheck={
 				     $(o).after("<div id='error_"+$(o).attr("name")+"'></div>"); //创建消息div
 					 eo = $("[id='error_"+$(o).attr("name")+"']");
 			}
-				
 					eo.removeClass();
 					eo.addClass("easycheck_errorInfo");
 				
-					$(o).removeClass("easycheck_okInput");
-					$(o).addClass("easycheck_errorInput");
+					if(EasyCheck.ecss!="no"){
+						if(!($(o).attr("ecss")&&$(o).attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
+							$(o).removeClass("easycheck_okInput");
+							$(o).addClass("easycheck_errorInput");
+						}
+					}
 					
 					var info =eo.attr("info");
 					if(info){
@@ -48,8 +53,12 @@ var EasyCheck={
 				var eo = $("[id='error_"+$(o).attr("name")+"']");
 				if(eo){
 					eo.removeClass();
-					$(o).removeClass("easycheck_errorInput");
-					$(o).addClass("easycheck_okInput");
+					if(EasyCheck.ecss!="no"){
+					if(!($(o).attr("ecss")&&$(o).attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
+						$(o).removeClass("easycheck_errorInput");
+						$(o).addClass("easycheck_okInput");
+					}
+					}
 					
 					eo.addClass("easycheck_okInfo");
 					if(msg){
@@ -61,15 +70,19 @@ var EasyCheck={
 								
 			}
 		},
-		"clearAllError":function(){
+	"clearAllError":function(){
 			$("[id^='error_']").each(function(){
 				var oName=$(this).attr("id").replace("error_","");
 				var n=$("[name='"+oName+"']");
-				n.removeClass("easycheck_errorInfo");
-				n.addClass("easycheck_okInput");
+				if(EasyCheck.ecss!="no"){
+					if(!(n.attr("ecss")&&n.attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
+						n.removeClass("easycheck_errorInfo");
+						n.addClass("easycheck_okInput");
+					}
+				}
 			});
 
-			$("[id^='error_']").hide("");
+			$("[id^='error_']").hide();
 		},
 		"formatMsg":function(){
 			var ary = [];
@@ -137,7 +150,8 @@ var EasyCheck={
 		"easyCheckSubmitDisable":true,  //默认开启客户端防重复提交功能
 		"removeDisableBtn":[], //Firefox下恢复禁用的按钮
 		"removeDisableForm":[],  //firefox下恢复禁用按钮的表单
-		"removeDisable":false //是否移除页面表单中所有禁用的submit按钮，默认为不移除
+		"removeDisable":false, //是否移除页面表单中所有禁用的submit按钮，默认为不移除
+		"ecss":"yes" //是否使用easycheck_errorInput验证未通过文本框样式，默认为是
 }
 /*
  验证规则对象列表
