@@ -10,7 +10,7 @@
 "fvalidator",
 "input","jquery","ui","echeck","easycheck"
     ],
-    "version": "2.0.2",
+    "version": "2.1.0",
     "author": {
         "name": "Ray",
 "email": "inthinkcolor@gmail.com",
@@ -33,6 +33,7 @@
     "homepage": "https://github.com/ushelp/EasyCheck",
     "docs": "https://github.com/ushelp/EasyCheck/blob/master/readme.txt",
     "download": "https://github.com/ushelp/EasyCheck/archive/master.zip",
+	"demo":"http://www.lightfeel.com/EasyCheck/zh_cn/demo.jsp",
     "dependencies": {
         "jquery": ">=1.5"
     }

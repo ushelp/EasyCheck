@@ -1,6 +1,6 @@
 // jQuery EasyCheck Plugin
 //
-// Version 2.0.2
+// Version 2.1.0
 //
 // Copy By RAY
 // inthinkcolor@gmail.com
@@ -9,8 +9,8 @@
 // http://plugins.jquery.com/EasyCheck/
 //
 var EasyCheck={
-	     "loadChk":true,//页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true
-	     "blurChk":true,   //开启失去焦点时验证，false禁用，默认为true
+	    "loadChk":true,//页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true
+	    "blurChk":true,   //开启失去焦点时验证，false禁用，默认为true
 		"keyupChk":true, //开启键盘弹起时验证，false禁用，默认为true
 	    "email":/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
 	     "url":/^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i,
@@ -24,17 +24,22 @@ var EasyCheck={
 		"ipv4":/^(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)$/i,
 		"ipv6":/^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))$/,
 	   "showError":function(o,msg){  //错误提示
-			var eo = $("[id*='error_"+$(o).attr("name")+"']");
+		   var eo = $("#ok_"+$(o).attr("name"));
+			if(eo){ //存在ok提示
+				eo.hide();
+			}
+		   
+			 eo = $("#error_"+$(o).attr("name"));
 			if(eo.size()==0){
-				     $(o).after("<div id='error_"+$(o).attr("name")+"'></div>"); //创建消息div
-					 eo = $("[id='error_"+$(o).attr("name")+"']");
+				     $(o).after("\r\n<div id='error_"+$(o).attr("name")+"'></div>"); //创建消息div
+					 eo = $("#error_"+$(o).attr("name"));
 			}
 					eo.removeClass();
 					eo.addClass("easycheck_errorInfo");
-				
+				//	eo.css("display","inline");
 					if(EasyCheck.ecss!="no"){
 						if(!($(o).attr("ecss")&&$(o).attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
-							$(o).removeClass("easycheck_okInput");
+							$(o).removeClass(EasyCheck.okcss);
 							$(o).addClass("easycheck_errorInput");
 						}
 					}
@@ -50,13 +55,13 @@ var EasyCheck={
 			
 		},
 		"clearError":function(o,msg){   //OK提示
-				var eo = $("[id='error_"+$(o).attr("name")+"']");
+				var eo = $("#error_"+$(o).attr("name"));
 				if(eo){
 					eo.removeClass();
 					if(EasyCheck.ecss!="no"){
 					if(!($(o).attr("ecss")&&$(o).attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
 						$(o).removeClass("easycheck_errorInput");
-						$(o).addClass("easycheck_okInput");
+						$(o).addClass(EasyCheck.okcss);
 					}
 					}
 					
@@ -67,7 +72,7 @@ var EasyCheck={
 						eo.html("");	
 					}
 					eo.hide();
-								
+					
 			}
 		},
 	"clearAllError":function(){
@@ -77,7 +82,7 @@ var EasyCheck={
 				if(EasyCheck.ecss!="no"){
 					if(!(n.attr("ecss")&&n.attr("ecss")!="yes")){//禁用错误提示时文本框改变样式——easycheck_errorInput
 						n.removeClass("easycheck_errorInfo");
-						n.addClass("easycheck_okInput");
+						n.addClass(EasyCheck.okcss);
 					}
 				}
 			});
@@ -102,14 +107,32 @@ var EasyCheck={
 
 	*/
 		"addChkMethod":function (o,e,chkCode,msg){
-			if(!chkCode(o)){
+			 var de= $("#default_"+$(o).attr("name"));
+			 if(de){ //默认提示隐藏
+				 de.hide();
+			  }
+			if(!chkCode(o)){ //验证未通过
+				 var de= $("#default_"+$(o).attr("name"));
+				 if(de){ //默认提示显示
+					 de.hide();
+				  }	
 					EasyCheck.showError(o,msg);
 					if(e){
 							e.stopImmediatePropagation(); //取消执行其他的事件处理函数并取消事件冒泡
 					}
 					return false;
-		  }else{
+		  }else{ //验证通过
 				  EasyCheck.clearError(o);
+				  var defaultDiv= $("#default_"+$(o).attr("name"));
+					if(defaultDiv){ //默认提示显示
+						defaultDiv.hide();
+					 }	
+			  var okDiv = $("#ok_"+$(o).attr("name"));
+				  
+				if(okDiv){ //存在ok提示
+					okDiv.addClass("easycheck_okInfo");
+					okDiv.show();
+				}
 				 return true;
 		  }
 	}
@@ -139,7 +162,7 @@ var EasyCheck={
 		"min":"不能小于{0}",
 		"max":"不能大于{0}",
 		"regexp":"格式有误",
-		 "extension":"文件扩展名只能为{0}",
+		 "extension":"文件后缀只能为{0}",
 		 "vc":"输入有误" //验证码
 
 		},
@@ -151,7 +174,8 @@ var EasyCheck={
 		"removeDisableBtn":[], //Firefox下恢复禁用的按钮
 		"removeDisableForm":[],  //firefox下恢复禁用按钮的表单
 		"removeDisable":false, //是否移除页面表单中所有禁用的submit按钮，默认为不移除
-		"ecss":"yes" //是否使用easycheck_errorInput验证未通过文本框样式，默认为是
+		"ecss":"yes", //是否使用easycheck_errorInput验证未通过文本框样式，默认为是
+		"okcss":"easycheck_okInput"
 }
 /*
  验证规则对象列表
@@ -231,16 +255,14 @@ EasyCheck.chkList=[
   }
    //验证扩展名，多个扩展名使用英文逗号分隔
      function checkExtension(o,e){
-		 ex="png,jpeg,jpg,gif";
+		 ex=$(o).attr("extension");
 	   return EasyCheck.addChkMethod(o,e,
 			 function(o){
 				 var val=$(o).val();
-				 ex=$(o).attr("extension");
 				 
 				 var extensionList=ex!=""?ex.replace(/,/g, '|'):"png|jpe?g|gif";
 				 return!($.trim(val)!=""&&!val.match(new RegExp(".(" + extensionList + ")$", "i")));
-			},
-				EasyCheck.formatMsg(EasyCheck.msg["extension"],ex));
+			},EasyCheck.formatMsg(EasyCheck.msg["extension"],ex));
   }
 
 
@@ -297,7 +319,7 @@ function checkEqualto(o,e){
 		return EasyCheck.addChkMethod(o,e,
 			 function(o){
 				 var val=$(o).val();
-				 return !(val!=$("[id='"+$(o).attr("equalto")+"']").val());
+				 return !(val!=$("#"+$(o).attr("equalto")).val());
 			},
 				EasyCheck.msg["equalto"]);
 }
@@ -401,7 +423,28 @@ function addChk(chkrule){
 			}
 		}).on("focus",function(e){
 				
-				  		 EasyCheck.clearError(this);
+				EasyCheck.clearError(this);
+				 var okDiv = $("#ok_"+$(this).attr("name"));
+				 if(okDiv.length>0){ //存在OK提示
+					
+					 if(okDiv.filter(":hidden").length>0){ //隐藏中，未成功
+						  //如果不存在提示信息则显示默认
+								var defaultDiv = $("#default_"+$(this).attr("name"));
+								if(defaultDiv){
+									defaultDiv.show();
+								}
+					 }
+					 
+				 }else{
+					//如果不存在提示信息则显示默认
+						var defaultDiv = $("#default_"+$(this).attr("name"));
+						if(defaultDiv){
+							defaultDiv.show();
+						} 
+				 }
+				 
+				
+
 					
 				
 		}).on("keyup",function(e){ 
@@ -490,5 +533,10 @@ $(function(){
 			$(":submit",$("#"+EasyCheck.removeDisableForm[i])).removeAttr("disabled");
 		}
 	}
+	$("[id*='ok_']").hide();
+	//$("[id*='ok_']").each(function(){
+		//$(this).addClass("easycheck_okInfo");
+		
+	//});
 
 });
