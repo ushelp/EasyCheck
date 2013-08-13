@@ -24,15 +24,15 @@ var EasyCheck={
 		"ipv4":/^(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)$/i,
 		"ipv6":/^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))$/,
 	   "showError":function(o,msg){  //错误提示
-		   var eo = $("#ok_"+$(o).attr("name"));
+		   var eo = $("[id='ok_"+$(o).attr("name")+"']");
 			if(eo){ //存在ok提示
 				eo.hide();
 			}
 		   
-			 eo = $("#error_"+$(o).attr("name"));
+			 eo = $("[id='error_"+$(o).attr("name")+"']");
 			if(eo.size()==0){
 				     $(o).after("\r\n<div id='error_"+$(o).attr("name")+"'></div>"); //创建消息div
-					 eo = $("#error_"+$(o).attr("name"));
+					 eo = $("[id='error_"+$(o).attr("name")+"']");
 			}
 					eo.removeClass();
 					eo.addClass("easycheck_errorInfo");
@@ -55,7 +55,7 @@ var EasyCheck={
 			
 		},
 		"clearError":function(o,msg){   //OK提示
-				var eo = $("#error_"+$(o).attr("name"));
+				var eo = $("[id='error_"+$(o).attr("name")+"']");
 				if(eo){
 					eo.removeClass();
 					if(EasyCheck.ecss!="no"){
@@ -107,12 +107,12 @@ var EasyCheck={
 
 	*/
 		"addChkMethod":function (o,e,chkCode,msg){
-			 var de= $("#default_"+$(o).attr("name"));
+			 var de= $("[id='default_"+$(o).attr("name")+"']");
 			 if(de){ //默认提示隐藏
 				 de.hide();
 			  }
 			if(!chkCode(o)){ //验证未通过
-				 var de= $("#default_"+$(o).attr("name"));
+				 var de= $("[id='default_"+$(o).attr("name")+"']");
 				 if(de){ //默认提示显示
 					 de.hide();
 				  }	
@@ -123,11 +123,11 @@ var EasyCheck={
 					return false;
 		  }else{ //验证通过
 				  EasyCheck.clearError(o);
-				  var defaultDiv= $("#default_"+$(o).attr("name"));
+				  var defaultDiv= $("[id='default_"+$(o).attr("name")+"']");
 					if(defaultDiv){ //默认提示显示
 						defaultDiv.hide();
 					 }	
-			  var okDiv = $("#ok_"+$(o).attr("name"));
+			  var okDiv = $("[id='ok_"+$(o).attr("name")+"']");
 				  
 				if(okDiv){ //存在ok提示
 					okDiv.addClass("easycheck_okInfo");
@@ -319,7 +319,7 @@ function checkEqualto(o,e){
 		return EasyCheck.addChkMethod(o,e,
 			 function(o){
 				 var val=$(o).val();
-				 return !(val!=$("#"+$(o).attr("equalto")).val());
+				 return !(val!=$("[id='"+$(o).attr("equalto")).val()+"']");
 			},
 				EasyCheck.msg["equalto"]);
 }
@@ -424,12 +424,12 @@ function addChk(chkrule){
 		}).on("focus",function(e){
 				
 				EasyCheck.clearError(this);
-				 var okDiv = $("#ok_"+$(this).attr("name"));
+				 var okDiv = $("[id='ok_"+$(this).attr("name")+"']");
 				 if(okDiv.length>0){ //存在OK提示
 					
 					 if(okDiv.filter(":hidden").length>0){ //隐藏中，未成功
 						  //如果不存在提示信息则显示默认
-								var defaultDiv = $("#default_"+$(this).attr("name"));
+								var defaultDiv = $("[id='default_"+$(this).attr("name")+"']");
 								if(defaultDiv){
 									defaultDiv.show();
 								}
@@ -437,7 +437,7 @@ function addChk(chkrule){
 					 
 				 }else{
 					//如果不存在提示信息则显示默认
-						var defaultDiv = $("#default_"+$(this).attr("name"));
+						var defaultDiv = $("[id='default_"+$(this).attr("name")+"']");
 						if(defaultDiv){
 							defaultDiv.show();
 						} 
