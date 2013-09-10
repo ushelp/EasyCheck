@@ -319,7 +319,7 @@ function checkEqualto(o,e){
 		return EasyCheck.addChkMethod(o,e,
 			 function(o){
 				 var val=$(o).val();
-				 return !(val!=$("[id='"+$(o).attr("equalto").val()+"']"));
+				 return val==$("[id='"+$(o).attr("equalto")+"']").val();
 			},
 				EasyCheck.msg["equalto"]);
 }
