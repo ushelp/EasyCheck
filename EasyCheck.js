@@ -1,6 +1,6 @@
 // jQuery EasyCheck Plugin
 //
-// Version 2.1.0
+// Version 2.2.0
 //
 // Copy By RAY
 // inthinkcolor@gmail.com
@@ -44,11 +44,16 @@ var EasyCheck={
 						}
 					}
 					
-					var info =eo.attr("info");
-					if(info){
-					   eo.html(info+msg);
+					var prefix =eo.attr("prefix"); //信息前缀
+					if(prefix){
+					   eo.html(prefix+msg);
 					}else{
-						  eo.html(msg);
+						prefix="";
+						eo.html(msg);
+					}
+					var info =eo.attr("info"); //自定义提示信息内容
+					if(info){
+						eo.html(prefix+info);
 					}
 					eo.show();
 		

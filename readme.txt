@@ -164,31 +164,7 @@ EasyCheck.okcss="txt";
 在页面元素过多时，还可通过全局参数EasyCheck.ecss设置禁用页面所有验证对象的验证未通过样式：
 EasyCheck.ecss="no";
 
-7、自定义消息
-EasyCheck支持手动指定默认提示信息，错误提示信息，正确提示信息。
-默认情况下，EasyCheck会在验证失败的文本框的后面自动显示提示消息，如果希望将提示信息显示在指定的位置，则可设置如下：
-在页面合适位置创建消息提示div，为显示消息的div指定id，命名格式必须为error_ElementName（error_验证元素的name）
-[info 属性为可选属性，如果设置了，会作为提示信息的前缀。]
-EasyCheck验证插件的提示消息会显示在您div指定的位置。
-如：
-<tr>  
-      <td align="left"  width="300px">
-       	<label class="lbl"><div style="color:#FF0000; display:inline">*</div>登录邮箱</label>
-          <div  id="error_uemail"  info="登录邮箱"></div> 
-       /td>
-</tr>
-	<tr>  
-        <td align="left"><input  type="text"  name="uemail" value="" class="txt required email" size="20"  /> </td>
-</tr>
-
-If you need to specify the default prompt and correct prompted, provide the following named DIV id can:
- default prompt: default_ validation element's name
- correct Tip: ok_ validation element's name
-<div id="default_uname2" style="display: inline;"> required, start with a letter and can only contain letters and numbers </ div>
-<div id="ok_uname2" style="display: inline;"> right </ div>
-Use the correct prompt easycheck_okInfo styles.
-
-8、自定义消息内容
+7、自定义全局错误消息内容
 在页面引入EasyCheck.js后，使用如下语法，可修改指定验证规则的提示消息内容：
 EasyCheck.msg['required']=" is required";
 可根据需要修改，EasyCheck. msg列表中默认的消息名称和默认值如下：
@@ -208,6 +184,38 @@ max min 值必须在{0}到{1}之间
 regExp 格式有误
 extension 文件扩展名只能为{0}
 vc 输入有误
+
+
+
+8、自定义默认，正确，错误提示
+EasyCheck支持手动指定默认提示信息，错误提示信息，正确提示信息。如果需要指定默认提示信息和正确提示信息，则提供如下id命名的DIV即可：
+
+默认提示：default_验证元素的name
+错误提示：error_验证元素的name（会使用easycheck_errorInfo样式）
+正确提示：ok_验证元素的name（会使用easycheck_okInfo样式）
+
+示例：
+<div id="default_uname2"  style="display: inline;">必填，字母开头，只能包含字母和数字</div> 
+<div id="ok_uname2" style="display: inline;">正确</div>
+<div id="error_uname"   prefix="用户名" style="display: inline;"></div>
+<div id="error_uemail"  info="请填写邮箱！"  style="display: inline;"></div>
+
+默认情况下，错误信息是自动创建并显示在文本框后的。如果希望将提示信息显示在指定的位置，则可设置如下：在页面合适位置创建消息提示div，为显示消息的div指定id，命名格式必须为error_ElementName（error_验证元素的name）
+info：可选属性，错误提示信息（会覆盖默认提示）
+perfix：可选属性，错误信息提示前缀。
+EasyCheck验证插件的提示消息会显示在您div指定的位置。
+
+示例：
+<tr>  
+      <td align="left"  width="300px">
+       	<label class="lbl"><div style="color:#FF0000; display:inline">*</div>登录邮箱</label>
+          <div  id="error_uemail"  info="请填写登录邮箱！"></div> 
+       /td>
+</tr>
+	<tr>  
+        <td align="left"><input  type="text"  name="uemail" value="" class="txt required email" size="20"  /> </td>
+</tr>
+
 
 
 9、手动清除所有错误提示消息
