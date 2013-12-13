@@ -33,62 +33,30 @@ EasyCheck.css中定义了：
 /*验证未通过的div样式*/
 .easycheck_errorInfo {
 	padding: 2px 8px;
-	padding-left: 8px;
-	height: 30px;
-	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
 	margin-left: 10px;
-	font-size: 15px;
-	line-height: 30px;
-	background-color: #FF6600;
-	color: #fff;
+	background-color:#FFE6BF;
+	color:#BF6200;
 	display: inline;
 	font-weight: bold;
 }
 /*验证通过的div样式*/
 .easycheck_okInfo {
-	padding: 3px 8px;
-	height: 30px;
-	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
+	padding: 2px 8px;
 	margin-left: 10px;
-	font-size: 15px;
-	line-height: 30px;
 	background-color: #7AC935;
 	color: #fff;
 	display: inline;
-	font-weight: bold;
+    font-weight: bold;
 }
 /*验证未通过的文本框样式*/
 .easycheck_errorInput {
-	height: 30px;
-	font-size: 14px;
-	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 	border: 1px solid #DD080A;
-	text-indent: inherit;
-	font-weight: normal;
-	line-height: 30px;
-	background: #fff;
-	font-family: "微软雅黑", sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
-	margin-right: 10px;
-	width: 325px;
-	margin: 0px 0 0 10px;
-	letter-spacing: 1px;
 }
-/*验证通过的默认文本框样式,与文本框默认样式保持一致！*/
+/*验证通过的文本框样式(一般与您使用的默认文本框样式相同)*/
 .easycheck_okInput {
-	height: 30px;
-	font-size: 14px;
-	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 	border: 1px solid #cfcfc9;
-	text-indent: inherit;
-	font-weight: normal;
-	line-height: 30px;
-	background: #fff;
-	font-family: "微软雅黑", sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
-	margin-right: 10px;
-	width: 325px;
-	margin: 0px 0 0 10px;
-	letter-spacing: 1px;
 }
+
 2、在页面使用EasyCheck的验证器进行验证
 	class类验证器：
 required    必填       <input type="text" name="name" class="required"/>     
@@ -130,8 +98,8 @@ easyCheckIgnor参数可以设置弹起和焦点验证时的忽略验证器，可
 <input  type="password" value=""  name="urepwd" size="20"  class="txt required"  max="20" max="40"/>
 
 3、提交表单时验证
-提交表单时进行验证，为form表单添加指定id属性和onsubmit="return easyCheckForm(this)"事件即可
-  <form action="login.action" onsubmit="return easyCheckForm(this)" id="regForm"> 
+提交表单时进行验证，为form表单添加指定id属性和onsubmit="return EasyCheck.easyCheckForm(this)"事件即可
+  <form action="login.action" onsubmit="return EasyCheck.easyCheckForm(this)" id="regForm" method="post"> 
   
 4、防止客户端表单重复提交功能
 EasyCheck默认开启了客户端防止重复提交功能。防止在用户验证通过提交数据过程中，由于网络未响应，用户多次点击提交等原因，导致重复提交数据功能。默认用户点击submit按钮提交表单过程中将禁用submit提交按钮。
@@ -218,11 +186,27 @@ EasyCheck验证插件的提示消息会显示在您div指定的位置。
 
 
 
-9、手动清除所有错误提示消息
-例如验证表单在弹出层中时，打开层时，清空层中表单之前的提示信息。
-直接调用
-EasyCheck.clearAllError();
-即可。
+9、手动清除和设置错误提示消息
+EasyCheck.clearAllError( [formId] );
+清除所有的错误提示，formId为可选：
+指定时，仅清除指定form中的错误消息；不指定，清除当前页面所有错误消息。
+
+EasyCheck.restoreAll( [formId] );
+还原消息。清除错误提示，并清除正确提示，显示默认提示。
+例如，验证表单在弹出层中时，关闭层重新打开时，清空层中表单之前的提示信息。
+formId为可选：
+指定时，仅清除指定form中的错误消息；不指定，清除当前页面所有错误消息。
+
+EasyCheck.showError( ’elementId’|elementDOM , ’msg’ );
+为指定表单元素手动设置错误消息。
+例如，可使用此方法来显示从服务器返回的指定消息。
+elementId | elementDOM：指定表单元素的id，或者表单元素DOM对象。
+msg：错误消息。
+
+EasyCheck.clearError( ’elementId’|elementDOM  );
+清除指定表单元素的错误消息。
+elementId | elementDOM：指定表单元素的id，或者表单元素DOM对象。
+
 
 10、高级选项：自定义新验证器——在页面添加一个新的验证器
 假设页面需要一个检测进行用户名是否存在的类验证器，则可直接定义
@@ -294,32 +278,15 @@ EasyCheck.easyCheckBlurIgnore["vc"]=true;
 EasyCheck.easyCheckKeyupIgnore["vc"]=true;
 	EasyCheck.easyCheckEleIgnore键盘弹起和失去焦点时忽略验证的DOM元素名称（只对提交表单有效）。
 EasyCheck.easyCheckEleIgnore["uservc"]=true;
-11、高级扩展：验证框架提示消息维护管理
-为了方便对提示消息进行管理和国际化。可以将提示消息定义在EasyCheck. msg列表中：
-  msg:{
-		"required":"不能为空",
-		"email":"邮箱格式不正确",
-		"url":"网址有误",
-		"number":"必须为数字",
-		"digits":"必须为整数",
-		"equalto":"输入不一致",
-"equallength":"长度必须为{0}位",
-		"minlength][maxlength":"长度必须在{0}到{1}之间",
-		"minlength":"长度不能小于{0}",
-		"maxlength":"长度不能大于{0}",
-		"min][max":"值必须在{0}和{1}之间",
-		"min":"不能小于{0}",
-		"max":"不能大于{0}",
-		"regExp":"格式有误",
-		"extension":"文件扩展名只能为{0}",
-"vc":"输入有误",
-       "自定义消息名称":"消息内容，可使用{0}，{1}……占位符"
-	}
 
-	在自定义的新验证函数的消息提示部分，使用EasyCheck.msg["自定义消息名称"]来获取消息内容
-如：
+12、高级扩展：验证框架提示消息内容维护管理
+
+12.1、为了方便对提示消息进行管理。可以将提示消息定义在EasyCheck. msg列表中。
+EasyCheck.msg["自定义消息名称"]= "消息内容，可使用{0}，{1}……占位符"；
+
+12.2、在自定义的新验证函数的消息提示部分，使用EasyCheck.msg["自定义消息名称"]来获取消息内容，如：
 EasyCheck.msg["required"]
-function checkNew(o,e){		
+	function checkNew(o,e){		
 		return EasyCheck. addChkMethod(o,e,
 			 function(o){
 			    //验证实现，返回true或false：true代表验证通过；false代表未通过，将显示msg的消息
@@ -327,10 +294,8 @@ function checkNew(o,e){
 			},EasyCheck.msg["required"]);
 	}
 
-	如果消息有占位符（如"长度必须在{0}到{1}之间"），则调用EasyCheck.formatMsg("消息内容","占位参数值1"，……)为消息赋值进行格式化
-如：
+12.3、如果消息有占位符（如"长度必须在{0}到{1}之间"），则调用EasyCheck.formatMsg("消息内容","占位参数值1"，……)为消息赋值进行格式化，如：
 EasyCheck.formatMsg(EasyCheck.msg["minlength][maxlength"],$(o).attr("minlength"),$(o).attr("maxlength"))
-
 
 
 online Demo:http://www.lightfeel.com/EasyCheck/zh_cn/demo.jsp

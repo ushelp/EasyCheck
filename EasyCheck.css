@@ -2,26 +2,16 @@
 /*验证未通过的div样式*/
 .easycheck_errorInfo {
 	padding: 2px 8px;
-	padding-left: 8px;
-	height: 30px;
-	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
 	margin-left: 10px;
-	font-size: 18px;
-	line-height: 30px;
-	background-color: #FF6600;
-	color: #fff;
+	background-color:#FFE6BF;
+	color:#BF6200;
 	display: inline;
 	font-weight: bold;
 }
 /*验证通过的div样式*/
 .easycheck_okInfo {
-		padding: 2px 8px;
-	padding-left: 8px;
-	height: 30px;
-	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
+	padding: 2px 8px;
 	margin-left: 10px;
-	font-size: 18px;
-	line-height: 30px;
 	background-color: #7AC935;
 	color: #fff;
 	display: inline;
@@ -29,33 +19,9 @@
 }
 /*验证未通过的文本框样式*/
 .easycheck_errorInput {
-	height: 38px;
-	font-size: 14px;
-	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 	border: 1px solid #DD080A;
-	text-indent: inherit;
-	font-weight: normal;
-	line-height: 38px;
-	background: #fff;
-	font-family: "微软雅黑", sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
-	margin-right: 10px;
-	width: 325px;
-	margin: 0px 0 0 10px;
-	letter-spacing: 1px;
 }
 /*验证通过的文本框样式(一般与您使用的默认文本框样式相同)*/
-.easycheck_okInput {
-	height: 38px;
-	font-size: 14px;
-	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+.easycheck_okInput{
 	border: 1px solid #cfcfc9;
-	text-indent: inherit;
-	font-weight: normal;
-	line-height: 38px;
-	background: #fff;
-	font-family: "微软雅黑", sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
-	margin-right: 10px;
-	width: 325px;
-	margin: 0px 0 0 10px;
-	letter-spacing: 1px;
 }
