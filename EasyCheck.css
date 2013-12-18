@@ -1,5 +1,3 @@
-/* CSS Document */
-/*验证未通过的div样式*/
 .easycheck_errorInfo {
 	padding: 2px 8px;
 	margin-left: 10px;
@@ -8,7 +6,6 @@
 	display: inline;
 	font-weight: bold;
 }
-/*验证通过的div样式*/
 .easycheck_okInfo {
 	padding: 2px 8px;
 	margin-left: 10px;
@@ -17,11 +14,12 @@
 	display: inline;
 	font-weight: bold;
 }
-/*验证未通过的文本框样式*/
+.easycheck_defaultInput,.txt{
+	border: 1px solid #cfcfc9;
+}
+.easycheck_focusInput{
+	border: 1px solid #0066FF;
+}
 .easycheck_errorInput {
 	border: 1px solid #DD080A;
-}
-/*验证通过的文本框样式(一般与您使用的默认文本框样式相同)*/
-.easycheck_okInput{
-	border: 1px solid #cfcfc9;
 }
