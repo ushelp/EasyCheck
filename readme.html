@@ -291,34 +291,35 @@ img {
 </style>
 </head>
 <body>
-<h1 id="echeck-a-powerful-jquery-plugin-to-validate-online-forms">ECheck a powerful jQuery plugin to validate online forms</h1>
-<p>Notice:the plugin same as EasyCheck,this is English Version,the message and user manual in English.<br>说明：该插件与EasyChec插件为同一插件，是EasyCheck的英文版本，中文版本请参考 GitHub:<a href="https://github.com/ushelp/EasyCheck">https://github.com/ushelp/EasyCheck</a></p>
-<p>EasyCheck is a front-end JS form validation plugin based on jQuery, without programming through HTML forms authentication enhancements to complete the work , simplifying the front-end development work, and to maintain a unified verification style , and improve efficiency. The biggest feature is the use of lightweight components and , but with complete flexibility and strong scalability, support for class-based , based on a combination of attributes and validators . EasyCheck developed to meet the daily built- dozen common validator ; support the text box to verify automatically switch styles ; default , error messages and correct the contents of the three DIV tips ; and support for custom message prompts position ; support for anti- client duplicate submission function ; also supports registered users to develop new validator for expansion.</p>
-<p><strong>Compatibility </strong>: EasyDataTable fully compatible with IE6 and above , Firefox, Chrome, Safari, Opera and other kernel (Trident, Gecko, Webkit, Presto) browser , and is compatible with multiple platforms and systems (PC, TabletPC, Mobile).</p>
+<h1 id="easycheck-">EasyCheck验证插件使用手册</h1>
+<p>说明：该插件与ECheck插件为同一插件，是ECheck的中文版本，提示消息和使用手册均为中文版。<br>Notice：It’s same to ECheck,this is Chinese language version, the English version please refer to GitHub：<a href="https://github.com/ushelp/ECheck">https://github.com/ushelp/ECheck</a></p>
+<p>EasyCheck是一个基于jQuery的前端JS表单验证插件，无需编程通过HTML增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。最大的特点是组件和使用轻量级，但具有完全的灵活性和强的扩展性，支持基于类、基于属性和组合验证器。EasyCheck内置能满足日常开发的十多种常用验证器；支持文本框验证样式自动切换；默认、错误和正确三种DIV提示消息内容；并支持提示消息位置的自定义；支持防客户端重复提交功能；还支持用户开发注册新验证器进行扩展。</p>
+<p><strong>兼容性</strong>：EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。</p>
+<h3 id="-http-www-lightfeel-com-easy-easycheck-zh-cn-index-jsp-easycheck-home-"><a href="http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp" title="EasyCheck官网 HOME 主页">官方主页</a></h3>
 <hr>
-<h2 id="1-the-introduction-easycheck-css-after-introduction-easycheck-js-jquery">1,the introduction EasyCheck.css, after introduction EasyCheck.js jQuery</h2>
+<h2 id="1-easycheck-css-jquery-easycheck-js">1、引入EasyCheck.css，在jQuery后引入EasyCheck.js</h2>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/EasyCheck.css&quot;/&gt;  
 &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;js/EasyCheck.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
-    // Optional Parameters
-    EasyCheck.blurChk=true;    //Verify loses focus when opened , false to disable , default is true
-    EasyCheck.keyupChk=true;  //Verify that the keyboard pops up when you turn on , false to disable , default is true
-    EasyCheck.loadChk=true;   // if the page is loaded immediately after turn on validation rules ( otherwise verified only when the form is submitted , if set to false, blurChk and keyupChk invalid ) , the default is true
+    //可选参数
+    EasyCheck.blurChk=true;    //开启失去焦点时验证，false禁用，默认为true
+    EasyCheck.keyupChk=true;  //开启键盘弹起时验证，false禁用，默认为true
+    EasyCheck.loadChk=true;   //页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true
 
-    //Style form elements actually used to specify when the error message , you need to switch the default class style form elements , if the default class style form elements are not using . easycheck_defaultInput, you must
+    //指定表单元素实际使用的样式，错误提示时，需要切换表单元素默认类样式，如果表单元素使用的默认类样式不是.easycheck_defaultInput，则必须
     EasyCheck.defaultCss=&quot;txt&quot;;   
 &lt;/script&gt;</code></pre>
-<h3 id="easycheck-css-description-">EasyCheck.css Description :</h3>
-<p>EasyCheck support for text boxes and div prompt message for event landscaping, you can dynamically change the text box and the div style according to the event and verify the results, showing different looks in different states, in order to provide a richer validation results.</p>
-<p>EasyCheck.css five defined CSS styles:</p>
+<h3 id="easycheck-css-">EasyCheck.css说明：</h3>
+<p>EasyCheck支持对文本框和div提示消息进行事件美化，可以根据事件及验证结果动态改变文本框和div样式，在不同状态时显示不同外观，使得表单项更加醒目，以提供更丰富的验证效果。</p>
+<p>EasyCheck.css中定义了五种CSS样式：   </p>
 <ul>
-<li><p>Div style related news:<br>Verified by message class style <code>. Easycheck_okInfo</code><br>Verify that did not pass the message class style <code>. Easycheck_errorInfo</code>    </p>
+<li><p>div消息相关样式：<br>验证通过消息类样式 <code>.easycheck_okInfo</code><br>验证未通过消息类样式 <code>.easycheck_errorInfo</code>  </p>
 </li>
-<li><p>Text boxes related styles<br>The default text box type style <code>. Easycheck_defaultInput</code><br>Text box has focus when the style class: <code>easycheck_focusInput</code><br>Verify text box type style fails when <code>. Easycheck_errorInput</code>    </p>
+<li><p>文本框相关样式<br>默认文本框类样式 <code>.easycheck_defaultInput</code><br>获得焦点时的文本框类样式：<code>easycheck_focusInput</code><br>验证未通过时的文本框类样式 <code>.easycheck_errorInput</code>  </p>
 </li>
 </ul>
-<p>Need more CSS class styles can be modified according to the actual project, set <code>easycheck_defaultInput</code> class style consistent with the style of your text box default class; would <code>easycheck_errorInput</code> class style modified to error style you need. Or, to redefine the class styles in the page, to replace the default style.</p>
+<p>根据实际项目需要可对以上CSS类样式进行修改，请将<code>.easycheck_defaultInput</code>类样式与您文本框默认类样式保持一致；将<code>.easycheck_errorInput</code>类样式修改为错误提示您需要的样式。或者，在页面重新定义该类样式，以替换默认样式。</p>
 <pre><code>.easycheck_errorInfo {
     padding: 2px 8px;
     margin-left: 10px;
@@ -344,150 +345,155 @@ img {
 .easycheck_errorInput {
     border: 1px solid #DD080A;
 }</code></pre>
-<h2 id="2-easycheck-built-in-validator-to-validate">2, EasyCheck built-in validator to validate</h2>
-<p>EasyCkeck built a 16 Validator common everyday development , divided into three types : Class, Attribute, Combination.</p>
-<h4 id="5-class-validator-class-">5 Class validator class：</h4>
-<pre><code>required      Required        &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;required&quot;/&gt;     
-email         Email        &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;email&quot;/&gt;
+<h2 id="2-easycheck-">2、在页面使用EasyCheck内置的验证器进行验证</h2>
+<p>EasyCkeck内置了16个日常开发常用的验证器，分为3种类型：类(Class)、属性(Attribute)、组合(Combination).</p>
+<h4 id="5-class-">5个Class类验证器：</h4>
+<pre><code>required      必填       &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;required&quot;/&gt;     
+email         邮箱       &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;email&quot;/&gt;
 url           URL        &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;url&quot;/&gt;
-number        A number       &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;number&quot;/&gt;
-integer       integer        &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;integer&quot;/&gt;</code></pre>
-<p>Simultaneous use of multiple classes validators , separated by spaces :</p>
-<pre><code>Can not be empty , and the mailbox   &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot; required email&quot; /&gt;</code></pre>
-<h4 id="9-attribute-attribute-validator-">9 Attribute attribute validator :</h4>
-<pre><code>equalTo     value must be equal to the specified element ElementId       &lt;input type=&quot;password&quot; name=&quot;name&quot; equalTo=&quot;ElementId&quot;/&gt;
-equallength value must be equal to the length of equallength                &lt;input type=&quot;password&quot; name=&quot;name&quot;  equallength =&quot;4&quot;/&gt;
-maxlength   The maximum character length can not exceed maxlength maxlength             &lt;input type=&quot;text&quot; name=&quot;name&quot; maxlength=&quot;20&quot;/&gt;
-minlength  minimum character length can not be eliminated on minlength             &lt;input type=&quot;text&quot; name=&quot;name&quot; minlength=&quot;6&quot;/&gt;
-max         number can not be greater than max                          &lt;input type=&quot;text&quot; name=&quot;name&quot; max=&quot;20&quot;/&gt;
-min        number can not be less than min                          &lt;input type=&quot;text&quot; name=&quot;name&quot; min=&quot;2&quot;/&gt;
-extension   extension validation extension, multiple extensions use a comma -delimited , the default is &quot;png, jpeg, jpg, gif&quot;     &lt;input type=&quot;file&quot; name=&quot;name&quot; extension=&quot;&quot;/&gt;
-reg       custom regular verification                             &lt;input type=&quot;text&quot; name=&quot;name&quot; reg=&quot;[A-Z]*&quot;/&gt;
-vc          Ajax request using vc vc specified URL, for verification code detection , URL returns true Congress passed , false representatives did not pass   &lt;input type=&quot;text&quot; vc=&quot;chkvc.jsp&quot; name=&quot;vc&quot; /&gt;
-Server-side custom processing Demo (JSP):
+number        数字       &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;number&quot;/&gt;
+integer       整数       &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;integer&quot;/&gt;</code></pre>
+<p>同时使用多个类验证器，用空格分隔：</p>
+<pre><code>不能为空，并且为邮箱    &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot; required email&quot; /&gt;</code></pre>
+<h4 id="9-attribute-">9个Attribute属性验证器:</h4>
+<pre><code>equalTo     值必须和Id为ElementId指定的元素相等       &lt;input type=&quot;password&quot; name=&quot;name&quot; equalTo=&quot;ElementId&quot;/&gt;
+equallength 值长度必须等于equallength                &lt;input type=&quot;password&quot; name=&quot;name&quot;  equallength =&quot;4&quot;/&gt;
+maxlength   最大字符长度不能大于maxlength             &lt;input type=&quot;text&quot; name=&quot;name&quot; maxlength=&quot;20&quot;/&gt;
+minlength   最小字符长度不能销于minlength             &lt;input type=&quot;text&quot; name=&quot;name&quot; minlength=&quot;6&quot;/&gt;
+max         数字不能大于max                          &lt;input type=&quot;text&quot; name=&quot;name&quot; max=&quot;20&quot;/&gt;
+min         数字不能小于min                          &lt;input type=&quot;text&quot; name=&quot;name&quot; min=&quot;2&quot;/&gt;
+extension   验证扩展名，多个扩展名使用英文逗号分隔，默认为&quot;png,jpeg,jpg,gif&quot;    &lt;input type=&quot;file&quot; name=&quot;name&quot; extension=&quot;&quot;/&gt;
+reg         自定义正则验证                             &lt;input type=&quot;text&quot; name=&quot;name&quot; reg=&quot;[A-Z]*&quot;/&gt;
+vc          使用Ajax请求vc指定的URL，进行验证码检测，URL返回true代表通过，false代表未通过   &lt;input type=&quot;text&quot; vc=&quot;chkvc.jsp&quot; name=&quot;vc&quot; /&gt;
+服务器端自定义处理Demo（JSP）：
 &lt;%  
-    //Get the input verification code via text box name
-    String vc = request.getParameter(&quot;vc&quot;);  //data
+    //通过验证码文本框名称获得输入的
+    String vc = request.getParameter(&quot;vc&quot;);  //数据
     String res = &quot;false&quot;;
     if (vc != null &amp;&amp; vc.equals(session.getAttribute(&quot;randomNumber&quot;))) {
         res = &quot;true&quot;;
     }
-    out.print(res);  //output true Congress passed , false representatives did not pass
+    out.print(res);  //输出true代表通过，false代表未通过
 %&gt;</code></pre>
 <blockquote>
-<p>Help , by default to avoid unnecessary server requests authentication code verification conducted only when the form is submitted , the keyboard does not bounce and validation parameters loses focus . Implementation code :</p>
-<p>EasyCheck.easyCheckIgnore [“vc”] = true;<br>Vc verification code rule , when the keyboard pops up and lose focus not verified , validated only when the form is submitted &gt; easyCheckIgnor parameters can be set to ignore the validator bounce and focus authentication , and can be modified according to the needs of the keyboard pops up is false, the representative and lose focus when open authentication.</p>
+<p>说明，默认情况下为了避免不必要的服务器请求，验证码验证只在提交表单时进行，不在键盘弹起和失去焦点时进行验证的参数。实现代码：</p>
+<pre><code>EasyCheck.easyCheckIgnore[&quot;vc&quot;]=true; </code></pre>
+<p>vc验证码规则，键盘弹起和失去焦点时不验证，只在表单提交时验证&gt;easyCheckIgnor参数可以设置弹起和焦点验证时的忽略验证器，可根据需要修改为false，代表进行键盘弹起和失去焦点时开启验证。</p>
 </blockquote>
-<h4 id="2-combination-combination-validator-">2 Combination combination validator:</h4>
-<pre><code>[minlength] [maxlength] length combination Validator : Using minlength property validator and validator maxlength attribute
-&lt;input type=&quot;password&quot; value=&quot;&quot; name=&quot;urepwd&quot; size=&quot;20&quot; class=&quot;txt required&quot; equalto=&quot;upwd&quot; maxlength=&quot;12&quot; minlength=&quot;6&quot;/&gt;
-[min] [max] a combination of numerical range validator : validator attributes while adding min and max attributes validator
-&lt;input type=&quot;password&quot; value=&quot;&quot; name=&quot;urepwd&quot; size=&quot;20&quot; class=&quot;txt required&quot; min=&quot;18&quot; max=&quot;45&quot;/&gt;</code></pre>
-<p><strong>Note : According to the principle EasyCheck internal validation , EasyCheck not mandatory user for each form element must specify the id attribute , you can simplify routine element definitions . But if the page exists <code>name</code> same form elements , you need to distinguish between the use of id . Elements are present in the form <code>id attribute</code>, <code>id</code> attribute takes precedence over the <code>name</code> attribute , EasyCheck internal <code>will</code> id attribute value as a reference to identify various functions to achieve - for example, the need to achieve the element associated with the specified expansion , when the configuration operations , priority <code>id</code>.</strong></p>
-<h2 id="3-when-the-form-is-submitted-to-verify">3, when the form is submitted to verify</h2>
-<p>Validated when the form is submitted, the form of <code>form</code> id <code>add the specified attribute</code> and <code>onsubmit =&quot; return EasyCheck.checkForm (this) &quot;</code> event to</p>
-<pre><code>&lt;form action=&quot;login.action&quot; onsubmit=&quot;return EasyCheck.checkForm(this)&quot; id=&quot;regForm&quot; method=&quot;post&quot;&gt;action&quot; onsubmit=&quot;return EasyCheck.checkForm(this)&quot; id=&quot;regForm&quot; method=&quot;post&quot;&gt; </code></pre>
-<h2 id="4-to-prevent-duplicate-submission-form-functional-client">4, to prevent duplicate submission form functional client</h2>
-<p>EasyCheck client is enabled by default to prevent duplicate submission function. Prevent the user authentication process by submitting data, because the network is not responding, you repeatedly click submit other reasons, led to resubmit data capabilities. The default user clicks the submit button to submit the form in the process of disabling submit submit button.<br>If, in exceptional scenarios need to disable this feature in the introduction EasyCheck.js, set <code>EasyCheck.easyCheckSubmitDisable</code> parameter value <code>false</code> to disable the anti-duplicate submission function:</p>
-<p>EasyCheck.easyCheckSubmitDisable = false; / / cancel the submit button to disable the function, the default is true</p>
+<h4 id="2-combination-">2个Combination组合验证器:</h4>
+<pre><code>[minlength][maxlength]  长度范围组合验证器：同时使用minlength属性验证器 与 maxlength属性验证器 
+&lt;input  type=&quot;password&quot; value=&quot;&quot;  name=&quot;urepwd&quot; size=&quot;20&quot;  class=&quot;txt required&quot;  equalto=&quot;upwd&quot; maxlength=&quot;12&quot; minlength=&quot;6&quot;/&gt;
+[min][max]              数字范围组合验证器：同时加入min属性验证器与 max属性验证器 
+&lt;input  type=&quot;password&quot; value=&quot;&quot;  name=&quot;urepwd&quot; size=&quot;20&quot;  class=&quot;txt required&quot;  min=&quot;18&quot; max=&quot;45&quot;/&gt;</code></pre>
+<p><strong>注意：根据EasyCheck内部验证原理，EasyCheck并不强制要求用户为每个表单元素必须指定id属性，可以简化日常元素定义。但如果页面存在<code>name</code>相同的表单元素，则需要使用id加以区分。在表单元素存在<code>id属性</code>时，<code>id</code>属性优先级高于<code>name</code>属性，EasyCheck内部将以<code>id属性</code>的值作为各个功能实现的参考标识——例如在需要实现与指定元素相关的扩展、配置操作时，优先使用<code>id</code>。</strong></p>
+<h2 id="3-">3、提交表单时验证</h2>
+<p>提交表单时进行验证，为<code>form表单</code>添加指定<code>id属性</code>和<code>onsubmit=&quot;return EasyCheck.checkForm(this)&quot;</code>事件即可</p>
+<pre><code>&lt;form action=&quot;login.action&quot; onsubmit=&quot;return EasyCheck.checkForm(this)&quot; id=&quot;regForm&quot; method=&quot;post&quot;&gt; </code></pre>
+<h2 id="4-">4、防止客户端表单重复提交功能</h2>
+<p>EasyCheck默认开启了客户端防止重复提交功能。防止在用户验证通过提交数据过程中，由于网络未响应，用户多次点击提交等原因，导致重复提交数据功能。默认用户点击submit按钮提交表单过程中将禁用submit提交按钮。<br>如果在特殊场景下需要禁用该功能，可在引入EasyCheck.js后，设置<code>EasyCheck.easyCheckSubmitDisable</code>参数值为<code>false</code>即可禁用防重复提交功能：</p>
+<pre><code>EasyCheck.easyCheckSubmitDisable=false;  //取消提交按钮禁用功能，默认为true</code></pre>
 <p>&gt;</p>
 <blockquote>
-<p>Firefox under special instructions:<br>Since the Firefox browser to load data from the cache memory when the reason, if the data is submitted by clicking on the browser back button to return to the page, the submit button will still be displayed as disabled.</p>
-<p>The workaround is to add the submit button autocomplete = “off” attribute can be.</p>
-<p>Role Description &gt;&gt; autocomplete attribute:<br>The default browser forms to shield memory function. Taobao, Baidu ‘s search box also has the attribute. Autocomplete attribute is nonstandard, first added in IE5, and the other browsers are supported. Html5 also be a list of criteria.</p>
+<p>Firefox下特别说明：<br>由于Firefox浏览器的从缓存加载数据时的记忆原因，如果提交数据后，通过点击浏览器后退按钮回到网页，提交按钮将依然显示为禁用状态。</p>
+<p>解决方法为给提交按钮加上 autocomplete=”off” 的属性即可。</p>
+<blockquote>
+<p>autocomplete属性作用说明：<br>此为了屏蔽浏览器表单默认的记忆功能。淘宝，百度的搜索框也有该属性。autocomplete 属性是非标准的，首先在 IE5 中加入，后 其它浏览器 都 支持。html5 也将其列表标准。</p>
 </blockquote>
-<p>Additionally, if you do not want to modify the html page through the submit button to add autocomplete = “off” attribute to implement this feature , EasyCheck also support the achievement of correction Firefox browser back button functionality is enabled by JS code :</p>
-<p>Method One: Set directly under Firefox after disabling the back button id array , you can specify multiple</p>
+</blockquote>
+<p>除此之外，如果不希望通修改html页面为提交按钮加autocomplete=”off”属性来实现此功能，EasyCheck同样支持通过JS代码实现修正Firefox浏览器后退按钮启用的功能：</p>
+<p>方法一：直接设置Firefox下后退后不禁用的按钮id数组，可指定多个</p>
 <pre><code> EasyCheck.removeDisableBtn=[&#39;submitId&#39;]; </code></pre>
-<p>Method Two : Set array formId back after disabling the next Firefox , you can specify more than one form of the form ID, all the submit button in a form automatically back to normal after</p>
+<p>方法二：设置Firefox下后退后不禁用的formId数组，可指定多个form表单的ID，在表单中的所有submit按钮在后退后自动转为正常</p>
 <pre><code> EasyCheck.removeDisableForm=[&#39;formId&#39;]; </code></pre>
-<p>Method three : Set to force all pages form a form submit button is enabled, the default value is false</p>
-<pre><code>//This parameter will disable all all from under the submit button is enabled
-//If it is determined that all project page does not need to disable the submit button by default , this setting is most convenient
+<p>方法三：设置强制将页面所有form表单中的submit按钮启用，默认值为false</p>
+<pre><code>//该参数会将所有所有from下禁用的submit按钮启用
+//所有如果确定项目页面没有默认需要禁用的submit按钮，该设置最为方便
 EasyCheck.removeDisable=true;  </code></pre>
-<h2 id="5-text-box-style-management">5 , Text box style management</h2>
-<p>EasyCheck has extensive appearance customization features that can automatically change the validation does not pass when the appearance of the form elements , making more eye-catching form item , the customer experience richer.</p>
-<p>EasyCheck support for the text boxes refer to different styles of three states: default text box style , style text box gets the focus , the error text box style - these three states are quoted <code>EasyCheck.css</code> in <code>easycheck_defaultInput</code>, <code>. . easycheck_focusInput</code>,<code>. easycheck_errorInput</code>.</p>
-<p>These styles are stored in the following parameter values ​​, and set up EasyCheck.css predefined styles :</p>
+<h2 id="5-">5、文本框样式管理</h2>
+<p>EasyCheck拥有丰富的外观自定义功能，能够在验证未通过时自动更改表单元素外观，使得表单项更加醒目，客户体验更加丰富。</p>
+<p>EasyCheck支持为文本框在三种状态引用不同样式：默认文本框样式、获得焦点文本框样式、错误文本框样式——这三类状态分别引用了<code>EasyCheck.css</code>中的<code>.easycheck_defaultInput</code>、<code>.easycheck_focusInput</code>、<code>.easycheck_errorInput</code>。</p>
+<p>这些样式值保存在如下参数中，并设置了EasyCheck.css中预定义的样式:</p>
 <pre><code>EasyCheck.defaultCss=&quot;easycheck_defaultInput&quot;；
 EasyCheck.focusCss=&quot;easycheck_focusInput&quot;；
 EasyCheck.errorCss=&quot;easycheck_errorInput&quot;；</code></pre>
-<p><em>Due to default EasyCheck use <code>EasyCheck.css</code> in <code>. Easycheck_defaultInput</code> styles to redefine the text box style , so you need to <code>. Easycheck_defaultInput</code> style form with your default style set to the same.</em></p>
-<p>If you want to redefine the default style used for the text box has focus style , wrong style, you can use JavaScript to be modified.</p>
+<p><em>由于默认情况下EasyCheck会使用<code>EasyCheck.css</code>中的<code>.easycheck_defaultInput</code>样式来重新定义文本框样式，所以需要将<code>.easycheck_defaultInput</code>样式同您表单的默认样式设置为一致。</em>    </p>
+<p>如果希望为文本框重新定义使用的默认样式、获得焦点样式，错误样式，可以使用JavaScript进行修改。</p>
 <ul>
-<li><p>Modify the text box default class style :</p>
-<pre><code>  // Specify the global default css class style used in the form
-  EasyCheck.defaultCss = &quot;txt&quot;;
+<li><p>修改文本框默认类样式：</p>
+<pre><code>  //指定全局默认使用的表单css类样式
+  EasyCheck.defaultCss=&quot;txt&quot;;
 
-  // If the page has multiple forms, class style used in different forms in different elements , you can specify the class style used elements in the form
-  EasyCheck.formDefaultCss [&#39;formId&#39;] ​​= &quot;txt2&quot;; / / specify an id regForm2 form elements using txt2 style.</code></pre>
+  //如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
+  EasyCheck.formDefaultCss[&#39;formId&#39;]=&quot;txt2&quot;;  //指定id为regForm2的表单元素使用的是.txt2样式</code></pre>
 </li>
 </ul>
 <ul>
-<li><p>Modify the text box has focus when the class styles :</p>
-<pre><code>  // Specify the global default css class style used in the form
-  EasyCheck.defaultCss = &quot;txt&quot;;
+<li><p>修改获得焦点时文本框类样式：</p>
+<pre><code>  //指定全局默认使用的表单css类样式
+  EasyCheck.defaultCss=&quot;txt&quot;;
 
-  // If the page has multiple forms, class style used in different forms in different elements , you can specify the class style used elements in the form
-  EasyCheck.formDefaultCss [&#39;formId&#39;] ​​= &quot;txt2&quot;; / / specify an id regForm2 form elements using txt2 style.</code></pre>
+  //如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
+  EasyCheck.formDefaultCss[&#39;formId&#39;]=&quot;txt2&quot;;  //指定id为regForm2的表单元素使用的是.txt2样式</code></pre>
 </li>
-<li><p>When you modify the error text box type styles :</p>
-<pre><code>  // Specify the global default css class style used in the form
-  EasyCheck.defaultCss = &quot;txt&quot;;
+<li><p>修改错误时文本框类样式：</p>
+<pre><code>  //指定全局默认使用的表单css类样式
+  EasyCheck.defaultCss=&quot;txt&quot;;
 
-  // If the page has multiple forms, class style used in different forms in different elements , you can specify the class style used elements in the form
-  EasyCheck.formDefaultCss [&#39;formId&#39;] ​​= &quot;txt2&quot;; / / specify an id regForm2 form elements using txt2 style.</code></pre>
+  //如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
+  EasyCheck.formDefaultCss[&#39;formId&#39;]=&quot;txt2&quot;;  //指定id为regForm2的表单元素使用的是.txt2样式</code></pre>
 </li>
 </ul>
-<h2 id="6-disable-text-box-style-validation-fails">6 , disable text box style validation fails</h2>
+<h2 id="6-">6、禁用验证失败时文本框样式</h2>
 <pre><code>&lt;input type=&quot;text&quot; name=&quot;content&quot; class=&quot;required&quot; ecss=&quot;no&quot;&gt;&lt;/textarea&gt;</code></pre>
-<p> By default, when the validation fails , in addition to displaying the error message , the text box will use <code>. Easycheck_errorInput</code> class style ( not verified via text box style ) shows that if you need to disable the display, can be added to the text box object <code>ecss = &quot;no&quot;</code> attribute to achieve disable error style.</p>
-<p>When too many elements on the page , the page can be set to disable all authentication to verify the object does not pass through the global parameters EasyCheck.ecss style :</p>
-<pre><code>//Specify the page to completely disable error text box style
+<p> 默认情况下验证失败时，除了显示错误提示信息外，文本框会使用<code>.easycheck_errorInput</code>类样式（验证未通过文本框样式）显示，如果需要禁用该显示效果，可以通过给文本框对象加入<code>ecss =&quot;no&quot;</code>属性实现禁用错误样式。</p>
+<p>在页面元素过多时，还可通过全局参数EasyCheck.ecss设置禁用页面所有验证对象的验证未通过样式：</p>
+<pre><code>//指定页面完全禁用错误文本框样式
 EasyCheck.ecss=&quot;no&quot;;</code></pre>
-<p>//Disable error id specified text box style form elements as regForm2</p>
+<p>//指定id为regForm2的表单元素禁用错误文本框样式</p>
 <pre><code>EasyCheck.formEcss[&#39;regForm2&#39;]=&quot;no&quot;;</code></pre>
-<h2 id="7-custom-global-error-message-content">7 , custom global error message content</h2>
-<p>Specify validation rules can be modified according to the needs prompt message content , grammar :</p>
-<p>EasyCheck.msg [‘ validation rules corresponding message name’ ] = “ message prompts Content” ;<br>EasyCheck message support placeholders , such as:</p>
-<p>EasyCheck.msg [‘required’] = “is required”;<br>EasyCheck.msg [‘lengthRange’] = “ { 0} is the minimum length , maximum length of { 1} ! “ ;</p>
-<p>Name and default value <code>EasyCheck.msg</code> default message list as follows :</p>
-<pre><code>  required:&quot;Is required&quot;,
-  email:&quot;Invalid email&quot;,
-  url:&quot;Invalid url&quot;,
-  number:&quot;Invalid number&quot;,
-  integer:&quot;Invalid integer&quot;,
+<h2 id="7-">7、自定义全局错误消息内容</h2>
+<p>可根据需要修改指定验证规则的提示消息内容，语法：</p>
+<pre><code>EasyCheck.msg[&#39;验证规则对应的消息名&#39;]=&quot;消息提示内容&quot;;</code></pre>
+<p>EasyCheck的消息支持占位符，如：</p>
+<pre><code>EasyCheck.msg[&#39;required&#39;]=&quot;is required&quot;;
+EasyCheck.msg[&#39;lengthRange&#39;]=&quot;最小长度{0}，最大长度{1}！&quot;;</code></pre>
+<p><code>EasyCheck.msg</code>列表中默认的消息名称和默认值如下：</p>
+<pre><code>required: &quot;不能为空&quot;,
+email:  &quot;邮箱格式不正确&quot;,
+url:  &quot;网址有误&quot;,
+number:  &quot;必须为数字&quot;,
+integer: &quot;必须为整数&quot;,
 
-  equalto:&quot;Didn&#39;t  match input&quot;,
-  equallength:&quot;length  has to be {0}&quot;,   
-  minlength:&quot;Use at least {0} characters&quot;,
-  maxlength:&quot;Must have at most {0} characters&quot;,
-  min:&quot;The minimum value of {0}&quot;,
-  max:&quot;The maximum value of {0}&quot;,
-  regexp:&quot;Invalid value&quot;,
-  extension:&quot;Invalid extension,only {0}&quot;,
-  vc:&quot;Didn&#39;t match the word verification&quot;,
+equalto:&quot;输入不一致&quot;,
+equallength: &quot;长度必须为{0}位&quot;,
+maxlength: &quot;长度不能小于{0}&quot;,
+minlength: &quot;长度不能大于{0}&quot;,
+max: &quot;不能小于&quot;,
+min: &quot;不能大于&quot;,
+regExp: &quot;格式有误&quot;,
+extension: &quot;文件扩展名只能为{0}&quot;,
+vc: &quot;输入有误&quot;,
 
-  lengthrange:&quot;Please use between {0} and {1} characters&quot;,
-  numberrange:&quot;Value is between{0}and{1}&quot;</code></pre>
-<h2 id="8-custom-default-correct-error-message">8 , custom default , correct error message</h2>
-<h3 id="8-1-easycheck-support-each-validation-element-specifies-three-types-of-message-manually-the-default-prompts-error-messages-correct-tip-">8.1,EasyCheck support each validation element specifies three types of message manually : The default prompts , error messages , correct Tip.</h3>
-<p>Provides the following named DIV id can ( if the form element name are the same, using the id to distinguish between form elements exist <code>id</code> attribute , use the <code>XXX_ElementId</code> name takes precedence. ) :</p>
+lengthRange: &quot;长度必须在{0}到{1}之间&quot;,
+numberrange: &quot;值必须在{0}到{1}之间&quot;</code></pre>
+<h2 id="8-">8、自定义默认，正确，错误提示消息</h2>
+<h3 id="8-1-easycheck-3-">8.1、EasyCheck支持手动为每个验证元素指定3类提示信息：默认提示，错误提示，正确提示。</h3>
+<p>提供如下id命名的DIV即可（如果表单元素name相同，则使用id区分。表单元素存在<code>id</code>属性，则使用<code>XXX_ElementId</code>命名优先）：</p>
 <ul>
-<li>Default prompt DIV id: <code>default_ElementId</code> | | <code>default_ElementName</code></li>
-<li>Correct Tip DIV id: <code>ok_ElementId</code> | | <code>ok_ElementName</code> ( using <code>easycheck_okInfo</code> style. )</li>
-<li>Error DIV id: <code>error_ElementId</code> | | <code>error_ElementName</code> ( using <code>easycheck_errorInfo</code> style. )</li>
+<li>默认提示DIV id：<code>default_ElementId</code> || <code>default_ElementName</code></li>
+<li>正确提示DIV id：<code>ok_ElementId</code> || <code>ok_ElementName</code>（会使用<code>.easycheck_okInfo</code>样式）</li>
+<li>错误提示DIV id：<code>error_ElementId</code> || <code>error_ElementName</code>（会使用<code>.easycheck_errorInfo</code>样式）</li>
 </ul>
-<pre><code>    &lt;div id=&quot;default_uname&quot;  style=&quot;display: inline;&quot;&gt; required , start with a letter and can only contain letters and numbers &lt;/div&gt; 
-    &lt;div id=&quot;ok_uname&quot; style=&quot;display: inline;&quot;&gt;correct &lt;/div&gt;
-    &lt;div id=&quot;error_uname&quot;   prefix=&quot;user name&quot; style=&quot;display: inline;&quot;&gt;&lt;/div&gt;
+<pre><code>    &lt;div id=&quot;default_uname&quot;  style=&quot;display: inline;&quot;&gt;必填，字母开头，只能包含字母和数字&lt;/div&gt; 
+    &lt;div id=&quot;ok_uname&quot; style=&quot;display: inline;&quot;&gt;正确&lt;/div&gt;
+    &lt;div id=&quot;error_uname&quot;   prefix=&quot;用户名&quot; style=&quot;display: inline;&quot;&gt;&lt;/div&gt;
 
-    &lt;div id=&quot;error_uemail&quot;  info=&quot;email please!&quot;  style=&quot;display: inline;&quot;&gt;&lt;/div&gt;</code></pre>
-<p>Use DIV error message can be displayed in the specified location ( by default , the error message without specifying the DIV and manually create , EasyCheck automatically created and displayed in the text box ) . DIV error message has the following two optional attributes :<br><code>info</code>: optional attribute error message ( overrides the default prompt content )<br><code>perfix</code>: an optional attribute , an error message prefix<br>Such as:</p>
+    &lt;div id=&quot;error_uemail&quot;  info=&quot;请填写邮箱！&quot;  style=&quot;display: inline;&quot;&gt;&lt;/div&gt;</code></pre>
+<p>使用错误提示DIV可以将提示信息显示在指定的位置（默认情况下，错误提示信息的DIV无需指定和手动创建，EasyCheck会自动创建并显示在文本框后）。错误信息DIV具有以下两个可选属性：<br><code>info</code>：可选属性，错误提示信息（会覆盖默认提示内容）<br><code>perfix</code>：可选属性，错误信息提示前缀<br>如：  </p>
 <pre><code>&lt;tr&gt;  
       &lt;td align=&quot;left&quot;  width=&quot;300px&quot;&gt;
            &lt;label class=&quot;lbl&quot;&gt;&lt;div style=&quot;color:#FF0000; display:inline&quot;&gt;*&lt;/div&gt;登录邮箱&lt;/label&gt;
-          &lt;div  id=&quot;error_uemail&quot;  info=&quot;input your email please！&quot;&gt;&lt;/div&gt; 
+          &lt;div  id=&quot;error_uemail&quot;  info=&quot;请填写登录邮箱！&quot;&gt;&lt;/div&gt; 
        /td&gt;
 &lt;/tr&gt;
     &lt;tr&gt;  
@@ -495,138 +501,135 @@ EasyCheck.ecss=&quot;no&quot;;</code></pre>
 &lt;input  type=&quot;text&quot;  name=&quot;uemail&quot; value=&quot;&quot; class=&quot;txt required email&quot; size=&quot;20&quot;  /&gt; 
 &lt;/td&gt;
 &lt;/tr&gt;</code></pre>
-<h3 id="8-2-easychek-support-error-message-content-is-fully-customizable-support-for-each-element-of-each-form-validator-uses-different-message-formats-">8.2、EasyChek support error message content is fully customizable, support for each element of each form validator uses different message formats:</h3>
-<p><strong> If the form element id attribute exists , then the priority ElementId</strong></p>
+<h3 id="8-2-easychek-">8.2、EasyChek支持错误提示信息内容的完全自定义，支持为每个表单元素的每个验证器使用不同消息，格式为：</h3>
+<p><strong>如果表单元素存在id属性，则优先使用ElementId</strong></p>
 <pre><code>EasyCheck.msgs[&#39;ElementId&#39;||&#39;ElementName&#39;]={  
-     Validator Name 1 &#39;: &quot;prompt content&quot;,
-     Validator Name 2 &#39;: &quot;prompt content&quot;
+    &#39;验证器名称1&#39;:&quot;提示内容&quot;,
+    &#39;验证器名称2&#39;: &quot;提示内容&quot;,
     ……
 };</code></pre>
-<p><strong>When you define a class name preceded validator point , using the name attribute validator brackets [ ] . </strong></p>
-<p>For example, the elements required for the uname class Validator ( <strong> preceded points . </strong> ) And reg attribute validator ( <strong> use brackets [ ] </strong> ) to specify a custom message.</p>
+<p><strong>定义时，类验证器名前面加点.，属性验证器名使用中括号[]。</strong></p>
+<p>如，为uname元素的required类验证器（<strong>前面加点.</strong>）和reg属性验证器（<strong>使用中括号[]</strong>）指定自定义提示信息。    </p>
 <pre><code>EasyCheck.msgs[&#39;uname&#39;]={
-    &#39;.required&#39;: &#39;There must be ah !&#39;,
-    &#39;[reg]&#39;:&#39;can only contain letters and numbers &#39;
+    &#39;.required&#39;: &#39;必须有啊！&#39;,
+    &#39;[reg]&#39;:&#39;只能包含字母和数字&#39;
 };</code></pre>
-<p>EasyCheck messages support the use of placeholders , if the message contains placeholders ( <code>{ 0 }</code>, <code>{1 }</code> , …… ) , you need to function <strong> </strong> handling and return messages via message and use `EasyCheck . formatMsg (“ message content “, “ placeholder parameter 1 “ , …… ) message format ‘ .</p>
-<p>For example, to specify a custom message length range validator upwd combination of elements and format placeholders message:</p>
+<p>EasyCheck的消息支持使用占位符，如果消息含有占位符（<code>{0}</code>,<code>{1}</code>,……）,则需要通过<strong>消息函数</strong>处理和返回消息，并使用<code>EasyCheck.formatMsg(&quot;消息内容&quot;,&quot;占位参数值1&quot;，……)</code>对消息进行格式化。</p>
+<p>如，为upwd元素的长度范围组合验证器指定自定义提示信息，并格式化占位符消息：</p>
 <pre><code>EasyCheck.msgs[&#39;upwd&#39;]={
     &#39;[minlength][maxlength]&#39;:
-    / / Message functions , o the current DOM object
+    //消息函数，o 当前DOM对象
     function(o){ 
-        return EasyCheck.formatMsg(&quot;Password digits : {0}-{1}&quot; , o.attr(&#39;minlength&#39;) , o.attr(&#39;maxlength&#39;));
+        return EasyCheck.formatMsg(&quot;密码位数：{0}-{1}&quot; , o.attr(&#39;minlength&#39;) , o.attr(&#39;maxlength&#39;));
     }
 };</code></pre>
-<p>Or</p>
-<pre><code>/ / Message functions , o the current DOM object
+<p>或</p>
+<pre><code>//消息函数，o 当前DOM对象
 var upwdMsg = function(o){
-    return EasyCheck.formatMsg(&quot;Password digits : {0}-{1}！&quot;, o.attr(&#39;minlength&#39;) , o.attr(&#39;maxlength&#39;));
+    return EasyCheck.formatMsg(&quot;密码位数：{0}-{1}！&quot;, o.attr(&#39;minlength&#39;) , o.attr(&#39;maxlength&#39;));
 };
 
 EasyCheck.msgs[&#39;upwd&#39;]={
     &#39;[minlength][maxlength]&#39;:upwdMsg
 };</code></pre>
-<p><em>Note: Use a custom message in error DIV generally do not use the info attribute prompt message if using the info attribute is set prompt message will cover more than a custom message content.</em></p>
-<h2 id="9-manually-clear-the-error-message-and-setting">9 , manually clear the error message and setting</h2>
-<h3 id="9-1-clear-all-the-error-messages-">9.1 , clear all the error messages .</h3>
-<p>Clear error.<br><code>formId</code>: Optional. When specified, only the specified form in clear error message ; do not specify , clear the current page for all error messages.</p>
+<p><em>注意：使用自定义消息时，一般请勿在错误提示DIV中使用info属性设置提示消息，如果使用info属性设置提示消息会覆盖以上自定义的消息内容。</em></p>
+<h2 id="9-">9、手动清除和设置错误提示消息</h2>
+<h3 id="9-1-">9.1、清除所有的错误提示。</h3>
+<p>清除错误提示。<br><code>formId</code>： 可选。指定时，仅清除指定form中的错误消息；不指定，清除当前页面所有错误消息。</p>
 <pre><code>EasyCheck.clearAllError( [formId] );</code></pre>
-<h3 id="9-2-restore-messages-">9.2 , restore messages.</h3>
-<p>Clear error and clear the correct prompt displays the default prompt.<br>For example, the verification form in the pop-up layer , the layer re-open the closed , all empty layers forms authentication prompt information before .<br><code>formId</code>: Optional. When specified, only the specified form in clear error message ; do not specify , clear the current page for all error messages.</p>
+<h3 id="9-2-">9.2、还原消息。</h3>
+<p>清除错误提示，并清除正确提示，显示默认提示。<br>例如，验证表单在弹出层中时，关闭层重新打开时，清空层中表单之前的所有验证提示信息。<br><code>formId</code>：可选。指定时，仅清除指定form中的错误消息；不指定，清除当前页面所有错误消息。</p>
 <pre><code>EasyCheck.restoreAll( [formId] );</code></pre>
-<h3 id="9-3-set-the-error-messages-to-the-specified-form-elements-manually-you-can-use-a-unified-style-tips-custom-message-">9.3 , set the error messages to the specified form elements manually (You can use a unified style tips custom message).</h3>
-<p>You can use this method to display the specified message returned from the server .<br><code>elementId | | elementDOM</code>: id specified form elements or form elements DOM object.<br>msg: the error message.</p>
-<pre><code>EasyCheck.showError( &#39;elementId&#39;|elementDOM , &#39;msg&#39; );</code></pre>
-<h3 id="9-4-clear-form-elements-specified-error-message-">9.4 , clear form elements specified error message.</h3>
-<p><code>elementId | | elementDOM</code>: id specified form elements or form elements DOM object.</p>
+<h3 id="9-3-">9.3、为指定表单元素手动设置错误消息(可以使用统一风格提示自定义的消息)。</h3>
+<p>可使用此方法来显示从服务器返回的指定消息。<br><code>elementId || elementDOM</code>：指定表单元素的id，或者表单元素DOM对象。<br>msg：错误消息。</p>
+<pre><code>EasyCheck.showError(&#39;elementId&#39;|elementDOM , &#39;msg&#39; );</code></pre>
+<h3 id="9-4-">9.4、清除指定表单元素的错误消息。</h3>
+<p><code>elementId || elementDOM</code>：指定表单元素的id，或者表单元素DOM对象。</p>
 <pre><code>EasyCheck.clearError( &#39;elementId&#39;|elementDOM  );</code></pre>
-<h3 id="10-senior-extension-new-custom-validator-plugin-extensions-easycheck-validation-framework">10 , senior extension : New custom validator plugin extensions EasyCheck validation framework</h3>
-<p>EasyCheck has flexible scalability, use <code>EasyCheck.addChk</code> function only easy step to add new custom validator ! </p>
-<h3 id="10-1-a-new-custom-validator-class-attribute-">10.1 , a new custom validator (Class, Attribute)</h3>
-<p>Call <code>EasyCheck.addChk (chkName, chkFun, chkMsg)</code> function can be realized to the new verification system to register a custom plugin function .</p>
-<p>/ *</p>
+<h2 id="10-easycheck-">10、高级扩展：自定义新验证器插件，扩展EasyCheck验证框架</h2>
+<p>EasyCheck具有灵活的扩展性，使用<code>EasyCheck.addChk</code>函数仅需轻松一步即可加入自定义新验证器！  </p>
+<h3 id="10-1-class-attribute-">10.1、自定义新的验证器（Class,Attribute）</h3>
+<p>调用 <code>EasyCheck.addChk(chkName,chkFun,chkMsg)</code>函数即可实现向系统注册自定义新验证插件函数。</p>
+<p>/*    </p>
 <ul>
-<li><code>CheckName</code> registered validator attribute or class name ( only letters and numbers )</li>
-<li><code>ChkFun</code> verification callback</li>
-<li><code>ChkMsg</code> validation failure alert message or message function</li>
-<li>/<br><strong>Authentication name naming convention: </strong>   </li>
+<li><code>checkName</code>    注册的属性或类验证器名称（只能使用英文字母和数字）   </li>
+<li><code>chkFun</code>       验证回调函数   </li>
+<li><code>chkMsg</code>       验证失败的提示消息或消息函数<br><em>/<br><em>*验证器名称命名规范：</em></em>   </li>
 </ul>
 <ul>
-<li><strong>Registration class validator : validator name must begin with a dot , such as <code>exists</code></strong>   </li>
-<li><p><strong>Registration attribute validator : validator name must use brackets [ ] to enclose , such as <code>[theme]</code> </strong></p>
-<p>Sign EasyCheck validator class and attribute syntax:</p>
-<p>  EasyCheck.addChk(“validator name”,</p>
-<pre><code>  //o represents the current DOM object
+<li><strong>注册类验证器：验证器名称必须以点.开头，如<code>.exists</code></strong>   </li>
+<li><p><strong>注册属性验证器：验证器名称必须使用中括号[]括起，如<code>[theme]</code></strong></p>
+<p>注册EasyCheck类和属性验证器语法：</p>
+<p>  EasyCheck.addChk(“验证器名称”,</p>
+<pre><code>  //o代表当前DOM对象
   function(o){
-      //Verify achieve
+      //验证实现 
       // var val=$(o).val();
       // return $.trim(val)!=&quot;&quot;;
-     //Returns true or verified by false.true behalf ; false representatives did not pass , chkMsg message will be displayed
+     //返回true或false.true代表验证通过；false代表未通过，将显示chkMsg的消息
   }
   ,
-  &quot;Authentication failed when the message string&quot;);</code></pre>
+  &quot;验证失败时的消息字符串&quot;);</code></pre>
 </li>
 </ul>
-<h3 id="10-2-a-new-combination-of-custom-validator-combination-">10.2 , a new combination of custom validator (Combination):</h3>
-<p>EasyCheck supports the use of multiple combinations of registered validators to create new combinations of validators.<br>Such as: <code>min through a combination of existing properties and</code> max <code>validator validator attribute</code> , digital detection range validator .<br>Validator naming convention is: <code>validator validator 1 2</code><br>Example , the combined new validator registered name : <code>[min] [max]</code><br>The validator will be used <strong> when the min and max validator</strong>  in user . </p>
-<h3 id="10-3-using-the-message-function-to-obtain-the-message-string">10.3 , using the message function to obtain the message string</h3>
-<p>10.3 , using the message function to obtain the message string<br>Some contents of the message with the current value of a property or related form elements , EasyCheck <strong>message function</strong> supports return a message string.</p>
-<pre><code>EasyCheck.addChk(&quot;validator name&quot;,
+<h3 id="10-2-combination-">10.2、自定义新的组合验证器（Combination）：</h3>
+<p>EasyCheck支持组合使用多个已注册的验证器来创建新的组合验证器。<br>如：通过组合已有的<code>min属性验证器</code>和<code>max属性验证器</code>，实现数字范围检测验证器。<br>验证器命名规范为：<code>验证器1验证器2</code><br>例，组合后的新验证器注册名：<code>[min][max]</code><br>该验证器会在用户<strong>同时使用min和max验证器</strong>时工作。</p>
+<h3 id="10-3-">10.3、使用消息函数获得消息字符串</h3>
+<p>某些消息内容同当前表单元素的属性或值相关，EasyCheck支持使用<strong>消息函数</strong>返回消息字符串。</p>
+<pre><code>EasyCheck.addChk(&quot;验证器名称&quot;,
     //o代表当前DOM对象
     function(o){
-    //o represents the current DOM object
-    function(o){
-        //Verify achieve
+        //验证实现 
         // var val=$(o).val();
         // return $.trim(val)!=&quot;&quot;;
-       //Returns true or verified by false.true behalf ; false representatives did not pass , chkMsg message will be displayed
+       //返回true或false.true代表验证通过；false代表未通过，将显示chkMsg的消息
     }
     ,
-    // Function instead of using the prompt message string  
-    // O represents the current DOM object
+    // 使用提示函数代替消息字符串  
+    // o 代表当前DOM对象
     function(o){
           // var val=$(o).val();
-          // return the string return a message when validation fails
+          //return 返回验证失败时的消息字符串
     });</code></pre>
-<h3 id="10-4-custom-validator-validation-trigger-event">10.4 , custom validator validation trigger event</h3>
-<p>EasyCheck supports three authentication trigger events : keyboard bounce onkeyup validation, verification loses focus onblur , submit the form onsubmit validation. The default validator registered in three types of events are triggered verified.</p>
-<p>EasyCheck support for validation and form elements trigger events ( keyboard pops onkeyup validation, loses focus onblur validation ) be managed , and some may disable some validators sure to affect the performance or verification triggering event under the circumstances .</p>
-<h4 id="validators-trigger-event-management">Validators trigger event management</h4>
-<p>If the registered validator only need to verify ( eg verification code , without losing focus or keyboard bounce verification ) at the time of submitting the form , you can registered the following code:</p>
+<h3 id="10-4-">10.4、自定义验证器的验证触发事件</h3>
+<p>EasyCheck支持三种验证触发事件：键盘弹起onkeyup验证、失去焦点onblur验证、提交表单onsubmit验证。默认注册的验证器会在三类事件中都触发验证。</p>
+<p>EasyCheck支持对验证器和表单元素的的触发事件(键盘弹起onkeyup验证、失去焦点onblur验证)进行管理，部分验证器可根据情况禁用某些影响性能或务必要的验证触发事件。    </p>
+<h4 id="-">验证器触发事件管理</h4>
+<p>如果注册的验证器只需要在提交表单时验证（如验证码，无需失去焦点或键盘弹起验证），则可注册如下代码：</p>
 <ul>
-<li><p><code>EasyCheck.easyCheckIgnore</code>: Specifies the validator to ignore validation, verification after setting while ignoring loses keyboard focus events and pop events.</p>
-<pre><code>  EasyCheck.easyCheckIgnore[&quot; validator name &quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckIgnore</code>：指定的验证器忽略验证，设置后同时忽略失去焦点事件和键盘弹起事件的验证。</p>
+<pre><code>  EasyCheck.easyCheckIgnore[&quot;验证器名称&quot;]=true;</code></pre>
 </li>
-<li><p><code>EasyCheck.easyCheckBlurIgnore</code>: Specifies the validator to ignore lost focus event validation</p>
-<pre><code>  EasyCheck.easyCheckBlurIgnore[&quot; validator name &quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckBlurIgnore</code>：指定的验证器忽略失去焦点事件验证</p>
+<pre><code>  EasyCheck.easyCheckBlurIgnore[&quot;验证器名称&quot;]=true;</code></pre>
 </li>
 </ul>
 <ul>
-<li><p><code>EasyCheck.easyCheckKeyupIgnore</code>: Specifies the validator to ignore the keyboard pops up event validation</p>
-<pre><code>  EasyCheck.easyCheckKeyupIgnore[&quot; validator name &quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckKeyupIgnore</code>：指定的验证器忽略键盘弹起事件验证</p>
+<pre><code>  EasyCheck.easyCheckKeyupIgnore[&quot;验证器名称&quot;]=true;</code></pre>
 </li>
 </ul>
-<h4 id="form-element-triggering-event-management">Form element triggering event management</h4>
-<p>  Specify the form elements elementId or elementName: (<strong> elementId priority </strong> )</p>
+<h4 id="-">表单元素触发事件管理</h4>
+<p>  指定表单元素elementId或elementName:（<strong>elementId优先</strong>）</p>
 <ul>
-<li><p><code>EasyCheck.easyCheckEleIgnore</code>: Specifies the form elements, disc bounce and lost focus event to ignore verification</p>
-<pre><code>  EasyCheck.easyCheckEleIgnore[&quot;element id or name&quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckEleIgnore</code>：指定表单元素,盘弹起和失去焦点事件忽略验证</p>
+<pre><code>  EasyCheck.easyCheckEleIgnore[&quot;表单元素id或name&quot;]=true;</code></pre>
 </li>
-<li><p><code>EasyCheck.easyCheckEleBlurIgnore</code>: Specifies the form element loses focus event to ignore verification</p>
-<pre><code>  EasyCheck.easyCheckEleBlurIgnore[&quot;element id or name&quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckEleBlurIgnore</code>：指定表单元素，失去焦点事件忽略验证</p>
+<pre><code>  EasyCheck.easyCheckEleBlurIgnore[&quot;表单元素id或name&quot;]=true;</code></pre>
 </li>
-<li><p><code>EasyCheck.easyCheckEleKeyupIgnore</code>: Specifies the form elements, ignoring the keyboard up event validation</p>
-<pre><code>  EasyCheck.easyCheckEleKeyupIgnore[&quot;element id or name&quot;]=true;</code></pre>
+<li><p><code>EasyCheck.easyCheckEleKeyupIgnore</code>：指定表单元素，键盘弹起事件忽略验证</p>
+<pre><code>  EasyCheck.easyCheckEleKeyupIgnore[&quot;表单元素id或name&quot;]=true;</code></pre>
 </li>
 </ul>
-<h2 id="11-advanced-options-custom-new-validator-instance">11 , Advanced Options : Custom new validator instance</h2>
-<p>Assuming page requires a user name to detect whether there is a validator class , you can directly define .</p>
-<pre><code>//Register the new class Validator ( validator name verification function , the error message ) , to detect the user name exists
+<h2 id="11-">11、高级选项：自定义新验证器实例</h2>
+<p>假设页面需要一个检测进行用户名是否存在的类验证器，则可直接定义。</p>
+<pre><code>//注册新的类验证器（验证器名称，验证函数，错误消息），检测用户名是否存在
 EasyCheck.addChk(&quot;.exists&quot;,
     function(o){
           var val=$(o).val();
-         var res=false; //result , Ajax return test results
-         dwr.engine.setAsync(false); //disable asynchronous AJAX DWR
+         var res=false; //结果,Ajax返回检测结果
+         dwr.engine.setAsync(false); //禁用DWR异步AJAX
          UserInfoDWR.checkEmail(val,function(d){
             res=d;
          });
@@ -634,13 +637,13 @@ EasyCheck.addChk(&quot;.exists&quot;,
     }
     ,
     &quot;该名称已被使用！&quot;);</code></pre>
-<h2 id="12-senior-extension-prompt-message-content-authentication-framework">12, Senior Extension: prompt message content authentication framework</h2>
-<h3 id="12-1-list-management-messages-using-easycheck-msg">12.1 , list management messages using EasyCheck.msg</h3>
-<p>In order to facilitate the prompt message for unified management , unified messaging can be prompted to define EasyCheck.msg list.</p>
-<p><strong>EasyCheck.msg [“ custom message name “ ] = “ message content , you can use { 0 } , { 1} …… placeholder” ;</strong></p>
-<p>Since the new validation function in the definition of news tips section, use <code>EasyCheck.msg [&quot; custom message name &quot; ]</code> to get the message content , such as:</p>
-<pre><code>// Define validator prompt message
-EasyCheck.msg[&quot;exists&quot;]=&quot; This name is already in use ! &quot;;
+<h2 id="12-">12、高级扩展：验证框架提示消息内容维护管理</h2>
+<h3 id="12-1-easycheck-msg-">12.1、使用EasyCheck.msg列表管理消息</h3>
+<p>为了方便对提示消息进行统一管理，可以将提示消息统一定义在EasyCheck.msg列表中。</p>
+<p><strong>EasyCheck.msg[“自定义消息名称”]= “消息内容，可使用{0}，{1}……占位符”；</strong></p>
+<p>在自定义的新验证函数的消息提示部分，使用<code>EasyCheck.msg[&quot;自定义消息名称&quot;]</code>来获取消息内容，如：</p>
+<pre><code>//定义验证器提示消息
+EasyCheck.msg[&quot;exists&quot;]=&quot;该名称已被使用！&quot;;
 
 EasyCheck.addChk(&quot;.exists&quot;,
     function(o){
@@ -650,12 +653,12 @@ EasyCheck.addChk(&quot;.exists&quot;,
         return true;
     }
     ,
-    EasyCheck.msg[&quot;exists&quot;]  //get the message
+    EasyCheck.msg[&quot;exists&quot;]  //获取消息
 );</code></pre>
-<h3 id="12-2-if-the-content-of-the-message-contains-placeholders-0-1-use-the-message-processing-function">12.2 , if the content of the message contains placeholders ( { 0 } , { 1} , …… ) , use the message processing function</h3>
-<p>Messages via `EasyCheck.formatMsg (“ message content “,” placeholder parameter 1 “ , …… ) ‘ format , such as:</p>
-<pre><code>//Define validator prompt message
-EasyCheck.msg[&quot;exists&quot;]=&quot;“{0}”This name is already in use !&quot;;
+<h3 id="12-2-0-1-">12.2、如果消息内容含有占位符（{0}，{1}，……），则使用消息函数处理</h3>
+<p>消息通过<code>EasyCheck.formatMsg(&quot;消息内容&quot;,&quot;占位参数值1&quot;，……)</code>进行格式化，如：</p>
+<pre><code>//定义验证器提示消息
+EasyCheck.msg[&quot;exists&quot;]=&quot;“{0}”该名称已被使用！&quot;;
 
 EasyCheck.addChk(&quot;.exists&quot;,
     function(o){
@@ -665,13 +668,14 @@ EasyCheck.addChk(&quot;.exists&quot;,
         return true;
     }
     ,
-   //Message functions
+   //消息函数
     function(o){
         return EasyCheck.formatMsg(EasyCheck.msg[&quot;exists&quot;],$(o).val());
     }
 );</code></pre>
-<p><a href="http://www.lightfeel.com/easy/easycheck/en/index.jsp" title="Demo online">Demo online</a></p>
-<p>Contact, feedback, custom Email: <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x69;&#110;&#46;&#116;&#x68;&#x69;&#110;&#107;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x69;&#110;&#46;&#116;&#x68;&#x69;&#110;&#107;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp#demo" title="在线实例">在线Demo</a></p>
+<p>联系、反馈、定制Email：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#105;&#110;&#46;&#116;&#x68;&#105;&#x6e;&#107;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#105;&#110;&#46;&#116;&#x68;&#105;&#x6e;&#107;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p><a href="https://me.alipay.com/inthink" target="_blank"><br><img src="http://www.lightfeel.com/easy/images/donation.png" alt="通过支付宝捐赠" title="通过支付宝捐赠" height="37" width="150"></img><br></a></p>
 
 </body>
 </html>
