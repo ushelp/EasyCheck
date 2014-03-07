@@ -82,13 +82,16 @@ EasyCheck.css中定义了五种CSS样式：
 EasyCkeck内置了16个日常开发常用的验证器，分为3种类型：类(Class)、属性(Attribute)、组合(Combination).
 
 #### 5个Class类验证器：
+类验证器在EasyCheck内部的名称都是以`.`开头:`.validatorName`。
 
 ```HTML
-required      必填       <input type="text" name="name" class="required"/>     
-email         邮箱       <input type="text" name="name" class="email"/>
-url           URL        <input type="text" name="name" class="url"/>
-number        数字       <input type="text" name="name" class="number"/>
-integer       整数       <input type="text" name="name" class="integer"/>
+<验证器内部名称>            <使用方法>
+
+.required      必填       <input type="text" name="name" class="required"/>     
+.email         邮箱       <input type="text" name="name" class="email"/>
+.url           URL        <input type="text" name="name" class="url"/>
+.number        数字       <input type="text" name="name" class="number"/>
+.integer       整数       <input type="text" name="name" class="integer"/>
 ```
 
 
@@ -100,17 +103,20 @@ integer       整数       <input type="text" name="name" class="integer"/>
 
 
 #### 9个Attribute属性验证器:
+属性验证器在EasyCheck内部的名称都是以`[]`包围：`[validatorName]`。
 
 ```HTML
-equalTo     值必须和Id为ElementId指定的元素相等       <input type="password" name="name" equalTo="ElementId"/>
-equallength 值长度必须等于equallength                <input type="password" name="name"  equallength ="4"/>
-maxlength   最大字符长度不能大于maxlength             <input type="text" name="name" maxlength="20"/>
-minlength   最小字符长度不能销于minlength             <input type="text" name="name" minlength="6"/>
-max         数字不能大于max                          <input type="text" name="name" max="20"/>
-min         数字不能小于min                          <input type="text" name="name" min="2"/>
-extension   验证扩展名，多个扩展名使用英文逗号分隔，默认为"png,jpeg,jpg,gif"    <input type="file" name="name" extension=""/>
-reg         自定义正则验证                             <input type="text" name="name" reg="[A-Z]*"/>
-vc          使用Ajax请求vc指定的URL，进行验证码检测，URL返回true代表通过，false代表未通过   <input type="text" vc="chkvc.jsp" name="vc" />
+<验证器内部名称>                                       <使用方法>
+
+[equalTo]     值必须和Id为ElementId指定的元素相等       <input type="password" name="name" equalTo="ElementId"/>
+[equallength] 值长度必须等于equallength                <input type="password" name="name"  equallength ="4"/>
+[maxlength]   最大字符长度不能大于maxlength             <input type="text" name="name" maxlength="20"/>
+[minlength]   最小字符长度不能销于minlength             <input type="text" name="name" minlength="6"/>
+[max]         数字不能大于max                          <input type="text" name="name" max="20"/>
+[min]         数字不能小于min                          <input type="text" name="name" min="2"/>
+[extension]   验证扩展名，多个扩展名使用英文逗号分隔，默认为"png,jpeg,jpg,gif"    <input type="file" name="name" extension=""/>
+[reg]         自定义正则验证                             <input type="text" name="name" reg="[A-Z]*"/>
+[vc]          使用Ajax请求vc指定的URL，进行验证码检测，URL返回true代表通过，false代表未通过   <input type="text" vc="chkvc.jsp" name="vc" />
 服务器端自定义处理Demo（JSP）：
 <%  
     //通过验证码文本框名称获得输入的
@@ -126,14 +132,16 @@ vc          使用Ajax请求vc指定的URL，进行验证码检测，URL返回tr
 > 
 > 说明，默认情况下为了避免不必要的服务器请求，验证码验证只在提交表单时进行，不在键盘弹起和失去焦点时进行验证的参数。实现代码：
 > 
->     EasyCheck.easyCheckIgnore["vc"]=true; 
-> vc验证码规则，键盘弹起和失去焦点时不验证，只在表单提交时验证>easyCheckIgnor参数可以设置弹起和焦点验证时的忽略验证器，可根据需要修改为false，代表进行键盘弹起和失去焦点时开启验证。
+>     EasyCheck.easyCheckIgnore["[vc]"]=true; 
+> vc验证码规则，键盘弹起和失去焦点时不验证，只在表单提交时验证`EasyCheck.easyCheckIgnore`参数可以设置弹起和焦点验证时的忽略验证器，可根据需要修改为false，代表进行键盘弹起和失去焦点时开启验证。
 
 
 
 #### 2个Combination组合验证器:
 
 ```HTML
+<验证器内部名称>                                    <使用方法>
+
 [minlength][maxlength]  长度范围组合验证器：同时使用minlength属性验证器 与 maxlength属性验证器 
 <input  type="password" value=""  name="urepwd" size="20"  class="txt required"  equalto="upwd" maxlength="12" minlength="6"/>
 [min][max]              数字范围组合验证器：同时加入min属性验证器与 max属性验证器 
@@ -153,20 +161,24 @@ vc          使用Ajax请求vc指定的URL，进行验证码检测，URL返回tr
 
 
 ## 4、防止客户端表单重复提交功能
-EasyCheck默认开启了客户端防止重复提交功能。防止在用户验证通过提交数据过程中，由于网络未响应，用户多次点击提交等原因，导致重复提交数据功能。默认用户点击submit按钮提交表单过程中将禁用submit提交按钮。
+
+### 4.1、防止客户端表单重复提交功能的开启和禁用
+EasyCheck默认开启了客户端防止重复提交功能：防止在用户验证通过提交数据过程中，由于网络未响应，用户多次点击提交等原因，导致重复提交数据功能。默认用户点击submit按钮提交表单过程中将禁用submit提交按钮。
 如果在特殊场景下需要禁用该功能，可在引入EasyCheck.js后，设置`EasyCheck.easyCheckSubmitDisable`参数值为`false`即可禁用防重复提交功能：
 
 ```JS
 EasyCheck.easyCheckSubmitDisable=false;  //取消提交按钮禁用功能，默认为true
 ```
 
+### 4.2、Firefox中浏览器后退按钮禁用状态恢复配置
 
-> Firefox下特别说明：
-> 由于Firefox浏览器的从缓存加载数据时的记忆原因，如果提交数据后，通过点击浏览器后退按钮回到网页，提交按钮将依然显示为禁用状态。
+**Firefox下按钮状态特别说明：**
+
+ 由于Firefox浏览器的从缓存加载数据时的记忆原因，如果提交数据后，通过点击浏览器后退按钮回到网页，提交按钮将依然显示为禁用状态。
+ 
+解决方法为给提交按钮加上 `autocomplete="off" `的属性即可。
 > 
-> 解决方法为给提交按钮加上 `autocomplete="off" `的属性即可。
-> 
-> > autocomplete属性作用说明：
+>  autocomplete属性作用说明：
 > 此为了屏蔽浏览器表单默认的记忆功能。淘宝，百度的搜索框也有该属性。autocomplete 属性是非标准的，首先在 IE5 中加入，后 其它浏览器 都 支持。html5 也将其列表标准。
 > 
  
@@ -209,31 +221,31 @@ EasyCheck.errorCss="easycheck_errorInput"；
 - 修改文本框默认类样式：
 
   ```JS
-	//指定全局默认使用的表单css类样式
+	//指定全局表单元素默认使用的表单css类样式
 	EasyCheck.defaultCss="txt";
 	
 	//如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
-	EasyCheck.formDefaultCss['formId']="txt2";  //指定id为regForm2的表单元素使用的是.txt2样式
+	EasyCheck.formDefaultCss['formId']="txt2";  //指定id为formId的表单中元素使用的是.txt2样式
   ```
 
 - 修改获得焦点时文本框类样式：
 
   ```JS
-	//指定全局默认使用的表单css类样式
-	EasyCheck.defaultCss="txt";
+	//指定全局表单元素获得焦点时使用的表单css类样式
+	EasyCheck.focusCss="focus";
 
 	//如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
-	EasyCheck.formDefaultCss['formId']="txt2";  //指定id为regForm2的表单元素使用的是.txt2样式
+	EasyCheck.formFocusCss['formId']="focus2";  //指定id为formId的表单中元素使用的是.focus2样式
   ```
 
 - 修改错误时文本框类样式：
 
   ```JS
-	//指定全局默认使用的表单css类样式
-	EasyCheck.defaultCss="txt";
+	//指定全局表单元素验证失败时使用的表单css类样式
+	EasyCheck.errorCss="error";
 
 	//如果页面有多个表单，不同表单中元素使用的类样式不同，则可分别指定表单中元素使用的类样式
-	EasyCheck.formDefaultCss['formId']="txt2";  //指定id为regForm2的表单元素使用的是.txt2样式
+	EasyCheck.formErrorCss['formId']="error2";  //指定id为formId的表单中元素使用的是.error2样式
   ```
 
 
@@ -274,24 +286,27 @@ EasyCheck的消息支持占位符，如：
 `EasyCheck.msg`列表中默认的消息名称和默认值如下：
 
 ```JS
-	required: "不能为空",
-	email:  "邮箱格式不正确",
-	url:  "网址有误",
-	number:  "必须为数字",
-	integer: "必须为整数",
+// 验证消息列表
+msg:{
+  required:"不能为空",
+  email:"邮箱格式不正确",
+  url:"网址有误",
+  number:"必须为数字",
+  integer:"必须为整数",
 
-	equalto:"输入不一致",
-	equallength: "长度必须为{0}位",
-	maxlength: "长度不能小于{0}",
-	minlength: "长度不能大于{0}",
-	max: "不能小于",
-	min: "不能大于",
-	regExp: "格式有误",
-	extension: "文件扩展名只能为{0}",
-	vc: "输入有误",
+  equalto:"输入不一致",
+  minlength:"长度不能小于{0}",
+  maxlength:"长度不能大于{0}",
+  numberrange:"值必须在{0}和{1}之间",
+  min:"不能小于{0}",
+  max:"不能大于{0}",
+  regexp:"格式有误",
+  extension:"文件后缀只能为{0}",
+  vc:"输入有误",
 
-	lengthRange: "长度必须在{0}到{1}之间",
-	numberrange: "值必须在{0}到{1}之间"
+  equallength:"长度必须为{0}位",
+  lengthrange:"长度必须在{0}到{1}之间"
+},
 ```
 
 
@@ -403,16 +418,16 @@ EasyCheck.restoreAll( [formId] );
 
 ### 9.3、为指定表单元素手动设置错误消息(可以使用统一风格提示自定义的消息)。
 可使用此方法来显示从服务器返回的指定消息。  
-`elementId || elementDOM`：指定表单元素的id，或者表单元素DOM对象。  
+`elementId || elementName || elementDOM`：指定表单元素的id，或者表单元素DOM对象。  
 msg：错误消息。
 ```JS
-EasyCheck.showError('elementId'|elementDOM , 'msg' );
+EasyCheck.showError('elementId'||'elementName'||elementDOM , 'msg' );
 ```
 
 ### 9.4、清除指定表单元素的错误消息。
-`elementId || elementDOM`：指定表单元素的id，或者表单元素DOM对象。
+`elementId || elementName || elementDOM`：指定表单元素的id，或者表单元素DOM对象。
 ```JS
-EasyCheck.clearError( 'elementId'|elementDOM  );
+EasyCheck.clearError('elementId'||'elementName'||elementDOM  );
 ```
 
 ## 10、高级扩展：自定义新验证器插件，扩展EasyCheck验证框架
@@ -454,8 +469,7 @@ EasyCheck.addChk("验证器名称",
 EasyCheck支持组合使用多个已注册的验证器来创建新的组合验证器。  
 如：通过组合已有的`min属性验证器`和`max属性验证器`，实现数字范围检测验证器。   
 验证器命名规范为：`验证器1验证器2`  
-例，组合后的新验证器注册名：`[min][max]`  
-该验证器会在用户**同时使用min和max验证器**时工作。
+例，组合后的新验证器注册名`[min][max]` ：该验证器仅在用户**同时使用min和max属性验证器时**工作，使用组合验证器时`[min]`和`[max]`的独立验证器函数会被忽略，直接执行`[min][max]` 组合验证器的验证函数。
 
 ### 10.3、使用消息函数获得消息字符串
 某些消息内容同当前表单元素的属性或值相关，EasyCheck支持使用**消息函数**返回消息字符串。
