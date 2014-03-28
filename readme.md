@@ -604,7 +604,7 @@ EasyCheck.addChk(".exists",
 
 [在线Demo](http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp#demo '在线实例')
 
-联系、反馈、定制Email：<in.think@gmail.com>
+联系、反馈、定制Email：<inthinkcolor@gmail.com>
 
 
 <a href="https://me.alipay.com/inthink" target="_blank">
