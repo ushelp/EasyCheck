@@ -10,17 +10,17 @@
 "fvalidator",
 "input","jquery","ui","echeck","easycheck","easy","easyproject"
     ],
-    "version": "3.1.0",
+    "version": "3.2.0",
     "author": {
         "name": "Ray",
 "email": "inthinkcolor@gmail.com",
-        "url": ""
+        "url": "http://www.easyproject.cn"
     },
     "maintainers": [
         {
             "name": "Ray",
             "email": "inthinkcolor@gmail.com",
-            "url": ""
+            "url": "http://www.easyproject.cn"
         }
     ],
     "licenses": [
@@ -30,10 +30,10 @@
         }
     ],
     "bugs": "https://github.com/ushelp/EasyCheck/issues",
-    "homepage": "https://github.com/ushelp/EasyCheck",
-    "docs": "https://github.com/ushelp/EasyCheck/blob/master/readme.md",
-    "download": "https://github.com/ushelp/EasyCheck/archive/master.zip",
-	"demo":"http://www.easyproject.cn/easycheck/zh-cn/index.jsp",
+     "homepage": "http://www.easyproject.cn/easycheck/zh-cn/index.jsp",
+    "docs": "http://www.easyproject.cn/easycheck/zh-cn/index.jsp#readme",
+    "download": "https://github.com/ushelp/ECheck/archive/master.zip",
+	"demo":"http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo",
     "dependencies": {
         "jquery": ">=1.5"
     }
