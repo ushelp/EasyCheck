@@ -615,4 +615,3 @@ EasyCheck.addChk(".exists",
 <p>
 
 <img alt="支付宝钱包扫一扫捐助" src="http://www.easyproject.cn/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
-
