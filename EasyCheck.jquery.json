@@ -33,7 +33,7 @@
     "homepage": "https://github.com/ushelp/EasyCheck",
     "docs": "https://github.com/ushelp/EasyCheck/blob/master/readme.md",
     "download": "https://github.com/ushelp/EasyCheck/archive/master.zip",
-	"demo":"http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp",
+	"demo":"http://www.easyproject.cn/easycheck/zh-cn/index.jsp",
     "dependencies": {
         "jquery": ">=1.5"
     }

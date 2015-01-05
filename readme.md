@@ -9,7 +9,7 @@ EasyCheck是一个基于jQuery的前端JS表单验证插件，无需编程通过
 
 **兼容性**：EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。
 
-### [官方主页](http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
+### [官方主页](http://www.easyproject.cn/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
 
 ----------
 
@@ -602,7 +602,7 @@ EasyCheck.addChk(".exists",
 );
 ```
 
-[在线Demo](http://www.lightfeel.com/easy/easycheck/zh-cn/index.jsp#demo '在线实例')
+[在线Demo](http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo '在线实例')
 
 联系、反馈、定制Email：<inthinkcolor@gmail.com>
 
@@ -614,5 +614,5 @@ EasyCheck.addChk(".exists",
 </p>
 <p>
 
-<img alt="支付宝钱包扫一扫捐助" src="http://www.lightfeel.com/easy/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
+<img alt="支付宝钱包扫一扫捐助" src="http://www.easyproject.cn/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
 
