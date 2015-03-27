@@ -1,0 +1,125 @@
+.easycheck_errorInfo {
+	padding: 2px 8px;
+	padding-left: 8px;
+	height: 30px;
+	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
+	margin-left: 10px;
+	font-size: 18px;
+	line-height: 30px;
+	color : #BF6200;
+	display: inline;
+	font-weight: bold;
+	border-radius: 0px;
+	color: #BF6200;
+}
+
+.easycheck_okInfo {
+	padding: 2px 8px;
+	padding-left: 8px;
+	height: 30px;
+	font-family: 微软雅黑, Arial, Helvetica, sans-serif;
+	margin-left: 10px;
+	font-size: 18px;
+	line-height: 30px;
+	background-color: #7AC935;
+	border-radius: 0px;
+	color: #fff;
+	display: inline;
+	font-weight: bold;
+}
+
+
+/*
+* Notice：
+* Make style to take effect
+* Use the !important to specify the style for each of the highest priority
+*/
+.easycheck_focusInput {
+	height: 38px !important;
+	font-size: 14px !important;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3) !important;
+	text-indent: inherit !important;
+	font-weight: normal !important;
+	line-height: 38px !important;
+	background: #fff !important;
+	font-family:  sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体" !important;
+	margin-right: 10px !important;
+	margin: 0px 0 0 10px !important;
+	letter-spacing: 1px !important;
+	background-color: #E3FFFF !important;
+	outline: none !important;
+	border: 1px solid #cfcfc9 !important;
+}
+
+.easycheck_errorInput {
+	height: 38px !important;
+	font-size: 14px !important;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3) !important;
+	text-indent: inherit !important;
+	font-weight: normal !important;
+	line-height: 38px !important;
+	background: #fff !important;
+	font-family:  sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体" !important;
+	margin-right: 10px !important;
+	margin: 0px 0 0 10px !important;
+	letter-spacing: 1px !important;
+	outline: none !important;
+	border: 1px solid #DD080A !important;
+}
+
+/*
+* Other test style (Not required for easycheck.css)
+*/
+
+.txt {
+	height: 38px;
+	font-size: 14px;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+	text-indent: inherit;
+	font-weight: normal;
+	line-height: 38px;
+	background: #fff;
+	font-family:  sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
+	margin-right: 10px;
+	width: 325px;
+	margin: 0px 0 0 10px;
+	letter-spacing: 1px;
+	border: 1px solid #cfcfc9;
+}
+
+.focus2 {
+	height: 38px;
+	font-size: 14px;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+	text-indent: inherit;
+	font-weight: normal;
+	line-height: 38px;
+	background: #fff;
+	font-family:  sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
+	margin-right: 10px;
+	width: 325px;
+	margin: 0px 0 0 10px;
+	letter-spacing: 1px;
+	background-color: #FFFFCC;
+	outline: none;
+	border: 1px solid #33CC00;
+	box-shadow: 0 0 8px rgba(51, 204, 0, 1);
+}
+
+.error2 {
+	height: 38px;
+	font-size: 14px;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+	text-indent: inherit;
+	font-weight: normal;
+	line-height: 38px;
+	background: #fff;
+	font-family:  sans-serif, Verdana, Arial, Helvetica, Tahoma, "宋体";
+	margin-right: 10px;
+	width: 325px;
+	margin: 0px 0 0 10px;
+	letter-spacing: 1px;
+	outline: none;
+	border: 1px solid #FF3399;
+	box-shadow: 0 0 8px rgba(255, 51, 153, 1);
+}
