@@ -1,20 +1,35 @@
-# EasyCheck验证插件使用手册
+# EasyCheck validation plug Manual
 
 > 说明：EasyCheck与ECheck插件为同一插件。在早期ECheck对应英文版，EasyCheck对应中文版，在`4.0.0`版本后，通过语言文件控制，不再按地区区分下载。  
 
 
 EasyCheck又名Echeck，是一个基于jQuery的前端JS表单验证插件，无需编程通过HTML增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。
 
+![EasyCheck](images/easycheck.png)
+
+![EasyCheck](images/easycheck-engine.png)
+
 **主要特点：**
+
 1. 轻量级
+
 2. 无需JS编程
+
 3. 支持基于类、基于属性和组合验证器
-4. 内置能满足日常开发的十多种常用验证器
+
+4. 内置能满足日常开发的16种常用验证器
+
 5. 文本框验证样式自动切换
+
 6. 默认、错误和正确三种DIV提示消息内容
+
 7. 提示消息位置的自定义
+
 8. 防客户端重复提交功能
+
 9. 扩展性，支持用户开发注册新验证器
+
+
 
 **兼容性**：
 EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。
@@ -25,7 +40,7 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 
 
 
-## 1、引入EasyCheck 
+## 1、 EasyCheck引入
 
 ```HTML
 <!-- 文本框和提示消息的CSS样式 -->
@@ -33,11 +48,11 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 <!-- jQuery -->
 <script type="text/javascript" src="easycheck/jquery-1.9.0.min.js"></script>
 <!-- EasyCheck & EasyCheck language file -->
-<script type="text/javascript" src="easycheck/easy.easycheck.js"></script>
+<script type="text/javascript" src="easycheck/easy.easycheck-4.0.0.min.js"></script>
 <script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-zh_CN.js"></script>
 
+<!-- 可选参数自定义 -->
 <script type="text/javascript">
-	//可选参数
 	EasyCheck.blurChk=true;    //开启失去焦点时验证，false禁用，默认为true
 	EasyCheck.keyupChk=true;  //开启键盘弹起时验证，false禁用，默认为true
 	EasyCheck.loadChk=true;   //页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true
@@ -62,32 +77,29 @@ EasyCheck.css中定义了四种CSS样式：
 
 ```CSS
 .easycheck_errorInfo {
-	padding: 2px 8px;
 	margin-left: 10px;
-	background-color:#FFE6BF;
-	color:#BF6200;
+	color:#FF2A2B;
 	display: inline;
-	font-weight: bold;
+	font-size: 13px;
 }
 .easycheck_okInfo {
-	padding: 2px 8px;
 	margin-left: 10px;
-	background-color: #7AC935;
-	color: #fff;
 	display: inline;
-	font-weight: bold;
+	font-size: 13px;
+	color:#007C00;
 }
 /*
-* 注意：
-* 为了使样式能正常生效
-* 使用 !important 将样式指定为最高权重
+* Notice：
+* Make style to take effect
+* Use the !important to specify the style for each of the highest priority
 */
 .easycheck_focusInput{
-	border: 1px solid #0066FF !important;
+	border: 1px solid #0066FF !important; 
 }
 .easycheck_errorInput {
 	border: 1px solid #DD080A !important;
 }
+
 ```
 
 ## 2、使用验证器
@@ -329,41 +341,110 @@ EasyCheck.msg['lengthRange']="最小长度{0}，最大长度{1}！";
 
 ## 8、自定义默认，正确，错误提示消息
 
-### 8.1、EasyCheck支持手动为每个验证元素指定3类提示信息：默认提示，错误提示，正确提示。
+EasyCheck在消息提示和管理上提供了极大的灵活性。在消息内容和外观上都可以自定义。使用错误提示DIV可以将提示信息显示在指定的位置，消息可以定义在div、p、span等容器标签内，建议使用span，可以在同一行显示，并将错误和正确提示默认设为隐藏(display:none)。
 
-提供如下id命名的DIV即可（如果表单元素name相同，则使用id区分。表单元素存在`id`属性，则使用`XXX_ElementId`命名优先）：
 
-- 默认提示DIV id：`default_ElementId` || `default_ElementName`
-- 正确提示DIV id：`ok_ElementId` || `ok_ElementName`（会使用`.easycheck_okInfo`样式）
-- 错误提示DIV id：`error_ElementId` || `error_ElementName`（会使用`.easycheck_errorInfo`样式）
 
+### 8.1、EasyCheck支持手动为每个验证元素指定3类提示信息（默认、正确、错误）：
+- **消息定义在标签体中**
+定义的错误（errorMsg）和正确提（correctMsg）示消息，EasyCheck会默认设为隐藏，仅在相应状态时自动显示隐藏。但由于EasyCheck的渲染是在页面加载完成后执行，所以页面渲染时仍然可能会在页面短暂显示，所以必须设置`style="display:none"`。
 ```HTML
-<div id="default_uname"  style="display: inline;">必填，字母开头，只能包含字母和数字</div> 
-<div id="ok_uname" style="display: inline;">正确</div>
-<div id="error_uname"   prefix="用户名" style="display: inline;"></div>
-
-<div id="error_uemail"  info="请填写邮箱！"  style="display: inline;"></div>
+<!-- 默认提示DIV（id命名：`default_ElementId`）-->
+<span id="default_表单元素ID"> 表单元素ID的默认提示消息 </span>
+<!-- 正确提示DIV（id命名：`correct_ElementId`，会使用`.easycheck_okInfo`样式）-->
+<span id="correct_表单元素ID" style="display:none"> 表单元素ID的正确提示消息 </span>
+<!-- 错误提示DIV（id命名：`error_ElementId`，会使用`.easycheck_errorInfo`样式）-->
+<span id="error_表单元素ID" style="display:none"> 表单元素ID的错误提示消息 </span>
 ```
 
-使用错误提示DIV可以将提示信息显示在指定的位置（默认情况下，错误提示信息的DIV无需指定和手动创建，EasyCheck会自动创建并显示在文本框后）。错误信息DIV具有以下两个可选属性：  
-`info`：可选属性，错误提示信息（会覆盖默认提示内容）   
-`perfix`：可选属性，错误信息提示前缀  
-如：  
+ - 错误提示DIV的内容为可选，如果指定了提示内容，则会覆盖其他提示消息。
+ - 错误信息DIV具有一个可选属性：   
+ `perfix`：可选属性，为错误信息添加一个前缀内容 
+ ```HTML
+ <span id="error_表单元素ID" style="display:none" perfix="username "></span>
+ ```
 
+- **消息定义在info属性中**
+提示消息还可以定义在提示标签的`info`属性中，可以避免显示问题。
 ```HTML
-<tr>  
-      <td align="left"  width="300px">
-       	<label class="lbl"><div style="color:#FF0000; display:inline">*</div>登录邮箱</label>
-          <div  id="error_uemail"  info="请填写登录邮箱！"></div> 
-       /td>
-</tr>
-	<tr>  
-        <td align="left">
-<input  type="text"  name="uemail" value="" class="txt required email" size="20"  /> 
-</td>
-</tr>
+<!-- 默认提示DIV（id命名：`default_ElementId`）-->
+<span id="default_表单元素ID" info="表单元素ID的默认提示消息"></span>
+<!-- 正确提示DIV（id命名：`correct_ElementId`，会使用`.easycheck_okInfo`样式）-->
+<span id="correct_表单元素ID" info="表单元素ID的正确提示消息"></span>
+<!-- 错误提示DIV（id命名：`error_ElementId`，会使用`.easycheck_errorInfo`样式）-->
+<span id="error_表单元素ID" info="表单元素ID的错误提示消息"></span>
 ```
-### 8.2、EasyChek支持错误提示信息内容的完全自定义，支持为每个表单元素的每个验证器使用不同消息，格式为：
+如果使用`info`属性定义默认提示消息（defMsg），还需要在页面加载完成后调用`EasyCheck.initDefMsg();`生效。
+```JS
+$(function(){
+    // 手动初始化默认消息生效
+    //Manually initialize the default message to take effect
+	EasyCheck.initDefMsg();
+})
+```
+
+- **优先级**
+`info属性中的消息内容` > `标签体内的消息内容`
+
+- **示例：  **
+```HTML
+<input type="text" id="uname" name="uname" class="txt2 required" reg="^[A-Za-z][A-Za-z0-9]*$"/>
+<span id="default_uname" info="必填，字母开头，只能包含字母和数字"></span> 
+<span id="correct_uname" info="正确"></span> 
+<span id="error_uname"  prefix="用户名" style="display:none">只能使用字母和数字</span> 
+```
+
+### 8.2、消息内容格式扩展
+对于制定多样化的提示外观（例如：EasyCheck ToolTip），EasyCheck可以对消息格式进行统一扩展，例如将要提示的消息统一包装在某一个自定义的DIV片段中。在自定义的消息片段中，使用`{0}`标记引用提示消息内容。
+- **全局设置：**
+```JS
+// 设置全局的默认、错误、正确的消息提示格式
+EasyCheck.defMsg='<div class="tip">默认内容：{0}</div>';
+EasyCheck.errorMsg='<div class="tip">错误内容：{0}</div>';
+EasyCheck.correctMsg='<div class="tip">正确内容：{0}</div>';
+```
+- **局部设置（为id指定的Form或Element进行扩展）**
+```
+// 为regForm表单指定默认消息格式
+EasyCheck.defMsgs["regForm"]='<div class="tip">默认内容：{0}</div>';
+// 为username元素指定错误消息格式
+EasyCheck.errorMsg["username"]='<div class="tip">错误内容：{0}</div>';
+// 为username元素指定ok消息格式
+EasyCheck.correctMsgs["regForm"]='<div class="tip">正确内容：{0}</div>';
+```
+
+- **格式优先级**
+`元素定义的消息格式` > `表单定义的消息格式` > `全局的消息格式`
+`EasyCheck.defMsgs["elementId"]` > `EasyCheck.defMsgs["formId"]` > `EasyCheck.defMsg`.
+
+
+- **默认提示消息手动初始化**
+修改了默认提示消息（defMsg）格式，需要手动调用initDefMsg()，让修改后的默认信息生效。
+```JS
+$(function(){
+    //在自定义ready函数中，修改默认提示消息
+	EasyCheck.defMsg='<div class="tooltip-right-def tooltip-def">'+
+	'<div class="tooltip-content-def">{0}</div>'+
+	'<div class="tooltip-arrow-outer-def"></div>'+
+	'<div class="tooltip-arrow-def" ></div>'+
+	'</div>';
+    // 手动初始化默认消息生效
+	EasyCheck.initDefMsg();
+})
+```
+
+- **自定义消息标记**
+默认引用消息的标记为`{0}`，如果需要自定义可以直接修改`msgMark`属性。
+```JS
+// 自定义消息标记 
+EasyCheck.msgMark="{msg}";
+// 使用自定义的{msg}引用提示消息
+EasyCheck.defMsg='<div class="tip">默认内容：{msg}</div>';
+```
+
+
+
+### 8.3、EasyChek支持错误提示信息内容的完全自定义，支持为每个表单元素的每个验证器使用不同消息，格式为：
 **如果表单元素存在id属性，则优先使用ElementId**
 ```JS
 EasyCheck.msgs['ElementId'||'ElementName']={  
@@ -616,6 +697,19 @@ EasyCheck.addChk(".exists",
 		return EasyCheck.formatMsg(EasyCheck.msg["exists"],$(o).val());
 	}
 );
+```
+
+## 13、 EasyChek Tooltip使用
+```HTML
+<!-- jQuery -->
+<script type="text/javascript" src="easycheck/jquery-1.9.0.min.js"></script>
+<!-- EasyCheck -->
+<link rel="stylesheet" type="text/css" href="easycheck/css/easycheck.css"/>  
+<script type="text/javascript" src="easycheck/easy.easycheck-4.0.0.js"></script>
+<script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-zh_CN.js"></script>
+<!-- EasyCheck tooltip -->
+<link rel="stylesheet" type="text/css" href="easycheck/tooltip/easycheck-tooltip.css"/>  
+<script type="text/javascript" src="easycheck/tooltip/easy.easycheck-tooltip.js"></script>
 ```
 
 [在线Demo](http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo '在线实例')

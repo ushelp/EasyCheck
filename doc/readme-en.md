@@ -1,25 +1,39 @@
 
-# ECheck a powerful jQuery plugin to validate online forms
+# ECheck a powerful jQuery plugin to validate forms
 
 
 
-Notice: EasyCheck and ECheck plug-in for the same plug-in. In the early ECheck correspondence in English, EasyCheck corresponding Chinese version after version of `4.0.0`, through language document control, no longer distinguish downloads by region.
+> Notice: EasyCheck and ECheck plug-in for the same plug-in. In the early ECheck correspondence in English, EasyCheck corresponding Chinese version after version of `4.0.0`, through language document control, no longer distinguish downloads by region.
 
 
 EasyCheck aka Echeck, is a front-end based on JS jQuery form validation plugin, without programming through HTML form validation enhancements to complete the work, simplifying the work of front-end development, and to maintain the unity of style to verify and improve efficiency.
 
+![EasyCheck](images/easycheck.png)
+
+![EasyCheck](images/easycheck-engine.png)
+
 **Main features:**
+
 1. Lightweight
+
 2. No JS programming
+
 3. Support class-based, based on a combination of property and validators
-4. Built to meet the daily development of a dozen popular validator
+
+4. Built-in 16 commonly used in daily development Validator
+
 5. Verify that the text box to automatically switch styles
+ 
 6. By default, three kinds of errors and correct the prompt message content DIV
+
 7. Tip custom message location
+
 8. Anti-client resubmit function
+
 9. scalability, support for registered users to develop new validator
 
 **Compatibility:**
+
 EasyDataTable fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera, and other kernel (Trident, Gecko, Webkit, Presto) browser, and is compatible with multiple platforms and systems (PC, TabletPC, Mobile).
 
 ### [The official site](http://www.easyproject.cn/easycheck/en/index.jsp 'EasyCheck  official site home page')
@@ -36,9 +50,10 @@ EasyDataTable fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera
 <!-- jQuery -->
 <script type="text/javascript" src="easycheck/jquery-1.9.0.min.js"></script>
 <!-- EasyCheck & EasyCheck language file -->
-<script type="text/javascript" src="easycheck/easy.easycheck.js"></script>
+<script type="text/javascript" src="easycheck/easy.easycheck-4.0.0.min.js"></script>
 <script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-zh_CN.js"></script>	
 	
+<!--  Optional parameters to customize  -->
 <script type="text/javascript">
 	// Optional Parameters
 	EasyCheck.blurChk=true;    //Verify loses focus when opened , false to disable , default is true
@@ -66,20 +81,16 @@ Need more CSS class styles can be modified according to the actual project, set 
 
 ```CSS
 .easycheck_errorInfo {
-	padding: 2px 8px;
 	margin-left: 10px;
-	background-color:#FFE6BF;
-	color:#BF6200;
+	color:#FF2A2B;
 	display: inline;
-	font-weight: bold;
+	font-size: 13px;
 }
 .easycheck_okInfo {
-	padding: 2px 8px;
 	margin-left: 10px;
-	background-color: #7AC935;
-	color: #fff;
 	display: inline;
-	font-weight: bold;
+	font-size: 13px;
+	color:#007C00;
 }
 /*
 * Notice：
@@ -87,11 +98,12 @@ Need more CSS class styles can be modified according to the actual project, set 
 * Use the !important to specify the style for each of the highest priority
 */
 .easycheck_focusInput{
-	border: 1px solid #0066FF !important;
+	border: 1px solid #0066FF !important; 
 }
 .easycheck_errorInput {
 	border: 1px solid #DD080A !important;
 }
+
 ```
 
 ## 2, Use validator 
@@ -192,7 +204,7 @@ With form elements of `onsubmit` events, results and `easycheck = "true" `the sa
 
 ## 4, to prevent duplicate submission form functional client
 
-### 4.1、Open and prevent duplicate submission form disabling client function
+### 4.1 , Open and prevent duplicate submission form disabling client function
 EasyCheck client is enabled by default to prevent duplicate submission function. Prevent the user authentication process by submitting data, because the network is not responding, you repeatedly click submit other reasons, led to resubmit data capabilities. The default user clicks the submit button to submit the form in the process of disabling submit submit button.
 If, in exceptional scenarios need to disable this feature in the introduction EasyCheck.js, set `EasyCheck.easyCheckSubmitDisable` parameter value `false` to disable the anti-duplicate submission function:
 
@@ -200,7 +212,7 @@ If, in exceptional scenarios need to disable this feature in the introduction Ea
 // cancel the submit button to disable the function, the default is true
 EasyCheck.easyCheckSubmitDisable = false; 
 ```
-### 4.2、Firefox, the browser back button to restore the configuration disabled
+### 4.2 , Firefox, the browser back button to restore the configuration disabled
 **Firefox under special instructions:**
  Since the Firefox browser to load data from the cache memory when the reason, if the data is submitted by clicking on the browser back button to return to the page, the submit button will still be displayed as disabled.
 
@@ -325,45 +337,107 @@ EasyCheck.msg ['lengthRange'] = " { 0} is the minimum length , maximum length of
 
 ## 8 , custom default , correct error message
 
-### 8.1,EasyCheck support each validation element specifies three types of message manually : The default prompts , error messages , correct Tip. 
+### 8.1, EasyCheck support manually specify the type 3 message (by default, correct the error) for each verification elements:
 
-Provides the following named DIV id can ( if the form element name are the same, using the id to distinguish between form elements exist `id` attribute , use the `XXX_ElementId` name takes precedence. ) :
-
-- Default prompt DIV id: `default_ElementId` | | `default_ElementName`
-- Correct Tip DIV id: `ok_ElementId` | | `ok_ElementName` ( using `easycheck_okInfo` style. )
-- Error DIV id: `error_ElementId` | | `error_ElementName` ( using `easycheck_errorInfo` style. )
-
+- **The message is defined in the body of the tag**
+Defined error (errorMsg) and the correct mentioning (correctMsg) shows the message, EasyCheck will default to hidden, only in the appropriate state to show hidden automatically. But because EasyCheck rendering is executed after the page is loaded, so the page rendering still may briefly appear in the page, so you must set the `style =" display: none "`.
 ```HTML
-<div id="default_uname"  style="display: inline;"> required , start with a letter and can only contain letters and numbers </div> 
-<div id="ok_uname" style="display: inline;">correct </div>
-<div id="error_uname"   prefix="user name" style="display: inline;"></div>
+<!-- Default prompt DIV id: (id Named: `default_ElementId`)-->
+<span id="default_ElementId"> The default form elementID prompt message </span>
+<!-- Correct prompt DIV id: (id Named: `correct_ElementId`，use `.easycheck_okInfo`)-->
+<span id="correct_ElementId" style="display:none"> The correct form elementID prompt message  </span>
+<!-- Error prompt DIV id: (id Named: `error_ElementId`，use `.easycheck_errorInfo`) -->
+<span id="error_ElementId" style="display:none"> The error form elementID prompt message  </span>
+```
+  - Error content DIV is optional, if you specify the prompts other prompt message will be overwritten.
+  - Error message DIV has an optional attribute:
+  `perfix`: optional attribute, add a prefix to the content of the error message
+ ```HTML
+ <span id="error_ElementID" style="display:none" perfix="username "></span>
+ ```
 
-<div id="error_uemail"  info="email please!"  style="display: inline;"></div>
+
+- **Message attributes are defined in the info**
+You can also define the prompt message prompted label `info` properties, display problems can be avoided.
+```HTML
+<!-- Default prompt DIV id: (id Named: `default_ElementId`)-->
+<span id="default_ElementId" info="The default form elementID prompt message"> </span>
+<!-- Correct prompt DIV id: (id Named: `correct_ElementId`，use `.easycheck_okInfo`)-->
+<span id="correct_ElementId" info="The correct form elementID prompt message">  </span>
+<!-- Error prompt DIV id: (id Named: `error_ElementId`，use `.easycheck_errorInfo`) -->
+<span id="error_ElementId" info="The error form elementID prompt message">   </span>
+```
+If you use `info` attribute defines the default prompt message (defMsg), also need to call after the page has finished loading `EasyCheck.initDefMsg (); ` to take effect.
+```JS
+$(function(){
+    //Manually initialize the default message to take effect
+	EasyCheck.initDefMsg();
+})
 ```
 
+- **Priority**
+`info attribute of the message content`> `tag body of the message content` 
 
-Use DIV error message can be displayed in the specified location ( by default , the error message without specifying the DIV and manually create , EasyCheck automatically created and displayed in the text box ) . DIV error message has the following two optional attributes :
-`info`: optional attribute error message ( overrides the default prompt content )
-`perfix`: an optional attribute , an error message prefix
-Such as:
+- **Example:**
 
 ```HTML
-<tr>  
-      <td align="left"  width="300px">
-       	<label class="lbl"><div style="color:#FF0000; display:inline">*</div>登录邮箱</label>
-          <div  id="error_uemail"  info="input your email please！"></div> 
-       /td>
-</tr>
-	<tr>  
-        <td align="left">
-<input  type="text"  name="uemail" value="" class="txt required email" size="20"  /> 
-</td>
-</tr>
+<input type="text" id="uname" name="uname" class="txt2 required" reg="^[A-Za-z][A-Za-z0-9]*$"/>
+<span id="default_uname" info="Required, start with a letter, can contain only letters and numbers"></span> 
+<span id="correct_uname" info="Correct"></span> 
+<span id="error_uname"  prefix="name "  style="display:none">only letter and number</span> 
 ```
 
+### 8.2. Message content format extensions
+Tips for developing a variety of appearance (for example: EasyCheck ToolTip), EasyCheck can extend unified message formats, such as unified messaging will be prompted DIV fragment packaged in one self-definition. In a custom message fragments using `{0}` mark references prompt message content.
 
+- **Global settings：**
+```JS
+// Set the global default, errors, correct message formatting tips
+EasyCheck.defMsg='<div class="tip">Default message: {0}</div>';
+EasyCheck.errorMsg='<div class="tip">Error message: {0}</div>';
+EasyCheck.correctMsg='<div class="tip">Correct message: {0}</div>';
+```
+- **Local settings(Id specified for the extended Form or Element)**
+```
+// To specify the default message format regForm form
+EasyCheck.defMsgs["regForm"]='<div class="tip">Default message: {0}</div>';
+// To specify the error message format username element
+EasyCheck.errorMsg["username"]='<div class="tip">Error message: {0}</div>';
+// To specify the ok message format regForm form
+EasyCheck.correctMsgs["regForm"]='<div class="tip">Correct message: {0}</div>';
+```
 
-### 8.2、EasyChek support error message content is fully customizable, support for each element of each form validator uses different message formats:
+- **Format Priority**
+`ElementId format` > `FormId format` > `Global format`
+`EasyCheck.defMsgs["elementId"]` > `EasyCheck.defMsgs["formId"]` > `EasyCheck.defMsg`.
+
+- **The default prompt message manual initialization**
+When modify the default prompt message (defMsg) format, you need to manually call `initDefMsg()`, so that the default information modified to take effect.
+```JS
+$(function(){
+    //In the custom ready function, modify the default prompt message
+	EasyCheck.defMsg='<div class="tooltip-right-def tooltip-def">'+
+	'<div class="tooltip-content-def">{0}</div>'+
+	'<div class="tooltip-arrow-outer-def"></div>'+
+	'<div class="tooltip-arrow-def" ></div>'+
+	'</div>';
+    // Manually initialize the default message into force
+	EasyCheck.initDefMsg();
+})
+```
+
+- **Custom message mark**
+The default reference message is marked as ` {0}`, if you need to customize `msgMark` properties can be modified directly.
+```JS
+// Custom message mark 
+EasyCheck.msgMark="{msg}";
+// Use a custom mark {msg}
+EasyCheck.defMsg='<div class="tip">Default message: {msg}</div>';
+```
+
+<div style='height:800px'></div>
+
+### 8.3 , EasyChek support error message content is fully customizable, support for each element of each form validator uses different message formats:
 ** If the form element id attribute exists , then the priority ElementId**
 
 ```JS
@@ -629,6 +703,18 @@ EasyCheck.addChk(".exists",
 ```
 
 
+## 13 , EasyChek Tooltip
+```HTML
+<!-- jQuery -->
+<script type="text/javascript" src="easycheck/jquery-1.9.0.min.js"></script>
+<!-- EasyCheck -->
+<link rel="stylesheet" type="text/css" href="easycheck/css/easycheck.css"/>  
+<script type="text/javascript" src="easycheck/easy.easycheck-4.0.0.js"></script>
+<script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-zh_CN.js"></script>
+<!-- EasyCheck tooltip -->
+<link rel="stylesheet" type="text/css" href="easycheck/tooltip/easycheck-tooltip.css"/>  
+<script type="text/javascript" src="easycheck/tooltip/easy.easycheck-tooltip.js"></script>
+```
 
 
 [Demo online](http://www.easyproject.cn/easycheck/en/index.jsp#demo 'Demo online')

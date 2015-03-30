@@ -1,14 +1,14 @@
 .easycheck_errorInfo {
 	margin-left: 10px;
-	color:#BF6200;
+	color:#FF2A2B;
 	display: inline;
 	font-size: 13px;
 }
 .easycheck_okInfo {
 	margin-left: 10px;
-	color: #fff;
 	display: inline;
 	font-size: 13px;
+	color:#007C00;
 }
 /*
 * Notice：

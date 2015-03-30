@@ -4,6 +4,10 @@
 
 EasyCheck又名Echeck，是一个基于jQuery的前端JS表单验证插件，无需编程通过HTML增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。
 
+![EasyCheck](doc/images/easycheck.png)
+
+![EasyCheck](doc/images/easycheck-engine.png)
+
 **主要特点：**
 1. 轻量级
 2. 无需JS编程
