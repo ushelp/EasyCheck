@@ -10,6 +10,11 @@
 	font-size: 13px;
 	color:#007C00;
 }
+[id^='default_'] {
+	margin-left: 10px;
+	display: inline;
+	font-size: 13px;
+}
 /*
 * Notice：
 * Make style to take effect

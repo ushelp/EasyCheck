@@ -1,3 +1,33 @@
+.easycheck_errorInfo {
+	margin-left: 10px;
+	color:#FF2A2B;
+	display: inline;
+	font-size: 13px;
+}
+.easycheck_okInfo {
+	margin-left: 10px;
+	display: inline;
+	font-size: 13px;
+	color:#007C00;
+}
+[id^='default_'] {
+	margin-left: 10px;
+	display: inline;
+	font-size: 13px;
+}
+
+/*
+* Notice：
+* Make style to take effect
+* Use the !important to specify the style for each of the highest priority
+*/
+.easycheck_focusInput{
+	border: 1px solid #0066FF !important; 
+}
+.easycheck_errorInput {
+	border: 1px solid #DD080A !important;
+}
+
 /*
 * Tooltip Style
 * Error tooltip
