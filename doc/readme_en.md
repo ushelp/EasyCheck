@@ -58,7 +58,7 @@ Easy DataTable is fully compatible with IE6 and above, Firefox, Chrome, Safari, 
 
 Add CSS and JavaScript file templates:
 
- ```
+ ```HTML
  <!-- EasyCheck start -->
  
  <!-- Validation plug-in required CSS ** If there is ** -->

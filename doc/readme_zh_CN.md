@@ -57,7 +57,7 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 
 添加 CSS 和 JavaScript 文件模板： 
 
- ```
+ ```HTML
  <!-- EasyCheck start -->
  
  <!-- 验证插件需要的 CSS **如果存在** -->
