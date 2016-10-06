@@ -9,12 +9,6 @@ Latest version: `5.0.0-RELEASE`
 
 ### [Demo](http://www.easyproject.cn/easycheck/en/index.jsp#demo 'Demo - English]')
 
-## Architecture 
-
-![EasyCheck Functions](images/easycheck.png)
-
-![EasyCheck Engine](images/easycheck-engine.png)
-
 
 ## Features 
 
@@ -22,23 +16,23 @@ Latest version: `5.0.0-RELEASE`
 
 1. Lightweight
 
-2. No JS programming
+2. No JavaScript programming
 
-3. Support for class-based, attribute-based, and composite validators
+3. Support class-based, based on a combination of property and validators
+ 
+4. Built to meet the daily development of a dozen popular validator
 
-4. Built-in to meet the daily development of 16 kinds of commonly used validator
+5. Verify that the text box to automatically switch styles
 
-5. Text box validation style automatically switches
+6. By default, errors and correct three kinds of message content
 
-6. Default, error and correct three DIV prompt message content
+7. Tip custom message location
 
-7. Prompt the customization of the message location
+8. Anti-client resubmit function
 
-8. Anti-client repeat submission function
+9. scalability, support for registered users to develop new validator
 
-9. Extensibility, support the user to develop and register the new verifier
-
-10. Engine framework extensions, support plug-ins: DIV, ToolTip, Bootstrap3 plug-ins
+10. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 
 **Compatibility:**
@@ -51,6 +45,13 @@ Easy DataTable is fully compatible with IE6 and above, Firefox, Chrome, Safari, 
 - Bootstrap3
 
 > Description: EasyCheck is the same plugin as the ECheck plugin. In the early ECheck corresponds to the English version, EasyCheck corresponds to the Chinese version, in the `4.0.0` version, through the language file control, no longer distinguish by region to download.  
+
+
+## Architecture 
+
+![EasyCheck Functions](images/easycheck.png)
+
+![EasyCheck Engine](images/easycheck-engine.png)
 
 
 ## 1. Add the validation plug-in

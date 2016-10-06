@@ -8,26 +8,29 @@ EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication 
 
 最新版本/latest version:  `5.0.0-RELEASE`
 
-## Architecture/架构 
-
-![EasyCheck Functions](doc/images/easycheck.png)
-
-![EasyCheck Engine](doc/images/easycheck-engine.png)
-
-
 ## Feature/功能 
 
 ###  中文
 **主要特点：**
+
 1. 轻量级
+
 2. 无需 JS 编程
+
 3. 支持基于类、基于属性和组合验证器
+
 4. 内置能满足日常开发的十多种常用验证器
+
 5. 文本框验证样式自动切换
+
 6. 默认、错误和正确三种提示消息内容
+
 7. 提示消息位置的自定义
+
 8. 防客户端重复提交功能
+
 9. 扩展性，支持用户开发注册新验证器
+ 
 10. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
 
 **兼容性**：
@@ -43,14 +46,23 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 
 **Main features:**
 1. Lightweight
+
 2. No JavaScript programming
+
 3. Support class-based, based on a combination of property and validators
+ 
 4. Built to meet the daily development of a dozen popular validator
+
 5. Verify that the text box to automatically switch styles
+
 6. By default, errors and correct three kinds of message content
+
 7. Tip custom message location
+
 8. Anti-client resubmit function
+
 9. scalability, support for registered users to develop new validator
+
 10. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 **Compatibility:**
@@ -62,6 +74,11 @@ EasyDataTable fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera
 - Bootstrap3
 
 
+## Architecture/架构 
+
+![EasyCheck Functions](doc/images/easycheck.png)
+
+![EasyCheck Engine](doc/images/easycheck-engine.png)
 
 
 ## Demo&Support plugins/示例和插件
