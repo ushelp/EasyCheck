@@ -3,7 +3,7 @@
 EasyCheck is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine. 
 
 
-Latest version: `5.0.0-RELEASE`
+Latest version: `5.1.0-RELEASE`
 
 ### [Official home](http://www.easyproject.cn/easycheck/en/index.jsp 'EasyCheck official home page')
 
@@ -36,8 +36,8 @@ Latest version: `5.0.0-RELEASE`
 
 
 **Compatibility:**
-Easy DataTable is fully compatible with IE6 and above, Firefox, Chrome, Safari, Opera and other core (Trident, Gecko, Webkit, Presto) browser, and compatible with multiple platforms and systems (PC, TabletPC, Mobile).
-
+- jQuery: `1.9+`, `2.X`, `3.X`
+> That the bootstrap validation plugin is compatible with Bootstrap minimum compatibility requirements
 
 **Support plug-ins:**
 - DIV
@@ -96,7 +96,7 @@ Add CSS and JavaScript file templates:
 - **DIV plugin**
  ![DIV demo](images/div.png)
 
- use templates: 
+ use code: 
 
  ```HTML
  <!-- EasyCheck start -->
@@ -127,7 +127,7 @@ Add CSS and JavaScript file templates:
 - **ToolTip plugin**
  ![DIV demo](images/tooltip.png)
 
- use templates: 
+ use code: 
 
  ```HTML
  <!-- EasyCheck start -->
@@ -156,8 +156,9 @@ Add CSS and JavaScript file templates:
 
 - **Bootstrap3 plugin**
  ![DIV demo](images/bootstrap3.png)
+ ![DIV demo](images/bootstrap3_2.png)
 
- use templates:
+ use code:
 
  ```HTML
  <!-- EasyCheck start -->
@@ -186,6 +187,8 @@ Add CSS and JavaScript file templates:
  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
  <!-- Bootstrap3 end-->
  ```
+
+ Follow the Bootstrap3 form design specification by putting the form elements in the `form-group` and adding` form-control` to the form elements.
 
 ## 2. Use the validator
 
@@ -479,7 +482,7 @@ EasyCheck.clearAllError( [formId] );
 
 #### 4.4.2 Restore of the message 
  
-Restore messages (error, prompt, correct display the default prompt) 
+Restore messages (error, prompt, correct display the default prompt). The reset button in the default validation form automatically calls the function to implement a form reset.
  
 Scene: the form in the pop-up layer, close the layer to open, clear layer form before all the validation message. 
 
@@ -713,8 +716,17 @@ Also can set by JS
    // Whether form elements gains focus when the reduction for the default prompt, the default is false (Bootstrap3 defaults to true) 
    EasyCheck.resetOnFocus=false;
 
-   // Bootstrap3, whether to display the bootstrap small icon, the default is true 
-   EasyCheck.icon=true; 
+   // BootStrap3
+   EasyCheck.bootstrap3={
+       //  Add feedback icons
+       icon:true,
+       // Display * after required element(only for 'form-horizontal', 'form-inline')
+       required:true,
+       // Display Dismissible alerts
+       alert:true,
+       // alert message
+       alertMsg:'Validation failed!'
+   };
 </script>
 ```
 

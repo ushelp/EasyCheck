@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Bootstrap plugin all in one file
  * 
- * Version 5.0.0
+ * Version 5.1.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -12,9 +12,7 @@
  * Dependencies: EasyCheck
  * 
  */
-
 (function(window) {
-	
     var addChkForm = function(chkrule, fromChkInfo) {
         var chkElements = EasyCheck.getMatches(chkrule.chkName);
         $(fromChkInfo.eleArea + chkElements).each(function(index, element) {
@@ -29,7 +27,7 @@
                 fromChkInfo.chkFlag = false;
             }
         });
-    }, checkVc = function(o, e) {
+    },checkVc = function(o, e) {
         return EasyCheck.chkDef.addChkMethod("[vc]", o, e, function(o) {
             var val = $(o).val();
             var res = false;
@@ -136,8 +134,6 @@
         cacheCorrectMsg:{},
         cacheDefMsg:{},
         cacheErrorMsg:{},
-        // 显示 Bootstrap 验证图标
-        icon:true,
         // 表单元素获得焦点时是否还原为默认提示
         resetOnFocus:false,
         validator:{
@@ -205,12 +201,18 @@
         	EasyCheck.chkDef.errorManger({
                 formId:formId
             });
+        	if(EasyCheck.chkDef.clearAllErrorComplete){
+        		EasyCheck.chkDef.clearAllErrorComplete(formId);
+        	}
         },
         restoreAll:function(formId) {
         	EasyCheck.chkDef.errorManger({
                 formId:formId,
                 restore:true
             });
+        	if(EasyCheck.chkDef.restoreAllComplete){
+        		EasyCheck.chkDef.restoreAllComplete(formId);
+        	}
         },
         showError:function(o, msg) {
            EasyCheck.chkDef.showError(o,msg);
@@ -231,7 +233,7 @@
                      		var formId = $("form").has(o).attr("id");
                      		var domId=o.attr("id")||o.attr("name");
                      		var defDiv = $("[id='default_" + domId + "']");
-                     		if(defDiv.size()>0){
+                     		if(defDiv.length>0){
                      			EasyCheck.chkDef.showDef(defDiv,formId,domId ); 
                      		}
                      });
@@ -257,9 +259,9 @@
         	if(typeof eleArea=="string"){
         		eleArea=$(eleArea);
         	} 
-   
+        	var formId=$(eleArea).attr("id");
             var fromChkInfo = {
-                eleArea:"[id='" + $(eleArea).attr("id") + "'] ",
+                eleArea:"[id='" + formId + "'] ",
                 chkFlag:true,
                 errorEleArray:new Array()
             };
@@ -272,8 +274,21 @@
             } else {
                 $(":submit", $(fromChkInfo.eleArea)).removeAttr("disabled");
             }
-   
+            
+            // 验证完成回调
+            if(EasyCheck.chkDef.complete){
+            	EasyCheck.chkDef.complete(formId, fromChkInfo.chkFlag);
+            }
             return fromChkInfo.chkFlag;
+        },
+        bootstrap3:{
+        		//  Add feedback icons
+        		icon:true,
+        		// Display * after required element(only for 'form-horizontal', 'form-inline')
+        		required:true,
+        		// Display Dismissible alerts
+        		alert:true,
+        		alertMsg:'Validation failed!'
         },
         // plugins 可覆盖扩展的默认检查配置
     	chkDef:{
@@ -288,7 +303,7 @@
     	        $(s + "[id^='error_']:visible").each(function() {
     	            var oNameOrId = $(this).attr("id").replace("error_", "");
     	            
-    	            var controlGroup=$(this).parentsUntil(".form-group");
+    	            var controlGroup=$(this).parents(".form-group");
                 	controlGroup.find('.form-control-feedback').remove();
                 	controlGroup.removeClass('has-feedback'); //移除后面图示
                 	controlGroup.removeClass('has-error'); // 移除状态
@@ -318,8 +333,6 @@
     	        
     	        //restoreAll
     	        if (param.restore) {
-    	        	
-    	 	       
     	            var form=$("#"+param.formId);
     	            form.find('.form-control-feedback').remove();
     	            form.find('div').removeClass('has-feedback'); //移除后面图示
@@ -327,7 +340,7 @@
     	            form.find('div').removeClass('has-success'); 
     	        	
     	            $(s + "[id^='correct_']").each(function() {
-    	                var controlGroup=$(this).parentsUntil(".form-group");
+    	                var controlGroup=$(this).parents(".form-group");
     	            	controlGroup.find('.form-control-feedback').remove();
     	            	controlGroup.removeClass('has-feedback'); //移除后面图示
     	            	controlGroup.removeClass('has-error'); // 移除状态
@@ -354,8 +367,8 @@
     	        if(formId){
     	        	  var defMsg=defDiv.html();
     	        	  
-    	        	  var controlGroup=$("#"+oid).parentsUntil(".form-group");
-    	        	  if(EasyCheck.icon){ 
+    	        	  var controlGroup=$("#"+oid).parents(".form-group");
+    	        	  if(EasyCheck.bootstrap3.icon){ 
     		            	controlGroup.find('.form-control-feedback').remove();
     		            	controlGroup.removeClass('has-feedback'); //移除后面图示
     		            	controlGroup.removeClass('has-error'); // 移除状态
@@ -404,6 +417,7 @@
     	            return false;
     	        } else {
     	        	// 验证通过
+    	  
     	            EasyCheck.clearError(o);
     	            var defaultDiv = $("[id='default_" + divSuf + "']");
     	            if (defaultDiv) {
@@ -416,17 +430,17 @@
     	            
     	            var formId = $("form").has(o).attr("id");
     	            
-    	            var controlGroup=$(o).parentsUntil(".form-group");
+    	            var controlGroup=$(o).parents(".form-group");
     	            controlGroup.removeClass('has-error has-success');
     	            controlGroup.addClass('has-success');
     	           
-    	            if(EasyCheck.icon){ 
+    	            if(EasyCheck.bootstrap3.icon){ 
     	            	controlGroup.addClass('has-feedback'); //增加后面图示
     	            	controlGroup.find('.form-control-feedback').remove();
     	            	 $(o).after(okIcon);
     	            }
     	         
-    	            if (okDiv.size()>0) {
+    	            if (okDiv.length>0) {
     	                okDiv.addClass("help-block");
     	                var correctMsg=okDiv.html();
     	                if(EasyCheck.cacheCorrectMsg[formId+"_"+divSuf]!=undefined){
@@ -472,7 +486,7 @@
     	            }
     	            o=$(o);
     	             
-    	            var controlGroup=o.parentsUntil(".form-group");
+    	            var controlGroup=o.parents(".form-group");
     	            controlGroup.removeClass('has-error has-success');
     	            controlGroup.addClass('has-error');
     	            
@@ -480,8 +494,16 @@
     	            $("[id='correct_" + divSuf + "']").hide();
     	            $("[id='default_" + divSuf + "']").hide();
     	            var eo = $("[id='error_" + divSuf + "']");
-    	            if (eo.size() == 0) {
-    	                o.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+    	            if (eo.length == 0) {
+    	            	
+    	            	var req=o.next('[name="required"]'); 
+    	            	
+    	            	if(req.length>0){
+    	            		 req.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+    	            	}else{
+    	            		 o.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+    	            	}
+    	               
     	                eo = $("[id='error_" + divSuf + "']");
     	            }
     	            eo.addClass("help-block");
@@ -523,10 +545,11 @@
     	            
     	            var errorIcon='<span class="glyphicon glyphicon-remove form-control-feedback"></span>'
     	            
-    	            if(EasyCheck.icon){ 
+    	            if(EasyCheck.bootstrap3.icon){ 
     	            	controlGroup.addClass('has-feedback'); //增加后面图示
     	            	controlGroup.find('.form-control-feedback').remove();
-    	            	eo.before(errorIcon);
+//    	            	eo.before(errorIcon);
+    	            	o.after(errorIcon);
     	            }
     	            
     	            if(EasyCheck.errorMsgs[divSuf]){
@@ -595,13 +618,16 @@
                 var chkElements = EasyCheck.getMatches(chkrule.chkName);
                 $(chkElements).each(function(){
                 		var o=$(this);
-                		var formId = $("form").has(o).attr("id");
+                		var nowForm=$("form").has(o);
+                		var formId = nowForm.attr("id");
                 		var domId=o.attr("id")||o.attr("name");
                 		// 为必填元素添加必填符号
-                		if(chkrule.chkName=='.required'){
-                			 o.parent().after('<span class="help-block" id="valierr" style="color:#FF9966">*</span>');
-                		}
-                });
+                		if((nowForm.hasClass("form-horizontal") || nowForm.hasClass("form-inline")) && EasyCheck.bootstrap3.required){
+                			if(chkrule.chkName=='.required'){
+                   			 	o.parent().after('<span  name="required" class="text-muted" style="color:#FF9966;">*</span>'); 
+                			}
+                		}  
+                }); 
                
                 
                 $(chkElements).on("blur change", function(e) {
@@ -649,7 +675,28 @@
                         }
                     }
                 });
-            }
+            },
+            complete:function(formId,result){
+    	    	 if(EasyCheck.bootstrap3.alert){
+    	    	    	if($("#alert_"+formId).length==0){
+    	    	    		var submit=$("#"+formId).find(':submit:last');
+    	    	    		if(submit.length>0){
+    	    	    			submit.before('<div style="display:none" id="alert_'+formId+'" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'+EasyCheck.bootstrap3.alertMsg+'</div>');
+    	    	    		}
+    	    	    	}
+    	    	    	if(result){
+    	    	    		$("#alert_"+formId).hide(); 	
+    	    		    }else{
+    	    		    	$("#alert_"+formId).show(); 	
+    	    		    }
+    	    	    }
+    	    },
+    	    restoreAllComplete:function(formId){
+    	    	$("#alert_"+formId).hide(); 
+    	    },
+    	    clearAllErrorComplete:function(formId){
+    	    	$("#alert_"+formId).hide(); 
+    	    }
     	}
     };
     
@@ -684,16 +731,16 @@ $(function() {
     $("[id*='error_']").hide();
     // 取消html默认验证提示
     $("form").attr( "novalidate", "novalidate" ); 
-    $("[easycheck='true']").on("submit",function(){
+    var ecs=$("[easycheck='true']");
+    ecs.on("submit",function(){
     	return EasyCheck.checkForm(this); 
     });
+    // 自动注册重置操作
+    ecs.find(":reset").on("click",function(){
+    	var form=$(this).parents("form");
+    	if(form){
+    		var formId=form.attr("id");
+    		if(formId){EasyCheck.restoreAll(formId);}
+    	}
+    })
 }); 
-
-
-
-
-
-
-
-
-

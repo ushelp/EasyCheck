@@ -33,4 +33,5 @@ if(window.EasyCheck){
 			extension:"文件后缀只能为{0}",
 			vc:"输入有误"
 	}
+	EasyCheck.bootstrap3.alertMsg="验证未通过！";
 }

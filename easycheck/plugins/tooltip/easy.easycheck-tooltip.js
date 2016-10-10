@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Tooltip plugin file
  * 
- * Version 5.0.0
+ * Version 5.1.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -115,7 +115,7 @@ EasyCheck.chkDef={
 	            }
 	            var okDiv = $("[id='correct_" + divSuf + "']");
 	            var formId = $("form").has(o).attr("id");
-	            if (okDiv) {
+	            if (okDiv.length>0) {
 	                okDiv.addClass("easycheck_okInfo");
 	                
 	                var correctMsg=okDiv.html();
@@ -165,7 +165,7 @@ EasyCheck.chkDef={
 	            $("[id='correct_" + divSuf + "']").hide();
 	            $("[id='default_" + divSuf + "']").hide();
 	            var eo = $("[id='error_" + divSuf + "']");
-	            if (eo.size() == 0) {
+	            if (eo.length == 0) {
 	                o.after("<div id='error_" + divSuf + "'></div>");
 	                eo = $("[id='error_" + divSuf + "']");
 	            }
@@ -230,8 +230,7 @@ EasyCheck.chkDef={
 	            var eo = $("[id='error_" + divSuf + "']");
 	          
 	            var formId = $("form").has(o).attr("id");
-	            if (eo) {
-//			                eo.removeClass();
+	            if (eo.length>0) {
 	                if (EasyCheck.ecss != "no" && EasyCheck.formEcss[formId] != "no") {
 	                    if (!(o.attr("ecss") && o.attr("ecss") != "yes")) {
 	                        o.removeClass(EasyCheck.errorCss);

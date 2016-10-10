@@ -33,4 +33,5 @@ if(window.EasyCheck){
 		     extension:"Invalid extension,only {0}",
 		     vc:"Didn't match the word verification"
 	};
+	EasyCheck.bootstrap3.alertMsg="Validation failed!";
 }

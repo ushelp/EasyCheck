@@ -14,10 +14,18 @@
  */
 EasyCheck.focusCss="";
 EasyCheck.errorCss="";
-// 是否显示 bootstrap 小图标
-EasyCheck.icon=true; 
 // 表单元素获得焦点时是否还原为默认提示
 EasyCheck.resetOnFocus=false;
+// BootStrap3参数
+EasyCheck.bootstrap3={
+		//  Add feedback icons
+		icon:true,
+		// Display * after required element(only for 'form-horizontal', 'form-inline')
+		required:true,
+		// Display Dismissible alerts
+		alert:true,
+		alertMsg:'Validation failed!'
+};
 EasyCheck.chkDef={
 		// 错误消息清除管理
 		errorManger : function(param) {
@@ -30,7 +38,7 @@ EasyCheck.chkDef={
 	        $(s + "[id^='error_']:visible").each(function() {
 	            var oNameOrId = $(this).attr("id").replace("error_", "");
 	            
-	            var controlGroup=$(this).parentsUntil(".form-group");
+	            var controlGroup=$(this).parents(".form-group");
             	controlGroup.find('.form-control-feedback').remove();
             	controlGroup.removeClass('has-feedback'); //移除后面图示
             	controlGroup.removeClass('has-error'); // 移除状态
@@ -60,8 +68,6 @@ EasyCheck.chkDef={
 	        
 	        //restoreAll
 	        if (param.restore) {
-	        	
-	 	       
 	            var form=$("#"+param.formId);
 	            form.find('.form-control-feedback').remove();
 	            form.find('div').removeClass('has-feedback'); //移除后面图示
@@ -69,7 +75,7 @@ EasyCheck.chkDef={
 	            form.find('div').removeClass('has-success'); 
 	        	
 	            $(s + "[id^='correct_']").each(function() {
-	                var controlGroup=$(this).parentsUntil(".form-group");
+	                var controlGroup=$(this).parents(".form-group");
 	            	controlGroup.find('.form-control-feedback').remove();
 	            	controlGroup.removeClass('has-feedback'); //移除后面图示
 	            	controlGroup.removeClass('has-error'); // 移除状态
@@ -96,8 +102,8 @@ EasyCheck.chkDef={
 	        if(formId){
 	        	  var defMsg=defDiv.html();
 	        	  
-	        	  var controlGroup=$("#"+oid).parentsUntil(".form-group");
-	        	  if(EasyCheck.icon){ 
+	        	  var controlGroup=$("#"+oid).parents(".form-group");
+	        	  if(EasyCheck.bootstrap3.icon){ 
 		            	controlGroup.find('.form-control-feedback').remove();
 		            	controlGroup.removeClass('has-feedback'); //移除后面图示
 		            	controlGroup.removeClass('has-error'); // 移除状态
@@ -146,6 +152,7 @@ EasyCheck.chkDef={
 	            return false;
 	        } else {
 	        	// 验证通过
+	  
 	            EasyCheck.clearError(o);
 	            var defaultDiv = $("[id='default_" + divSuf + "']");
 	            if (defaultDiv) {
@@ -158,17 +165,17 @@ EasyCheck.chkDef={
 	            
 	            var formId = $("form").has(o).attr("id");
 	            
-	            var controlGroup=$(o).parentsUntil(".form-group");
+	            var controlGroup=$(o).parents(".form-group");
 	            controlGroup.removeClass('has-error has-success');
 	            controlGroup.addClass('has-success');
 	           
-	            if(EasyCheck.icon){ 
+	            if(EasyCheck.bootstrap3.icon){ 
 	            	controlGroup.addClass('has-feedback'); //增加后面图示
 	            	controlGroup.find('.form-control-feedback').remove();
 	            	 $(o).after(okIcon);
 	            }
 	         
-	            if (okDiv.size()>0) {
+	            if (okDiv.length>0) {
 	                okDiv.addClass("help-block");
 	                var correctMsg=okDiv.html();
 	                if(EasyCheck.cacheCorrectMsg[formId+"_"+divSuf]!=undefined){
@@ -214,7 +221,7 @@ EasyCheck.chkDef={
 	            }
 	            o=$(o);
 	             
-	            var controlGroup=o.parentsUntil(".form-group");
+	            var controlGroup=o.parents(".form-group");
 	            controlGroup.removeClass('has-error has-success');
 	            controlGroup.addClass('has-error');
 	            
@@ -222,8 +229,16 @@ EasyCheck.chkDef={
 	            $("[id='correct_" + divSuf + "']").hide();
 	            $("[id='default_" + divSuf + "']").hide();
 	            var eo = $("[id='error_" + divSuf + "']");
-	            if (eo.size() == 0) {
-	                o.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+	            if (eo.length == 0) {
+	            	
+	            	var req=o.next('[name="required"]'); 
+	            	
+	            	if(req.length>0){
+	            		 req.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+	            	}else{
+	            		 o.after("<span id='error_" + divSuf + "' class='help-block'></span>");
+	            	}
+	               
 	                eo = $("[id='error_" + divSuf + "']");
 	            }
 	            eo.addClass("help-block");
@@ -265,10 +280,11 @@ EasyCheck.chkDef={
 	            
 	            var errorIcon='<span class="glyphicon glyphicon-remove form-control-feedback"></span>'
 	            
-	            if(EasyCheck.icon){ 
+	            if(EasyCheck.bootstrap3.icon){ 
 	            	controlGroup.addClass('has-feedback'); //增加后面图示
 	            	controlGroup.find('.form-control-feedback').remove();
-	            	eo.before(errorIcon);
+//	            	eo.before(errorIcon);
+	            	o.after(errorIcon);
 	            }
 	            
 	            if(EasyCheck.errorMsgs[divSuf]){
@@ -291,8 +307,7 @@ EasyCheck.chkDef={
 	            var eo = $("[id='error_" + divSuf + "']");
 	          
 	            var formId = $("form").has(o).attr("id");
-	            if (eo) {
-//			                eo.removeClass();
+	            if (eo.length>0) {
 	                if (EasyCheck.ecss != "no" && EasyCheck.formEcss[formId] != "no") {
 	                    if (!(o.attr("ecss") && o.attr("ecss") != "yes")) {
 	                        o.removeClass(EasyCheck.errorCss);
@@ -305,7 +320,6 @@ EasyCheck.chkDef={
 	                        	
 	                    }
 	                }
-	                //eo.addClass("easycheck_okInfo");
 	                if (msg) {
 	                    eo.html(msg);
 	                } else {
@@ -313,14 +327,10 @@ EasyCheck.chkDef={
 	                }
 	                eo.hide();
 	                
-	                
 	                var defDiv=$("[id='default_" + divSuf + "']");
 	                $("[id='correct_" + divSuf + "']").hide();
 	                EasyCheck.chkDef.showDef(defDiv,formId,divSuf ); 
-	                
 	            }
-	            
-	                
 	            
 	            o.removeClass(EasyCheck.focusCss);
 	            if (formId && EasyCheck.formFocusCss[formId]) {
@@ -337,13 +347,16 @@ EasyCheck.chkDef={
             var chkElements = EasyCheck.getMatches(chkrule.chkName);
             $(chkElements).each(function(){
             		var o=$(this);
-            		var formId = $("form").has(o).attr("id");
+            		var nowForm=$("form").has(o);
+            		var formId = nowForm.attr("id");
             		var domId=o.attr("id")||o.attr("name");
             		// 为必填元素添加必填符号
-            		if(chkrule.chkName=='.required'){
-            			 o.parent().after('<span class="help-block" id="valierr" style="color:#FF9966">*</span>');
-            		}
-            });
+            		if((nowForm.hasClass("form-horizontal") || nowForm.hasClass("form-inline")) && EasyCheck.bootstrap3.required){
+            			if(chkrule.chkName=='.required'){
+               			 	o.parent().after('<span  name="required" class="text-muted" style="color:#FF9966;">*</span>'); 
+            			}
+            		}  
+            }); 
            
             
             $(chkElements).on("blur change", function(e) {
@@ -391,7 +404,28 @@ EasyCheck.chkDef={
                     }
                 }
             });
-        }
+        },
+        complete:function(formId,result){
+	    	 if(EasyCheck.bootstrap3.alert){
+	    	    	if($("#alert_"+formId).length==0){
+	    	    		var submit=$("#"+formId).find(':submit:last');
+	    	    		if(submit.length>0){
+	    	    			submit.before('<div style="display:none" id="alert_'+formId+'" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'+EasyCheck.bootstrap3.alertMsg+'</div>');
+	    	    		}
+	    	    	}
+	    	    	if(result){
+	    	    		$("#alert_"+formId).hide(); 	
+	    		    }else{
+	    		    	$("#alert_"+formId).show(); 	
+	    		    }
+	    	    }
+	    },
+	    restoreAllComplete:function(formId){
+	    	$("#alert_"+formId).hide(); 
+	    },
+	    clearAllErrorComplete:function(formId){
+	    	$("#alert_"+formId).hide(); 
+	    }
 }
 $(function(){
     EasyCheck.initDefMsg();  

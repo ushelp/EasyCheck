@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck DIV plugin all in one file
  * 
- * Version 5.0.0
+ * Version 5.1.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -202,12 +202,18 @@
         	EasyCheck.chkDef.errorManger({
                 formId:formId
             });
+        	if(EasyCheck.chkDef.clearAllErrorComplete){
+        		EasyCheck.chkDef.clearAllErrorComplete(formId);
+        	}
         },
         restoreAll:function(formId) {
         	EasyCheck.chkDef.errorManger({
                 formId:formId,
                 restore:true
             });
+        	if(EasyCheck.chkDef.restoreAllComplete){
+        		EasyCheck.chkDef.restoreAllComplete(formId);
+        	}
         },
         showError:function(o, msg) {
            EasyCheck.chkDef.showError(o,msg);
@@ -228,7 +234,7 @@
                      		var formId = $("form").has(o).attr("id");
                      		var domId=o.attr("id")||o.attr("name");
                      		var defDiv = $("[id='default_" + domId + "']");
-                     		if(defDiv.size()>0){
+                     		if(defDiv.length>0){
                      			EasyCheck.chkDef.showDef(defDiv,formId,domId ); 
                      		}
                      });
@@ -255,8 +261,9 @@
         		eleArea=$(eleArea);
         	} 
    
+        	var formId=$(eleArea).attr("id");
             var fromChkInfo = {
-                eleArea:"[id='" + $(eleArea).attr("id") + "'] ",
+                eleArea:"[id='" + formId + "'] ",
                 chkFlag:true,
                 errorEleArray:new Array()
             };
@@ -269,7 +276,10 @@
             } else {
                 $(":submit", $(fromChkInfo.eleArea)).removeAttr("disabled");
             }
-   
+            // 验证完成回调
+            if(EasyCheck.chkDef.complete){
+            	EasyCheck.chkDef.complete(formId, fromChkInfo.chkFlag);
+            }
             return fromChkInfo.chkFlag;
         },
         // plugins 可覆盖扩展的默认检查配置
@@ -375,7 +385,7 @@
     	            }
     	            var okDiv = $("[id='correct_" + divSuf + "']");
     	            var formId = $("form").has(o).attr("id");
-    	            if (okDiv) {
+    	            if (okDiv.length>0) {
     	                okDiv.addClass("easycheck_okInfo");
     	                
     	                var correctMsg=okDiv.html();
@@ -425,7 +435,7 @@
     	            $("[id='correct_" + divSuf + "']").hide();
     	            $("[id='default_" + divSuf + "']").hide();
     	            var eo = $("[id='error_" + divSuf + "']");
-    	            if (eo.size() == 0) {
+    	            if (eo.length == 0) {
     	                o.after("<div id='error_" + divSuf + "'></div>");
     	                eo = $("[id='error_" + divSuf + "']");
     	            }
@@ -490,7 +500,7 @@
     	            var eo = $("[id='error_" + divSuf + "']");
     	          
     	            var formId = $("form").has(o).attr("id");
-    	            if (eo) {
+    	            if (eo.length>0) {
     	                if (EasyCheck.ecss != "no" && EasyCheck.formEcss[formId] != "no") {
     	                    if (!(o.attr("ecss") && o.attr("ecss") != "yes")) {
     	                        o.removeClass(EasyCheck.errorCss);
@@ -585,7 +595,13 @@
                         }
                     }
                 });
-            }
+            },
+		    // 验证完成后的回调函数(formId,验证结果true|false)
+		    complete:function(formId,result){},
+		    // restoreAll 完成后的回调函数
+		    restoreAllComplete:function(formId){},
+		    // clearAllError 完成后的回调函数
+		    clearAllErrorComplete:function(formId){}
     	}
     };
     
@@ -623,5 +639,17 @@ $(function() {
     $("[easycheck='true']").on("submit",function(){
     	return EasyCheck.checkForm(this); 
     });
+    var ecs=$("[easycheck='true']");
+    ecs.on("submit",function(){
+    	return EasyCheck.checkForm(this); 
+    });
+    // 自动注册重置操作
+    ecs.find(":reset").on("click",function(){
+    	var form=$(this).parents("form");
+    	if(form){
+    		var formId=form.attr("id");
+    		if(formId){EasyCheck.restoreAll(formId);}
+    	}
+    })
     EasyCheck.initDefMsg();
 }); 

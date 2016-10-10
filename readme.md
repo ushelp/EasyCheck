@@ -6,7 +6,7 @@ EasyCheck，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无
 
 EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine.
 
-最新版本/latest version:  `5.0.0-RELEASE`
+最新版本/latest version:  `5.1.0-RELEASE`
 
 ## Feature/功能 
 
@@ -34,7 +34,9 @@ EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication 
 10. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
 
 **兼容性**：
-EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。
+- 浏览器：完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。 
+- jQuery: `1.9+`, `2.X`, `3.X`
+> Bootstrap 验证插件的兼容性与 Bootstrap 最低兼容要求一致
 
 **支持插件：**
 - DIV
@@ -66,7 +68,9 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 10. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 **Compatibility:**
-EasyDataTable fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera, and other kernel (Trident, Gecko, Webkit, Presto) browser, and is compatible with multiple platforms and systems (PC, TabletPC, Mobile).
+- Browser: fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera, and other kernel (Trident, Gecko, Webkit, Presto) browser, and is compatible with multiple platforms and systems (PC, TabletPC, Mobile).
+- jQuery: `1.9+`, `2.X`, `3.X`
+> That the bootstrap validation plugin is compatible with Bootstrap minimum compatibility requirements
 
 **Support plugins:**
 - DIV
@@ -95,7 +99,7 @@ EasyDataTable fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera
 
 - **Bootstrap3**
 ![DIV demo](doc/images/bootstrap3.png)
-
+![DIV demo](doc/images/bootstrap3_2.png)
 
 
 ## Document/文档

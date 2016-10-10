@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin
  * 
- * Version 5.0.0
+ * Version 5.1.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -12,9 +12,7 @@
  * Dependencies: jQuery
  * 
  */
-
 (function(window) {
-	
     var addChkForm = function(chkrule, fromChkInfo) {
         var chkElements = EasyCheck.getMatches(chkrule.chkName);
         $(fromChkInfo.eleArea + chkElements).each(function(index, element) {
@@ -29,7 +27,7 @@
                 fromChkInfo.chkFlag = false;
             }
         });
-    }, checkVc = function(o, e) {
+    },checkVc = function(o, e) {
         return EasyCheck.chkDef.addChkMethod("[vc]", o, e, function(o) {
             var val = $(o).val();
             var res = false;
@@ -203,12 +201,18 @@
         	EasyCheck.chkDef.errorManger({
                 formId:formId
             });
+        	if(EasyCheck.chkDef.clearAllErrorComplete){
+        		EasyCheck.chkDef.clearAllErrorComplete(formId);
+        	}
         },
         restoreAll:function(formId) {
         	EasyCheck.chkDef.errorManger({
                 formId:formId,
                 restore:true
             });
+        	if(EasyCheck.chkDef.restoreAllComplete){
+        		EasyCheck.chkDef.restoreAllComplete(formId);
+        	}
         },
         showError:function(o, msg) {
            EasyCheck.chkDef.showError(o,msg);
@@ -229,7 +233,7 @@
                      		var formId = $("form").has(o).attr("id");
                      		var domId=o.attr("id")||o.attr("name");
                      		var defDiv = $("[id='default_" + domId + "']");
-                     		if(defDiv.size()>0){
+                     		if(defDiv.length>0){
                      			EasyCheck.chkDef.showDef(defDiv,formId,domId ); 
                      		}
                      });
@@ -255,9 +259,9 @@
         	if(typeof eleArea=="string"){
         		eleArea=$(eleArea);
         	} 
-   
+        	var formId=$(eleArea).attr("id");
             var fromChkInfo = {
-                eleArea:"[id='" + $(eleArea).attr("id") + "'] ",
+                eleArea:"[id='" + formId + "'] ",
                 chkFlag:true,
                 errorEleArray:new Array()
             };
@@ -270,7 +274,11 @@
             } else {
                 $(":submit", $(fromChkInfo.eleArea)).removeAttr("disabled");
             }
-   
+            
+            // 验证完成回调
+            if(EasyCheck.chkDef.complete){
+            	EasyCheck.chkDef.complete(formId, fromChkInfo.chkFlag);
+            }            
             return fromChkInfo.chkFlag;
         },
         // plugins 可覆盖扩展的默认检查配置
@@ -286,7 +294,13 @@
 		   // 清除错误
 		    clearError:function(o, msg){},
 		   // 初始化Chk框
-		    initChk:function(chkrule){}
+		    initChk:function(chkrule){},
+		    // 验证完成后的回调函数(formId,验证结果true|false)
+		    complete:function(formId,result){},
+		    // restoreAll 完成后的回调函数
+		    restoreAllComplete:function(formId){},
+		    // clearAllError 完成后的回调函数
+		    clearAllErrorComplete:function(formId){}
     	}
     };
     
@@ -321,9 +335,18 @@ $(function() {
     $("[id*='error_']").hide();
     // 取消html默认验证提示
     $("form").attr( "novalidate", "novalidate" ); 
-    $("[easycheck='true']").on("submit",function(){
+    
+    var ecs=$("[easycheck='true']");
+    
+    ecs.on("submit",function(){
     	return EasyCheck.checkForm(this); 
     });
+    // 自动注册重置操作
+    ecs.find(":reset").on("click",function(){
+    	var form=$(this).parents("form");
+    	if(form){
+    		var formId=form.attr("id");
+    		if(formId){EasyCheck.restoreAll(formId);}
+    	}
+    })
 }); 
-
-

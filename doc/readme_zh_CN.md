@@ -2,7 +2,7 @@
 
 EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。
 
-最新版本:  `5.0.0-RELEASE`
+最新版本:  `5.1.0-RELEASE`
 
 ### [官方主页](http://www.easyproject.cn/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
 
@@ -35,7 +35,9 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
 
 
 **兼容性**：
-EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。
+- 浏览器：完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。 
+- jQuery: `1.9+`, `2.X`, `3.X`
+> Bootstrap 验证插件的兼容性与 Bootstrap 最低兼容要求一致
 
 
 **支持插件：**
@@ -95,7 +97,7 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 - **DIV 插件**
  ![DIV demo](images/div.png)
 
- 引入模板：
+ 引入代码：
 
  ```HTML
  <!-- EasyCheck start -->
@@ -126,7 +128,7 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 - **ToolTip 插件**
  ![DIV demo](images/tooltip.png)
 
- 引入模板：
+ 引入代码：
 
  ```HTML
  <!-- EasyCheck start -->
@@ -155,8 +157,9 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
 
 - **Bootstrap3 插件**
  ![DIV demo](images/bootstrap3.png)
+ ![DIV demo](images/bootstrap3_2.png)
 
- 引入模板：
+ 引入代码：
 
  ```HTML
  <!-- EasyCheck start -->
@@ -188,6 +191,8 @@ EasyDataTable完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera�
  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
  <!-- Bootstrap3 end-->
  ```
+
+ 请按照 Bootstrap3 表单设计规范，将表单元素放入 `form-group` 中，并为表单元素添加 `form-control`。
 
 ## 2. 使用验证器
 
@@ -480,7 +485,7 @@ EasyCheck.clearAllError( [formId] );
 
 #### 4.4.2 还原消息
 
-还原消息（清除错误提示，正确提示，显示默认提示）
+还原消息（清除错误提示，正确提示，显示默认提示）。默认验证表单中的重置按钮都会自动调用该函数实现表单重置。
 
 场景：验证表单在弹出层中时，关闭层重新打开时，清空层中表单之前的所有验证提示信息。  
 
@@ -719,8 +724,17 @@ EasyCheck.easyCheckSubmitDisable=false;
    //  表单元素获得焦点时是否还原为默认提示,默认为 false(Bootstrap3 默认为true)
    EasyCheck.resetOnFocus=false;
 
-   // Bootstrap3, 是否显示 bootstrap 小图标, 默认为 true
-   EasyCheck.icon=true; 
+   // BootStrap3
+   EasyCheck.bootstrap3={
+       //  Add feedback icons
+       icon:true,
+       // Display * after required element(only for 'form-horizontal', 'form-inline')
+       required:true,
+       // Display Dismissible alerts
+       alert:true,
+       // alert message
+       alertMsg:'Validation failed!'
+   };
 </script>
 ```
 
