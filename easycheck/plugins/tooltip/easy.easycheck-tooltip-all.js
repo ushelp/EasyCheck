@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Tooltip plugin all in one file
  * 
- * Version 5.1.0
+ * Version 5.1.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -663,5 +663,6 @@ $(function() {
     		if(formId){EasyCheck.restoreAll(formId);}
     	}
     })
+    $(":submit").attr("autocomplete","off");
     EasyCheck.initDefMsg();
 }); 

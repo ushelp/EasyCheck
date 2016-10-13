@@ -2,7 +2,7 @@
 
 EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。
 
-最新版本:  `5.1.0-RELEASE`
+最新版本:  `5.1.1-RELEASE`
 
 ### [官方主页](http://www.easyproject.cn/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
 
@@ -673,38 +673,6 @@ EasyCheck支持客户端防止重复提交功能：当用户点击 submit 按钮
 // 关闭提交按钮禁用功能，默认为 true
 EasyCheck.easyCheckSubmitDisable=false; 
 ```
-
-### Firefox 下按钮状态特别说明
-
- 由于Firefox浏览器的从缓存加载数据时的记忆原因，如果提交数据后，通过点击浏览器后退按钮回到网页，提交按钮将依然显示为禁用状态。
- 
-- 提交按钮加上 `autocomplete="off"` 的属性即可。
-> 
->  autocomplete 屏蔽浏览器表单默认的记忆功能。
-> 
- 
-如果不希望通修改 html 页面为提交按钮加 `autocomplete="off"` 属性来实现此功能，EasyCheck 同样支持通过 JS 代码实现修正 Firefox 浏览器后退按钮启用的功能：
-
-- 方法一：直接设置Firefox下后退后不禁用的按钮id数组，可指定多个
-
- ```JS
-  EasyCheck.removeDisableBtn=['submitId']; 
- ```
-
-- 方法二：设置Firefox下后退后不禁用的formId数组，可指定多个form表单的ID，在表单中的所有submit按钮在后退后自动转为正常
-
- ```JS
-  EasyCheck.removeDisableForm=['formId']; 
- ```
-
-- 方法三：设置强制将页面所有form表单中的submit按钮启用，默认值为false
-
- ```JS
- //该参数会将所有所有from下禁用的submit按钮启用
- //所有如果确定项目页面没有默认需要禁用的submit按钮，该设置最为方便
- EasyCheck.removeDisable=true;  
- ```
-
 
 
 ## 7. 可选配置参数

@@ -3,7 +3,7 @@
 EasyCheck is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine. 
 
 
-Latest version: `5.1.0-RELEASE`
+Latest version: `5.1.1-RELEASE`
 
 ### [Official home](http://www.easyproject.cn/easycheck/en/index.jsp 'EasyCheck official home page')
 
@@ -667,36 +667,6 @@ Shut down to prevent repeat submit function form:
 // close the submit button to disable the function, the default is true 
 EasyCheck.easyCheckSubmitDisable=false; 
 ```
-
-### Firefox button state special instructions 
- 
-As a result of the Firefox browser load the data from the cache memory, if the submitted data, by clicking on the browser back button to return to web page, the submit button will still show for the disabled state. 
-
-- add `autocomplete="off"` on submit button.
-> 
->  autocomplete ahielding browser forms the default memory function. 
-
-> 
- 
-Also can set by JS
-
-- Method One: Set directly under Firefox after disabling the back button id array , you can specify multiple
- ```JS
-  EasyCheck.removeDisableBtn=['submitId']; 
- ```
-
-- Method Two : Set array formId back after disabling the next Firefox , you can specify more than one form of the form ID, all the submit button in a form automatically back to normal after
- ```JS
-  EasyCheck.removeDisableForm=['formId']; 
- ```
-
-- Method three : Set to force all pages form a form submit button is enabled, the default value is false
- ```JS
- //This parameter will disable all all from under the submit button is enabled
- //If it is determined that all project page does not need to disable the submit button by default , this setting is most convenient
- EasyCheck.removeDisable=true;  
-  ```
-
 
 
 ## 7. The optional configuration parameters 

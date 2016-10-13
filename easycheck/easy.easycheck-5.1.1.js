@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin
  * 
- * Version 5.1.0
+ * Version 5.1.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -348,5 +348,6 @@ $(function() {
     		var formId=form.attr("id");
     		if(formId){EasyCheck.restoreAll(formId);}
     	}
-    })
+    });
+    $(":submit").attr("autocomplete","off");
 }); 

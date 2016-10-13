@@ -152,7 +152,7 @@ tr {
 	<!-- jQuery -->
 	<script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
 	<!-- EasyCheck & EasyCheck language file -->
-	<script type="text/javascript" src="easycheck/easy.easycheck-5.1.0.js"></script>
+	<script type="text/javascript" src="easycheck/easy.easycheck-5.1.1.js"></script>
 	<!-- Tooltip plugin -->
 	<script type="text/javascript" src="easycheck/plugins/tooltip/easy.easycheck-tooltip.js"></script>
 	<!-- Message i18n -->

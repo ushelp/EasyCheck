@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- jQuery -->
 	<script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
 	<!-- EasyCheck & EasyCheck language file -->
-	<script type="text/javascript" src="easycheck/easy.easycheck-5.1.0.js"></script>
+	<script type="text/javascript" src="easycheck/easy.easycheck-5.1.1.js"></script>
 	<!-- Bootstrap3 plugin -->
 	<script type="text/javascript" src="easycheck/plugins/bootstrap3/easy.easycheck-bootstrap3.js"></script>
 	<!-- Message i18n -->

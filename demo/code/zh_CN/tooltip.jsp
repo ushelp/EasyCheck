@@ -308,7 +308,7 @@ tr{ height: 55px;}
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="  注  册   " id="regBtn2"/>
+				<input type="submit" value="  注  册   " id="regBtn2" />
 				<input type="reset" value="  重  置   " id="resetBtn2"  />
 			</td>
 		</tr>
