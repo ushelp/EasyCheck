@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Bootstrap plugin file
  * 
- * Version 5.0.0
+ * Version 5.1.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
