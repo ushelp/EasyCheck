@@ -20,8 +20,10 @@ EasyCheck.resetOnFocus=false;
 EasyCheck.bootstrap3={
 		//  Add feedback icons
 		icon:true,
-		// Display * after required element(only for 'form-horizontal', 'form-inline')
+		// Display * after required element
 		required:true,
+		// * poisition: left(label left), right(label right), after(form element after, only for 'form-horizontal', 'form-inline')
+		requiredPosition:'after',
 		// Display Dismissible alerts
 		alert:true,
 		alertMsg:'Validation failed!'
@@ -351,9 +353,20 @@ EasyCheck.chkDef={
             		var formId = nowForm.attr("id");
             		var domId=o.attr("id")||o.attr("name");
             		// 为必填元素添加必填符号
-            		if((nowForm.hasClass("form-horizontal") || nowForm.hasClass("form-inline")) && EasyCheck.bootstrap3.required){
+            		var req=EasyCheck.bootstrap3.required;
+            		if(req){
             			if(chkrule.chkName=='.required'){
-               			 	o.parent().after('<span  name="required" class="text-muted" style="color:#FF9966;">*</span>'); 
+            				var pst=EasyCheck.bootstrap3.requiredPosition;
+	            			var s='<span name="required" class="text-muted" style="color:#FF9966;">*</span>';
+	            			if(pst=='after' && (nowForm.hasClass("form-horizontal") || nowForm.hasClass("form-inline")) ){
+	                   			 	o.parent().after(s); 
+	            			}else if(pst=='left'){
+	            				 var label=$(this).parents(".form-group").find("label:first");
+	            				 label.prepend(s);
+	            			}else if(pst=='right'){
+		           				 var label=$(this).parents(".form-group").find("label:first");
+		        				 label.append(s);
+		        			}
             			}
             		}  
             }); 

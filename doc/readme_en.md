@@ -30,9 +30,11 @@ Latest version: `5.1.1-RELEASE`
 
 8. Anti-client resubmit function
 
-9. scalability, support for registered users to develop new validator
+9. Server-side validation message, according to manually add and remove validation messages (such as the page to submit to the server check forwarding back to news, the news of the Ajax...)
 
-10. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
+10. scalability, support for registered users to develop new validator
+
+11. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 
 **Compatibility:**
@@ -686,16 +688,17 @@ EasyCheck.easyCheckSubmitDisable=false;
    // Whether form elements gains focus when the reduction for the default prompt, the default is false (Bootstrap3 defaults to true) 
    EasyCheck.resetOnFocus=false;
 
-   // BootStrap3
+   // BootStrap3 
    EasyCheck.bootstrap3={
-       //  Add feedback icons
-       icon:true,
-       // Display * after required element(only for 'form-horizontal', 'form-inline')
-       required:true,
-       // Display Dismissible alerts
-       alert:true,
-       // alert message
-       alertMsg:'Validation failed!'
+   		//  Add feedback icons
+   		icon:true,
+   		// Display * after required element
+   		required:true,
+   		// * poisition: left(label left), right(label right), after(form element after, only for 'form-horizontal', 'form-inline')
+   		requiredPosition:'after',
+   		// Display Dismissible alerts
+   		alert:true,
+   		alertMsg:'Validation failed!'
    };
 </script>
 ```

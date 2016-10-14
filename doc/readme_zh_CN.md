@@ -29,9 +29,11 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
 
 8. 防客户端重复提交功能
 
-9. 扩展性，支持用户开发注册新验证器
+9. 服务器端验证消息显示，手动添加和清除验证消息（如页面提交到服务器校验转发回的消息，Ajax 的消息...）
+
+10. 扩展性，支持用户开发注册新验证器
  
-10. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
+11. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
 
 
 **兼容性**：
@@ -692,16 +694,18 @@ EasyCheck.easyCheckSubmitDisable=false;
    //  表单元素获得焦点时是否还原为默认提示,默认为 false(Bootstrap3 默认为true)
    EasyCheck.resetOnFocus=false;
 
-   // BootStrap3
+   // BootStrap3 
    EasyCheck.bootstrap3={
-       //  Add feedback icons
-       icon:true,
-       // Display * after required element(only for 'form-horizontal', 'form-inline')
-       required:true,
-       // Display Dismissible alerts
-       alert:true,
-       // alert message
-       alertMsg:'Validation failed!'
+        // 添加图标反馈
+        icon:true,
+        // 在 required 必填表单自动显示 *
+        required:true,
+        // 显示 * 的位置：left(label 标签左边), right(label 标签右侧), after(form 表单元素之后, 仅支持 'form-horizontal', 'form-inline')
+        requiredPosition:'after',
+        // 显示可关闭的消息反馈警告框
+        alert:true,
+        // 警告框提示内容
+        alertMsg:'Validation failed!'
    };
 </script>
 ```

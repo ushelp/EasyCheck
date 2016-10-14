@@ -29,9 +29,11 @@ EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication 
 
 8. 防客户端重复提交功能
 
-9. 扩展性，支持用户开发注册新验证器
+9. 服务器端验证消息显示，手动添加和清除验证消息（如页面提交到服务器校验转发回的消息，Ajax 的消息...）
+
+10. 扩展性，支持用户开发注册新验证器
  
-10. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
+11. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
 
 **兼容性**：
 - 浏览器：完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。 
@@ -63,9 +65,11 @@ EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication 
 
 8. Anti-client resubmit function
 
-9. scalability, support for registered users to develop new validator
+9. Server-side validation message, according to manually add and remove validation messages (such as the page to submit to the server check forwarding back to news, the news of the Ajax...)
 
-10. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
+11. scalability, support for registered users to develop new validator
+
+12. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 **Compatibility:**
 - Browser: fully compatible with IE6 or later, Firefox, Chrome, Safari, Opera, and other kernel (Trident, Gecko, Webkit, Presto) browser, and is compatible with multiple platforms and systems (PC, TabletPC, Mobile).
