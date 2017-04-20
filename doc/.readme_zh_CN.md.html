@@ -1,0 +1,1435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C:\Users\easyp\Documents\HBuilderProject\EasyCheck\doc\.readme_zh_CN.md.html</title>
+
+
+<style type="text/css">
+body {
+	color: #333;
+	font: 13px/1.4 "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	background: transparent;
+	color: #4183c4;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0 none;
+	text-decoration: underline;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+mark {
+	background: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0 none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace,monospace;
+	font-size: 1em;
+}
+
+pre {
+	overflow: auto;
+	font: 12px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.markdown-body {
+	padding: 30px;
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+.markdown-body>*:first-child {
+	margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+.markdown-body .absent {
+	color: #c00;
+}
+
+.markdown-body .anchor {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	padding-right: 6px;
+	padding-left: 30px;
+	margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 16px;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+	display: none;
+	color: #000;
+	vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	padding-left: 8px;
+	margin-left: -30px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+	display: inline-block;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+	font-size: inherit;
+}
+
+.markdown-body h1 {
+	padding-bottom: 0.3em;
+	font-size: 2.25em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+	padding-bottom: 0.3em;
+	font-size: 1.75em;
+	line-height: 1.225;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+	font-size: 1.5em;
+	line-height: 1.43;
+}
+
+.markdown-body h4 {
+	font-size: 1.25em;
+}
+
+.markdown-body h5 {
+	font-size: 1em;
+}
+
+.markdown-body h6 {
+	font-size: 1em;
+	color: #777;
+}
+
+.markdown-body p,.markdown-body blockquote,
+.markdown-body ul,.markdown-body ol,
+.markdown-body dl,.markdown-body table,
+.markdown-body pre {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.markdown-body hr {
+	height: 4px;
+	padding: 0;
+	margin: 16px 0;
+	background-color: #e7e7e7;
+	border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+	padding-left: 2em;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.markdown-body li>p {
+	margin-top: 16px;
+}
+
+.markdown-body dl {
+	padding: 0;
+}
+
+.markdown-body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.markdown-body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+	padding: 0 15px;
+	color: #777;
+	border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+	margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+.markdown-body table {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	word-break: normal;
+	word-break: keep-all;
+}
+
+.markdown-body table th {
+	font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+	padding: 6px 13px;
+	border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+
+.markdown-body img {
+	max-width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.markdown-body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+
+.markdown-body span.frame span img {
+	display: block;
+	float: left;
+}
+
+.markdown-body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: #333;
+}
+
+.markdown-body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.markdown-body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.markdown-body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+.markdown-body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+	margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body code,.markdown-body tt {
+	padding: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(0,0,0,0.04);
+	border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after,
+.markdown-body tt:before,
+.markdown-body tt:after {
+	letter-spacing: -0.2em;
+	content: "\00a0";
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+	display: none;
+}
+
+.markdown-body del code {
+	text-decoration: inherit;
+}
+
+.markdown-body pre>code {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+.markdown-body .highlight {
+	margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+.markdown-body pre {
+	word-wrap: normal;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+	display: inline;
+	max-width: initial;
+	padding: 0;
+	margin: 0;
+	overflow: initial;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after,
+.markdown-body pre tt:before,
+.markdown-body pre tt:after {
+	content: normal;
+}
+
+.highlight .pl-coc,
+.highlight .pl-entl,
+.highlight .pl-entm,
+.highlight .pl-eoa,
+.highlight .pl-mai .pl-sf,
+.highlight .pl-mm,
+.highlight .pl-pdv,
+.highlight .pl-sc,
+.highlight .pl-som,
+.highlight .pl-sr,
+.highlight .pl-v,
+.highlight .pl-vpf {
+	color: #0086b3;
+}
+.highlight .pl-eoac,
+.highlight .pl-mdht,
+.highlight .pl-mi1,
+.highlight .pl-mri,
+.highlight .pl-va,
+.highlight .pl-vpu {
+	color: #008080;
+}
+.highlight .pl-c,
+.highlight .pl-pdc {
+	color: #b4b7b4;
+	font-style: italic;
+}
+.highlight .pl-k,
+.highlight .pl-ko,
+.highlight .pl-kolp,
+.highlight .pl-mc,
+.highlight .pl-mr,
+.highlight .pl-ms,
+.highlight .pl-s,
+.highlight .pl-sok,
+.highlight .pl-st {
+	color: #6e5494;
+}
+.highlight .pl-ef,
+.highlight .pl-enf,
+.highlight .pl-enm,
+.highlight .pl-entc,
+.highlight .pl-eoi,
+.highlight .pl-sf,
+.highlight .pl-smc {
+	color: #d12089;
+}
+.highlight .pl-ens,
+.highlight .pl-eoai,
+.highlight .pl-kos,
+.highlight .pl-mh .pl-pdh,
+.highlight .pl-mp,
+.highlight .pl-pde,
+.highlight .pl-stp {
+	color: #458;
+}
+.highlight .pl-enti {
+	color: #d12089;
+	font-weight: bold;
+}
+.highlight .pl-cce,
+.highlight .pl-enc,
+.highlight .pl-kou,
+.highlight .pl-mq {
+	color: #f93;
+}
+.highlight .pl-mp1 .pl-sf {
+	color: #458;
+	font-weight: bold;
+}
+.highlight .pl-cos,
+.highlight .pl-ent,
+.highlight .pl-md,
+.highlight .pl-mdhf,
+.highlight .pl-ml,
+.highlight .pl-pdc1,
+.highlight .pl-pds,
+.highlight .pl-s1,
+.highlight .pl-scp,
+.highlight .pl-sol {
+	color: #df5000;
+}
+.highlight .pl-c1,
+.highlight .pl-cn,
+.highlight .pl-pse,
+.highlight .pl-pse .pl-s2,
+.highlight .pl-vi {
+	color: #a31515;
+}
+.highlight .pl-mb,
+.highlight .pl-pdb {
+	color: #df5000;
+	font-weight: bold;
+}
+.highlight .pl-mi,
+.highlight .pl-pdi {
+	color: #6e5494;
+	font-style: italic;
+}
+.highlight .pl-ms1 {
+	background-color: #f5f5f5;
+}
+.highlight .pl-mdh,
+.highlight .pl-mdi {
+	font-weight: bold;
+}
+.highlight .pl-mdr {
+	color: #0086b3;
+	font-weight: bold;
+}
+.highlight .pl-s2 {
+	color: #333;
+}
+.highlight .pl-ii {
+	background-color: #df5000;
+	color: #fff;
+}
+.highlight .pl-ib {
+	background-color: #f93;
+}
+.highlight .pl-id {
+	background-color: #a31515;
+	color: #fff;
+}
+.highlight .pl-iu {
+	background-color: #b4b7b4;
+}
+.highlight .pl-mo {
+	color: #969896;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+function getDocumentScrollTop() 
+{
+   var res = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
+   // alert(res);
+   return res;
+}
+
+function setDocumentScrollTop(ypos) 
+{
+	window.scrollTo(0, ypos);
+}
+
+</script>
+
+
+</head>
+<body class="markdown-body">
+<h1> <a id="easycheck-验证框架手册" class="anchor" href="#easycheck-%E9%AA%8C%E8%AF%81%E6%A1%86%E6%9E%B6%E6%89%8B%E5%86%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EasyCheck 验证框架手册</h1> 
+<p>EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。</p> 
+<p>最新版本: <code>5.2.0-RELEASE</code></p> 
+<h3> <a id="官方主页" class="anchor" href="#%E5%AE%98%E6%96%B9%E4%B8%BB%E9%A1%B5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://www.easyproject.cn/easycheck/zh-cn/index.jsp" title="EasyCheck官网 HOME 主页">官方主页</a> </h3> 
+<h3> <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo" title="Demo - 中文]">Demo</a> </h3> 
+<h2> <a id="功能" class="anchor" href="#%E5%8A%9F%E8%83%BD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>功能</h2> 
+<p><strong>主要特点：</strong></p> 
+<ol> 
+ <li> <p>轻量级，无需 JS 编程</p> </li> 
+ <li> <p>支持基于类、基于属性和组合验证器，内置能满足日常开发的十多种常用验证器</p> </li> 
+ <li> <p>文本框验证样式自动切换</p> </li> 
+ <li> <p>默认、错误和正确三种提示消息内容，提示消息位置的自定义</p> </li> 
+ <li> <p>客户端防止重复提交功能</p> </li> 
+ <li> <p>异步验证支持，支持 <code>ES6 Promise</code> 编程（验证码在不支持 <code>Promise</code> 的环境时，自动回退到同步验证）</p> </li> 
+ <li> <p>服务器验证消息处理，手动添加和清除验证消息（如页面提交到服务器校验转发回的消息，<code>Ajax</code> 的消息...）</p> </li> 
+ <li> <p>扩展性，支持用户开发注册新验证器</p> </li> 
+ <li> <p>插件支持，已支持验证提示插件：<strong>DIV</strong>, <strong>ToolTip</strong>, <strong>Bootstrap3</strong></p> </li> 
+</ol> 
+<p><strong>兼容性</strong>：</p> 
+<ul> 
+ <li>浏览器：完全兼容IE6及以上版本、Firefox、Chrome、Safari、Opera等各内核（Trident、Gecko、Webkit、Presto）浏览器，并兼容多平台及系统（PC，TabletPC，Mobile）。</li> 
+ <li>jQuery: <code>1.9+</code>, <code>2.X</code>, <code>3.X</code> </li> 
+</ul> 
+<blockquote> 
+ <p>Bootstrap 验证插件的兼容性与 Bootstrap 最低兼容要求一致</p> 
+</blockquote> 
+<p><strong>支持插件：</strong></p> 
+<ul> 
+ <li>DIV</li> 
+ <li>ToolTip</li> 
+ <li>Bootstrap3</li> 
+</ul> 
+<blockquote> 
+ <p>说明：EasyCheck 与 ECheck 插件为同一插件。在早期 ECheck 对应英文版，EasyCheck 对应中文版，在 <code>4.0.0</code> 版本后，通过语言文件控制，不再按地区区分下载。</p> 
+</blockquote> 
+<h2> <a id="架构" class="anchor" href="#%E6%9E%B6%E6%9E%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>架构</h2> 
+<p><a href="images/easycheck.png" target="_blank"><img src="images/easycheck.png" alt="EasyCheck Functions" style="max-width:100%;" /></a></p> 
+<p><a href="images/easycheck-engine.png" target="_blank"><img src="images/easycheck-engine.png" alt="EasyCheck Engine" style="max-width:100%;" /></a></p> 
+<h2> <a id="1-引入验证插件" class="anchor" href="#1-%E5%BC%95%E5%85%A5%E9%AA%8C%E8%AF%81%E6%8F%92%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 引入验证插件</h2> 
+<p>添加 CSS 和 JavaScript 文件模板：</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck start <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 验证插件需要的 CSS（div, div2, tooltip, bootstrap3） **如果存在** <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/css<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/XXX/easycheck-XXX.css<span class="pl-pds">&quot;</span></span>/&gt;  
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> jQuery 必须在第一位 <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/jquery-1.12.4.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 引入验证文件 <span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 1. 单独引入 <span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> easy.easycheck.min.js <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/easy.easycheck.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> plugin 插件（div, tooltip, bootstrap3） <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/XXX/easy.easycheck-XXX.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 2. 使用 all 方式引入 <span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> easy.easycheck.min.js + easy.easycheck-XXX.js <span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span></span>
+<span class="pl-c">&lt;script type=&quot;text/javascript&quot; src=&quot;easycheck/plugins/div/easy.easycheck-div-all.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="pl-c"><span class="pl-c">--&gt;</span></span>
+	
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck 语言文件: i18n 消息 <span class="pl-c">--&gt;</span></span> 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/lang/easy.easycheck-lang-language_COUNTRY.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 可选配置参数   <span class="pl-c">--&gt;</span></span>
+<span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span>&gt;</span>
+<span class="pl-s1">		<span class="pl-c"><span class="pl-c">//</span> EasyCheck.formFocusCss['regForm2']=&quot;focus2&quot;;</span></span>
+<span class="pl-s1">		<span class="pl-c"><span class="pl-c">//</span> EasyCheck.formErrorCss['regForm2']=&quot;error2&quot;;</span></span>
+<span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
+<span class="pl-s1">       	<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>必须填写啊！<span class="pl-pds">&quot;</span></span></span>
+<span class="pl-s1">       	,</span>
+<span class="pl-s1">       	<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>只允许字母数字，不能以数字开始<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">		};</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt; </span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span></pre>
+</div> 
+<ul> 
+ <li> <strong>DIV 插件</strong> <a href="images/div.png" target="_blank"><img src="images/div.png" alt="DIV demo" style="max-width:100%;" /></a> </li> 
+</ul> 
+<p>引入代码：</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck start <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Div plugin CSS <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/css<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/div/easycheck-div.css<span class="pl-pds">&quot;</span></span>/&gt;  
+<span class="pl-c"><span class="pl-c">&lt;!--</span> &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;easycheck/plugins/div/easycheck-div2.css&quot;/&gt; <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> jQuery: must first <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/jquery-1.12.4.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck &amp; DIV Plugin JS <span class="pl-c">--&gt;</span></span>
+<span class="pl-s1">   &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/div/easy.easycheck-div-all.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck language file: i18n message <span class="pl-c">--&gt;</span></span> 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/lang/easy.easycheck-lang-zh_CN.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Other optional <span class="pl-c">--&gt;</span></span>
+<span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span>&gt;</span>
+<span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>自定义消息：必须有啊！<span class="pl-pds">&quot;</span></span></span>
+<span class="pl-s1">			,</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>只允许字母和数字,字母开头<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">		};</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt; </span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span></pre>
+</div> 
+<ul> 
+ <li> <strong>ToolTip 插件</strong> <a href="images/tooltip.png" target="_blank"><img src="images/tooltip.png" alt="DIV demo" style="max-width:100%;" /></a> </li> 
+</ul> 
+<p>引入代码：</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck start <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Tooltip plugin CSS <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/css<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/tooltip/easycheck-tooltip.css<span class="pl-pds">&quot;</span></span>/&gt;  
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> jQuery: must first <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/jquery-1.12.4.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck &amp; Tooltip Plugin JS <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/tooltip/easy.easycheck-tooltip-all.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck language file: i18n message <span class="pl-c">--&gt;</span></span> 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/lang/easy.easycheck-lang-zh_CN.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Other optional <span class="pl-c">--&gt;</span></span>
+<span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span>&gt;</span>
+<span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>自定义消息：必须有啊！<span class="pl-pds">&quot;</span></span></span>
+<span class="pl-s1">			,</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>只允许字母和数字,字母开头<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">		};</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt; </span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span></pre>
+</div> 
+<ul> 
+ <li> <strong>Bootstrap3 插件</strong> <a href="images/bootstrap3.png" target="_blank"><img src="images/bootstrap3.png" alt="DIV demo" style="max-width:100%;" /></a> <a href="images/bootstrap3_2.png" target="_blank"><img src="images/bootstrap3_2.png" alt="DIV demo" style="max-width:100%;" /></a> </li> 
+</ul> 
+<p>引入代码：</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck start <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> jQuery: must first <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/jquery-1.12.4.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck &amp; DIV Plugin JS <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/bootstrap3/easy.easycheck-bootstrap3-all.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck language file: i18n message <span class="pl-c">--&gt;</span></span> 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/lang/easy.easycheck-lang-zh_CN.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Other optional <span class="pl-c">--&gt;</span></span>
+<span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span>&gt;</span>
+<span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>自定义消息：必须有啊！<span class="pl-pds">&quot;</span></span></span>
+<span class="pl-s1">			,</span>
+<span class="pl-s1">			<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>只允许字母和数字,字母开头<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">		};</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt; </span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span>
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Bootstrap3 start<span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Bootstrap 核心 CSS 文件 <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="pl-pds">&quot;</span></span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 可选的Bootstrap主题文件（一般不用引入） <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bootstrap-3.3.7-dist/css/bootstrap-theme.min.css<span class="pl-pds">&quot;</span></span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 最新的 Bootstrap 核心 JavaScript 文件 <span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> Bootstrap3 end<span class="pl-c">--&gt;</span></span></pre>
+</div> 
+<p>请按照 Bootstrap3 表单设计规范，将表单元素放入 <code>form-group</code> 中，并为表单元素添加 <code>form-control</code>。</p> 
+<h2> <a id="2-使用验证器" class="anchor" href="#2-%E4%BD%BF%E7%94%A8%E9%AA%8C%E8%AF%81%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. 使用验证器</h2> 
+<p>EasyCheck 内置了 16 个日常开发常用的验证器。分为 3 种类型：</p> 
+<ul> 
+ <li> <strong>类(Class)</strong>: 5 个</li> 
+ <li> <strong>属性(Attribute)</strong>：9 个</li> 
+ <li> <strong>组合(Combination)</strong>： 2 个</li> 
+</ul> 
+<h4> <a id="5-个-class-类验证器" class="anchor" href="#5-%E4%B8%AA-class-%E7%B1%BB%E9%AA%8C%E8%AF%81%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5 个 Class 类验证器：</h4> 
+<p>类验证器在 EasyCheck 内部的名称都是以<code>.</code>开头:<code>.validatorName</code>。</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;验证器内部名称&gt;            &lt;使用方法&gt;
+
+.required      必填       &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>required<span class="pl-pds">&quot;</span></span>/&gt;     
+.email         邮箱       &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>email<span class="pl-pds">&quot;</span></span>/&gt;
+.url           URL        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>url<span class="pl-pds">&quot;</span></span>/&gt;
+.number        数字       &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>number<span class="pl-pds">&quot;</span></span>/&gt;
+.integer       整数       &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>integer<span class="pl-pds">&quot;</span></span>/&gt;</pre>
+</div> 
+<p>同时使用多个类验证器，用空格分隔：</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>不能为空，并且为邮箱    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span> required email<span class="pl-pds">&quot;</span></span> /&gt;</pre>
+</div> 
+<h4> <a id="9-个-attribute-属性验证器" class="anchor" href="#9-%E4%B8%AA-attribute-%E5%B1%9E%E6%80%A7%E9%AA%8C%E8%AF%81%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9 个 Attribute 属性验证器:</h4> 
+<p>属性验证器在EasyCheck内部的名称都是以<code>[]</code>包围：<code>[validatorName]</code>。</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;验证器内部名称&gt;                                       &lt;使用方法&gt;
+
+[equalTo]     值必须和Id为ElementId指定的元素相等       &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>password<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">equalTo</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>ElementId<span class="pl-pds">&quot;</span></span>/&gt;
+[equallength] 值长度必须等于equallength                &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>password<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span>  <span class="pl-e">equallength</span> =<span class="pl-s"><span class="pl-pds">&quot;</span>4<span class="pl-pds">&quot;</span></span>/&gt;
+[maxlength]   最大字符长度不能大于maxlength             &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">maxlength</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>20<span class="pl-pds">&quot;</span></span>/&gt;
+[minlength]   最小字符长度不能销于minlength             &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">minlength</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>6<span class="pl-pds">&quot;</span></span>/&gt;
+[max]         数字不能大于max                          &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">max</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>20<span class="pl-pds">&quot;</span></span>/&gt;
+[min]         数字不能小于min                          &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">min</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>2<span class="pl-pds">&quot;</span></span>/&gt;
+[extension]   验证扩展名，多个扩展名使用英文逗号分隔，默认为&quot;png,jpeg,jpg,gif&quot;    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>file<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">extension</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>/&gt;
+[reg]         自定义正则验证                             &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span> <span class="pl-e">reg</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>[A-Z]*<span class="pl-pds">&quot;</span></span>/&gt;
+[vc]          使用Ajax请求vc指定的URL，进行验证码检测，URL返回true代表通过，false代表未通过   &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">vc</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>chkvc.jsp<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>vc<span class="pl-pds">&quot;</span></span> /&gt;
+服务器端自定义处理Demo（JSP）：
+&lt;%  
+    //通过验证码文本框名称获得输入的
+    String vc = request.getParameter(&quot;vc&quot;);  //数据
+    String res = &quot;false&quot;;
+    if (vc != null <span class="pl-ii">&amp;&amp;</span> vc.equals(session.getAttribute(&quot;randomNumber&quot;))) {
+	    res = &quot;true&quot;;
+    }
+    out.print(res);  //输出true代表通过，false代表未通过
+%&gt;</pre>
+</div> 
+<blockquote> 
+ <p>说明，默认情况下为了避免不必要的服务器请求，验证码验证只在提交表单时进行，不在键盘弹起和失去焦点时进行验证的参数。实现代码： EasyCheck.easyCheckIgnore[&quot;[vc]&quot;]=true; <code>EasyCheck.easyCheckIgnore</code>参数可以设置弹起和焦点验证时的忽略验证器，可根据需要修改为false，代表进行键盘弹起和失去焦点时开启验证。</p> 
+</blockquote> 
+<h4> <a id="2-个-combination-组合验证器" class="anchor" href="#2-%E4%B8%AA-combination-%E7%BB%84%E5%90%88%E9%AA%8C%E8%AF%81%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2 个 Combination 组合验证器:</h4> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;验证器内部名称&gt;                                    &lt;使用方法&gt;
+
+[minlength][maxlength]  长度范围组合验证器：同时使用minlength属性验证器 与 maxlength属性验证器 
+&lt;<span class="pl-ent">input</span>  <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>password<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>  <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>urepwd<span class="pl-pds">&quot;</span></span> <span class="pl-e">size</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>20<span class="pl-pds">&quot;</span></span>  <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>txt required<span class="pl-pds">&quot;</span></span>  <span class="pl-e">equalto</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>upwd<span class="pl-pds">&quot;</span></span> <span class="pl-e">maxlength</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>12<span class="pl-pds">&quot;</span></span> <span class="pl-e">minlength</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>6<span class="pl-pds">&quot;</span></span>/&gt;
+[min][max]              数字范围组合验证器：同时加入min属性验证器与 max属性验证器 
+&lt;<span class="pl-ent">input</span>  <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>password<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>  <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>urepwd<span class="pl-pds">&quot;</span></span> <span class="pl-e">size</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>20<span class="pl-pds">&quot;</span></span>  <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>txt required<span class="pl-pds">&quot;</span></span>  <span class="pl-e">min</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>18<span class="pl-pds">&quot;</span></span> <span class="pl-e">max</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>45<span class="pl-pds">&quot;</span></span>/&gt;</pre>
+</div> 
+<h4> <a id="注意" class="anchor" href="#%E6%B3%A8%E6%84%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>注意：</h4> 
+<p><strong>建议为每个验证元素指定唯一的元素id，以避免不必要的验证冲突。</strong></p> 
+<blockquote> 
+ <p>EasyCheck 并不强制要求为每个表单元素指定 id 属性。但如果页面存在 <code>name</code> 相同的表单元素，则需要使用 <code>id</code> 加以区分。EasyCheck 内部以 <code>id属性</code> 的值作为各个功能实现的参考标识——例如在需要实现与指定元素相关的扩展、配置操作时，优先使用 <code>id</code>。</p> 
+</blockquote> 
+<h2> <a id="3-运行表单验证" class="anchor" href="#3-%E8%BF%90%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 运行表单验证</h2> 
+<ul> 
+ <li><strong>提交 form 表单时自动进行验证：</strong></li> 
+</ul> 
+<p>为 <code>form</code> 表单添加指定 <code>id属性</code>（必须）和 <code>easycheck=&quot;true&quot;</code> 。</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>login.action<span class="pl-pds">&quot;</span></span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>post<span class="pl-pds">&quot;</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>regForm<span class="pl-pds">&quot;</span></span> <span class="pl-e">easycheck</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt; </pre>
+</div> 
+<ul> 
+ <li><strong>手动验证 form 表单：</strong></li> 
+</ul> 
+<p>有些时候验证表单并不需要提交表单，可以通过JS手动验证指定表单。EasyCheck 支持 ES6 的 Promise 编程，所以考虑到异步验证任务，应当判断结果是否是 Promise 对象，区别处理。</p> 
+<div class="highlight highlight-source-js">
+ <pre>	<span class="pl-c"><span class="pl-c">//</span> 验证选择器指定的表单，但并不提交</span>
+   <span class="pl-k">var</span> result<span class="pl-k">=</span><span class="pl-smi">EasyCheck</span>.<span class="pl-en">checkForm</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>formSelector<span class="pl-pds">&quot;</span></span>); 
+   
+   <span class="pl-c"><span class="pl-c">//</span> 如果是异步验证</span>
+   <span class="pl-k">if</span>(<span class="pl-c1">window</span>.<span class="pl-smi">Promise</span> <span class="pl-k">&amp;&amp;</span> result <span class="pl-k">instanceof</span> <span class="pl-c1">Promise</span>){
+   	<span class="pl-smi">result</span>.<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){
+   		<span class="pl-k">if</span>(data){
+   			<span class="pl-c"><span class="pl-c">//</span> 验证通过</span>
+   		}<span class="pl-k">else</span>{
+   			<span class="pl-c"><span class="pl-c">//</span> 验证未通过</span>
+   		}
+   	})
+   }<span class="pl-k">else</span>{
+   	 <span class="pl-k">if</span>(result){
+   	     <span class="pl-c"><span class="pl-c">//</span> 验证通过</span>
+   	 }<span class="pl-k">else</span>{
+   	     <span class="pl-c"><span class="pl-c">//</span> 验证未通过</span>
+   	 }
+   }</pre>
+</div> 
+<h2> <a id="4-提示消息管理" class="anchor" href="#4-%E6%8F%90%E7%A4%BA%E6%B6%88%E6%81%AF%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. 提示消息管理</h2> 
+<h3> <a id="41-全局错误消息管理" class="anchor" href="#41-%E5%85%A8%E5%B1%80%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1 全局错误消息管理</h3> 
+<p>EasyCheck 全局验证提示消息定义在 lang 目录下对应的 i18n 语言文件中，消息支持占位符。如：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 验证消息列表</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span> <span class="pl-k">=</span> {
+		required<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>不能为空<span class="pl-pds">&quot;</span></span>,
+		email<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>邮箱格式不正确<span class="pl-pds">&quot;</span></span>,
+		url<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>网址有误<span class="pl-pds">&quot;</span></span>,
+		number<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>必须为数字<span class="pl-pds">&quot;</span></span>,
+		integer<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>必须为整数<span class="pl-pds">&quot;</span></span>,
+		equalto<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>输入不一致<span class="pl-pds">&quot;</span></span>,
+		equallength<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>长度必须为{0}位<span class="pl-pds">&quot;</span></span>,
+		lengthrange<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>长度必须在{0}到{1}之间<span class="pl-pds">&quot;</span></span>,
+		minlength<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>长度不能小于{0}<span class="pl-pds">&quot;</span></span>,
+		maxlength<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>长度不能大于{0}<span class="pl-pds">&quot;</span></span>,
+		numberrange<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>值必须在{0}和{1}之间<span class="pl-pds">&quot;</span></span>,
+		min<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>不能小于{0}<span class="pl-pds">&quot;</span></span>,
+		max<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>不能大于{0}<span class="pl-pds">&quot;</span></span>,
+		regexp<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>格式有误<span class="pl-pds">&quot;</span></span>,
+		extension<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>文件后缀只能为{0}<span class="pl-pds">&quot;</span></span>,
+		vc<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>输入有误<span class="pl-pds">&quot;</span></span>
+}</pre>
+</div> 
+<p>修改指定验证规则的提示消息内容，语法：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> EasyCheck.msg['验证规则对应的消息名']=&quot;消息提示内容&quot;;</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">'</span>required<span class="pl-pds">'</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>is required<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">'</span>lengthRange<span class="pl-pds">'</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>最小长度{0}，最大长度{1}！<span class="pl-pds">&quot;</span></span>;</pre>
+</div> 
+<h3> <a id="42-为元素指定特定错误消息" class="anchor" href="#42-%E4%B8%BA%E5%85%83%E7%B4%A0%E6%8C%87%E5%AE%9A%E7%89%B9%E5%AE%9A%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.2 为元素指定特定错误消息</h3> 
+<p>EasyCheck 支持错误提示信息内容的完全自定义，并可以为每个表单元素的每个验证器使用不同消息。</p> 
+<ul> 
+ <li><strong>错误消息自定义：</strong></li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>ElementId<span class="pl-pds">'</span></span><span class="pl-k">||</span><span class="pl-s"><span class="pl-pds">'</span>ElementName<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{  
+    <span class="pl-s"><span class="pl-pds">'</span>.类验证器<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>提示内容<span class="pl-pds">&quot;</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>[属性验证器]<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">&quot;</span>提示内容<span class="pl-pds">&quot;</span></span>,
+    <span class="pl-s"><span class="pl-pds">'</span>[组合验证器][组合验证器]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>提示内容<span class="pl-pds">'</span></span>
+    ……
+};</pre>
+</div> 
+<ul> 
+ <li>如果表单元素存在 <code>id</code> 属性，则优先使用 <code>ElementId</code> </li> 
+ <li>定义时，类验证器名前面加点<code>.</code>，属性验证器名使用中括号<code>[]</code>。</li> 
+</ul> 
+<p>示例：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{
+ <span class="pl-c"><span class="pl-c">//</span> required类验证器（**前面加点.**）</span>
+	<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>必须有啊！<span class="pl-pds">'</span></span>,
+ <span class="pl-c"><span class="pl-c">//</span> reg属性验证器（**使用中括号[]**）</span>
+	<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>只能包含字母和数字<span class="pl-pds">'</span></span>
+};</pre>
+</div> 
+<ul> 
+ <li> <strong>消息处理函数：</strong> 如果消息含有占位符（<code>{0}</code>,<code>{1}</code>,……）,则需要通过<strong>消息函数</strong>处理和返回消息，并使用 <code>EasyCheck.formatMsg(&quot;消息内容&quot;, &quot;占位参数值1&quot;, ……)</code>对消息进行格式化。</li> 
+</ul> 
+<p>示例：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>upwd<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{
+	<span class="pl-s"><span class="pl-pds">'</span>[minlength][maxlength]<span class="pl-pds">'</span></span><span class="pl-k">:</span>
+	<span class="pl-c"><span class="pl-c">//</span>消息函数，o 当前DOM对象</span>
+	<span class="pl-k">function</span>(<span class="pl-smi">o</span>){ 
+		<span class="pl-k">return</span> <span class="pl-smi">EasyCheck</span>.<span class="pl-en">formatMsg</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>密码位数：{0}-{1}<span class="pl-pds">&quot;</span></span> , <span class="pl-smi">o</span>.<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">'</span>minlength<span class="pl-pds">'</span></span>) , <span class="pl-smi">o</span>.<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">'</span>maxlength<span class="pl-pds">'</span></span>));
+	}
+};</pre>
+</div> 
+<p>或</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span>消息函数，o 当前DOM对象</span>
+<span class="pl-k">var</span> <span class="pl-en">upwdMsg</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+	<span class="pl-k">return</span> <span class="pl-smi">EasyCheck</span>.<span class="pl-en">formatMsg</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>密码位数：{0}-{1}！<span class="pl-pds">&quot;</span></span>, <span class="pl-smi">o</span>.<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">'</span>minlength<span class="pl-pds">'</span></span>) , <span class="pl-smi">o</span>.<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">'</span>maxlength<span class="pl-pds">'</span></span>));
+};
+	
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>upwd<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{
+	<span class="pl-s"><span class="pl-pds">'</span>[minlength][maxlength]<span class="pl-pds">'</span></span><span class="pl-k">:</span>upwdMsg
+};</pre>
+</div> 
+<blockquote> 
+ <p>注意：使用自定义消息时，一般请勿在错误提示DIV中使用info属性设置提示消息，如果使用info属性设置提示消息会覆盖以上自定义的消息内容。</p> 
+</blockquote> 
+<h3> <a id="43-默认正确错误-3-大消息管理" class="anchor" href="#43-%E9%BB%98%E8%AE%A4%E6%AD%A3%E7%A1%AE%E9%94%99%E8%AF%AF-3-%E5%A4%A7%E6%B6%88%E6%81%AF%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.3 默认，正确，错误 3 大消息管理</h3> 
+<p>EasyCheck 在消息提示和管理上提供了极大的灵活性。每个表单元素的在消息内容和外观上都可以自定义，可以手动为每个验证元素指定3类提示信息（默认、正确、错误）。</p> 
+<p>消息可以定义在 <code>div</code>、<code>p</code>、<code>span</code> 等容器标签内，显示在指定的位置。建议使用 <code>span</code>，可以在同一行显示，并将错误和正确提示默认设为隐藏(<code>display:none</code>)。</p> 
+<ul> 
+ <li><strong>消息定义在标签体中</strong></li> 
+</ul> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> 默认提示（id命名：`default_ElementId`）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default_表单元素ID<span class="pl-pds">&quot;</span></span>&gt; 表单元素ID的默认提示消息 &lt;/<span class="pl-ent">span</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 正确提示（id命名：`correct_ElementId`，会使用`.easycheck_okInfo`样式）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>correct_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>display:none<span class="pl-pds">&quot;</span></span>&gt; 表单元素ID的正确提示消息 &lt;/<span class="pl-ent">span</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 错误提示（id命名：`error_ElementId`，会使用`.easycheck_errorInfo`样式）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>error_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>display:none<span class="pl-pds">&quot;</span></span>&gt; 表单元素ID的错误提示消息 &lt;/<span class="pl-ent">span</span>&gt;</pre>
+</div> 
+<p>错误提示的内容为可选，如果指定了提示内容，则会覆盖其他提示消息。错误信息标签具有一个可选属性 <code>perfix</code> 可以为错误信息添加一个前缀内容:</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>error_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>display:none<span class="pl-pds">&quot;</span></span> <span class="pl-e">perfix</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>username <span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;</pre>
+</div> 
+<ul> 
+ <li><strong>消息定义在info属性中</strong></li> 
+</ul> 
+<p>提示消息还可以定义在提示标签的 <code>info</code> 属性中，可以避免显示问题。</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> 默认提示DIV（id命名：`default_ElementId`）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素ID的默认提示消息<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 正确提示DIV（id命名：`correct_ElementId`，会使用`.easycheck_okInfo`样式）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>correct_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素ID的正确提示消息<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+<span class="pl-c"><span class="pl-c">&lt;!--</span> 错误提示DIV（id命名：`error_ElementId`，会使用`.easycheck_errorInfo`样式）<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>error_表单元素ID<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素ID的错误提示消息<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;</pre>
+</div> 
+<p>如果使用 <code>info</code> 属性定义默认提示消息（defMsg），还需要在页面加载完成后调用 <code>EasyCheck.initDefMsg();</code> 生效。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-en">$</span>(<span class="pl-k">function</span>(){
+    <span class="pl-c"><span class="pl-c">//</span> 手动初始化默认消息生效</span>
+    <span class="pl-c"><span class="pl-c">//</span>Manually initialize the default message to take effect</span>
+	<span class="pl-smi">EasyCheck</span>.<span class="pl-en">initDefMsg</span>();
+})</pre>
+</div> 
+<ul> 
+ <li><strong>优先级</strong></li> 
+</ul> 
+<p><code>info属性中的消息内容</code> &gt; <code>标签体内的消息内容</code></p> 
+<ul> 
+ <li><strong>示例</strong></li> 
+</ul> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>uname<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>uname<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>txt2 required<span class="pl-pds">&quot;</span></span> <span class="pl-e">reg</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>^[A-Za-z][A-Za-z0-9]*$<span class="pl-pds">&quot;</span></span>/&gt;
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default_uname<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>必填，字母开头，只能包含字母和数字<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt; 
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>correct_uname<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>正确<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt; 
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>error_uname<span class="pl-pds">&quot;</span></span>  <span class="pl-e">prefix</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>用户名<span class="pl-pds">&quot;</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>display:none<span class="pl-pds">&quot;</span></span>&gt;只能使用字母和数字&lt;/<span class="pl-ent">span</span>&gt; </pre>
+</div> 
+<ul> 
+ <li><strong>Bootstrap3</strong></li> 
+</ul> 
+<p>Bootstrap3 的提示消息必须按照规范添加 <code>class=&quot;help-block&quot;</code></p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default_usermail<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>help-block<span class="pl-pds">&quot;</span></span>&gt;required<span class="pl-c1">&amp;amp;</span>email&lt;/<span class="pl-ent">span</span> &gt;
+&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>correct_usermail<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>help-block<span class="pl-pds">&quot;</span></span> <span class="pl-e">info</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>correct<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt; </pre>
+</div> 
+<h3> <a id="44-手动清除和设置错误提示消息" class="anchor" href="#44-%E6%89%8B%E5%8A%A8%E6%B8%85%E9%99%A4%E5%92%8C%E8%AE%BE%E7%BD%AE%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4 手动清除和设置错误提示消息</h3> 
+<h4> <a id="441-清除所有的错误提示" class="anchor" href="#441-%E6%B8%85%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4.1 清除所有的错误提示</h4> 
+<p>清除错误提示。</p> 
+<p><code>formId</code>： 可选。指定时，仅清除指定form中的错误消息；不指定，清除当前页面所有错误消息。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">clearAllError</span>( [formId] );</pre>
+</div> 
+<h4> <a id="442-还原消息" class="anchor" href="#442-%E8%BF%98%E5%8E%9F%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4.2 还原消息</h4> 
+<p>还原消息（清除错误提示，正确提示，显示默认提示）。默认验证表单中的重置按钮都会自动调用该函数实现表单重置。</p> 
+<p>场景：验证表单在弹出层中时，关闭层重新打开时，清空层中表单之前的所有验证提示信息。</p> 
+<p><code>formId</code>：可选。指定时，仅还原指定 form 中的消息；不指定，还原当前页面所有消息。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">restoreAll</span>( [formId] );</pre>
+</div> 
+<h4> <a id="443-为指定表单元素手动设置错误消息可以使用统一风格提示自定义的消息" class="anchor" href="#443-%E4%B8%BA%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%BB%9F%E4%B8%80%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4.3 为指定表单元素手动设置错误消息(可以使用统一风格提示自定义的消息)。</h4> 
+<p>可使用此方法来显示从服务器返回的指定消息。</p> 
+<p><code>elementId || elementName || elementDOM</code>：指定表单元素的id，或者表单元素DOM对象。</p> 
+<p><code>msg</code>：错误消息。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">showError</span>(<span class="pl-s"><span class="pl-pds">'</span>elementId<span class="pl-pds">'</span></span><span class="pl-k">||</span><span class="pl-s"><span class="pl-pds">'</span>elementName<span class="pl-pds">'</span></span><span class="pl-k">||</span>elementDOM , <span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> );</pre>
+</div> 
+<h4> <a id="444-清除指定表单元素的错误消息" class="anchor" href="#444-%E6%B8%85%E9%99%A4%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%9A%84%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4.4 清除指定表单元素的错误消息。</h4> 
+<p><code>elementId || elementName || elementDOM</code>：指定表单元素的id，或者表单元素DOM对象。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">clearError</span>(<span class="pl-s"><span class="pl-pds">'</span>elementId<span class="pl-pds">'</span></span><span class="pl-k">||</span><span class="pl-s"><span class="pl-pds">'</span>elementName<span class="pl-pds">'</span></span><span class="pl-k">||</span>elementDOM  );</pre>
+</div> 
+<h3> <a id="45-消息内容格式扩展" class="anchor" href="#45-%E6%B6%88%E6%81%AF%E5%86%85%E5%AE%B9%E6%A0%BC%E5%BC%8F%E6%89%A9%E5%B1%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.5 消息内容格式扩展</h3> 
+<p>对于制定多样化的提示外观（例如：<code>ToolTip</code>），EasyCheck 可以对消息外观进行统一扩展，例如将要提示的消息统一包装在某一个自定义的 <code>DIV</code> 片段中。在自定义的消息片段中，使用 <code>{0}</code> 标记引用提示消息内容。</p> 
+<ul> 
+ <li><strong>全局设置：</strong></li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 设置全局的默认、错误、正确的消息提示格式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">defMsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tip&quot;&gt;默认内容：{0}&lt;/div&gt;<span class="pl-pds">'</span></span>;
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">errorMsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tip&quot;&gt;错误内容：{0}&lt;/div&gt;<span class="pl-pds">'</span></span>;
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">correctMsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tip&quot;&gt;正确内容：{0}&lt;/div&gt;<span class="pl-pds">'</span></span>;</pre>
+</div> 
+<ul> 
+ <li><strong>局部设置（为id指定的Form或Element进行扩展）</strong></li> 
+</ul> 
+<pre><code>// 为regForm表单指定默认消息格式
+EasyCheck.defMsgs[&quot;regForm&quot;]='&lt;div class=&quot;tip&quot;&gt;默认内容：{0}&lt;/div&gt;';
+// 为username元素指定错误消息格式
+EasyCheck.errorMsg[&quot;username&quot;]='&lt;div class=&quot;tip&quot;&gt;错误内容：{0}&lt;/div&gt;';
+// 为username元素指定ok消息格式
+EasyCheck.correctMsgs[&quot;regForm&quot;]='&lt;div class=&quot;tip&quot;&gt;正确内容：{0}&lt;/div&gt;';
+</code></pre> 
+<ul> 
+ <li><strong>格式优先级</strong></li> 
+</ul> 
+<p><code>元素定义的消息格式</code> &gt; <code>表单定义的消息格式</code> &gt; <code>全局的消息格式</code></p> 
+<p><code>EasyCheck.defMsgs[&quot;elementId&quot;]</code> &gt; <code>EasyCheck.defMsgs[&quot;formId&quot;]</code> &gt; <code>EasyCheck.defMsg</code>.</p> 
+<ul> 
+ <li><strong>默认提示消息手动初始化</strong></li> 
+</ul> 
+<p>修改了默认提示消息（<code>defMsg</code>）格式，需要手动调用 <code>initDefMsg()</code>，让修改后的默认信息生效。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-en">$</span>(<span class="pl-k">function</span>(){
+    <span class="pl-c"><span class="pl-c">//</span>在自定义ready函数中，修改默认提示消息</span>
+	<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">defMsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tooltip-right-def tooltip-def&quot;&gt;<span class="pl-pds">'</span></span><span class="pl-k">+</span>
+	<span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tooltip-content-def&quot;&gt;{0}&lt;/div&gt;<span class="pl-pds">'</span></span><span class="pl-k">+</span>
+	<span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tooltip-arrow-outer-def&quot;&gt;&lt;/div&gt;<span class="pl-pds">'</span></span><span class="pl-k">+</span>
+	<span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tooltip-arrow-def&quot; &gt;&lt;/div&gt;<span class="pl-pds">'</span></span><span class="pl-k">+</span>
+	<span class="pl-s"><span class="pl-pds">'</span>&lt;/div&gt;<span class="pl-pds">'</span></span>;
+    <span class="pl-c"><span class="pl-c">//</span> 手动初始化默认消息生效</span>
+	<span class="pl-smi">EasyCheck</span>.<span class="pl-en">initDefMsg</span>();
+})</pre>
+</div> 
+<ul> 
+ <li><strong>自定义消息标记</strong></li> 
+</ul> 
+<p>默认引用消息的标记为<code>{0}</code>，如果需要自定义可以直接修改<code>msgMark</code>属性。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 自定义消息标记 </span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgMark</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>{msg}<span class="pl-pds">&quot;</span></span>;
+<span class="pl-c"><span class="pl-c">//</span> 使用自定义的{msg}引用提示消息</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">defMsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>&lt;div class=&quot;tip&quot;&gt;默认内容：{msg}&lt;/div&gt;<span class="pl-pds">'</span></span>;</pre>
+</div> 
+<h2> <a id="5-提示外观自定义" class="anchor" href="#5-%E6%8F%90%E7%A4%BA%E5%A4%96%E8%A7%82%E8%87%AA%E5%AE%9A%E4%B9%89" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. 提示外观自定义</h2> 
+<h3> <a id="51-消息和文本框全局样式" class="anchor" href="#51-%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E6%9C%AC%E6%A1%86%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.1 消息和文本框全局样式</h3> 
+<p>EasyCheck 可以根据事件及验证结果动态改变文本框和 div 样式，在不同状态时显示不同外观，使得表单项更加醒目，以提供更丰富的验证效果。</p> 
+<p>部分验证插件（DIV, Tooltip）需要首先引入对应的 CSS 文件。并支持以下四种 CSS 类样式进行外观定制：</p> 
+<ul> 
+ <li>验证通过 div 消息类样式 <code>.easycheck_okInfo</code> </li> 
+ <li>验证未通过 div 消息类样式 <code>.easycheck_errorInfo</code> </li> 
+ <li>获得焦点时的文本框类样式：<code>easycheck_focusInput</code> </li> 
+ <li>验证未通过时的文本框类样式 <code>.easycheck_errorInput</code> </li> 
+</ul> 
+<p>根据实际项目需要可对以上CSS类样式进行修改：</p> 
+<div class="highlight highlight-source-css">
+ <pre><span class="pl-e">.easycheck_errorInfo</span> {
+	<span class="pl-c1"><span class="pl-c1">margin-left</span></span>: <span class="pl-c1">10<span class="pl-k">px</span></span>;
+	<span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">#FF2A2B</span>;
+	<span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline</span>;
+	<span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">13<span class="pl-k">px</span></span>;
+}
+<span class="pl-e">.easycheck_okInfo</span> {
+	<span class="pl-c1"><span class="pl-c1">margin-left</span></span>: <span class="pl-c1">10<span class="pl-k">px</span></span>;
+	<span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline</span>;
+	<span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">13<span class="pl-k">px</span></span>;
+	<span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">#007C00</span>;
+}
+
+<span class="pl-e">.easycheck_focusInput</span>{
+	<span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#0066FF</span> <span class="pl-k">!important</span>; 
+}
+<span class="pl-e">.easycheck_errorInput</span> {
+	<span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#DD080A</span> <span class="pl-k">!important</span>;
+}
+</pre>
+</div> 
+<blockquote> 
+ <p>Bootstrap 具有默认的校验状态，无需配置 CSS 样式。</p> 
+</blockquote> 
+<h2> <a id="52-文本框外观管理" class="anchor" href="#52-%E6%96%87%E6%9C%AC%E6%A1%86%E5%A4%96%E8%A7%82%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.2 文本框外观管理</h2> 
+<p>默认情况下验证失败时，除了显示错误提示信息外，文本框会随校验状态改变。 EasyCheck 支持为文本框在三种状态引用不同样式：</p> 
+<ul> 
+ <li> <strong>默认文本框样式</strong>：用户自定义</li> 
+ <li> <strong>获得焦点文本框样式</strong>：<code>.easycheck_focusInput</code> </li> 
+ <li> <strong>错误文本框样式</strong>：<code>.easycheck_errorInput</code> </li> 
+</ul> 
+<h3> <a id="修改获得焦点时文本框类样式" class="anchor" href="#%E4%BF%AE%E6%94%B9%E8%8E%B7%E5%BE%97%E7%84%A6%E7%82%B9%E6%97%B6%E6%96%87%E6%9C%AC%E6%A1%86%E7%B1%BB%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>修改获得焦点时文本框类样式：</h3> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 指定全局表单元素获得焦点时使用的表单 css 类样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">focusCss</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>focus<span class="pl-pds">&quot;</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> 指定表单中元素使用的类样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">formFocusCss</span>[<span class="pl-s"><span class="pl-pds">'</span>formId<span class="pl-pds">'</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>focus2<span class="pl-pds">&quot;</span></span>;  <span class="pl-c"><span class="pl-c">//</span>指定 formId 表单中元素使用 .focus2 样式</span></pre>
+</div> 
+<h3> <a id="修改错误时文本框类样式" class="anchor" href="#%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF%E6%97%B6%E6%96%87%E6%9C%AC%E6%A1%86%E7%B1%BB%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>修改错误时文本框类样式：</h3> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 指定全局表单元素验证失败时使用的表单 css 类样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">errorCss</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>error<span class="pl-pds">&quot;</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> 指定表单中元素使用的类样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">formErrorCss</span>[<span class="pl-s"><span class="pl-pds">'</span>formId<span class="pl-pds">'</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>error2<span class="pl-pds">&quot;</span></span>;  <span class="pl-c"><span class="pl-c">//</span>指定 formId 的表单元素使用 .error2 样式</span></pre>
+</div> 
+<h3> <a id="禁用验证失败时文本框样式" class="anchor" href="#%E7%A6%81%E7%94%A8%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5%E6%97%B6%E6%96%87%E6%9C%AC%E6%A1%86%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>禁用验证失败时文本框样式</h3> 
+<p><code>ecss =&quot;no&quot;</code> 属性实现禁用文本框的错误样式。</p> 
+<div class="highlight highlight-text-html-basic">
+ <pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>content<span class="pl-pds">&quot;</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>required<span class="pl-pds">&quot;</span></span> <span class="pl-e">ecss</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>no<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">textarea</span>&gt;</pre>
+</div> 
+<p>页面元素过多时，还可通过全局参数 <code>EasyCheck.ecss</code> 设置禁用页面所有验证对象的验证未通过样式：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 指定页面完全禁用错误文本框样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">ecss</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>no<span class="pl-pds">&quot;</span></span>;
+<span class="pl-c"><span class="pl-c">//</span> 指定 id 为 regForm2 的表单元素禁用错误文本框样式</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">formEcss</span>[<span class="pl-s"><span class="pl-pds">'</span>regForm<span class="pl-pds">'</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>no<span class="pl-pds">&quot;</span></span>;</pre>
+</div> 
+<h2> <a id="6-防止客户端表单重复提交功能" class="anchor" href="#6-%E9%98%B2%E6%AD%A2%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%E5%8A%9F%E8%83%BD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. 防止客户端表单重复提交功能</h2> 
+<p>EasyCheck支持客户端防止重复提交功能：当用户点击 submit 按钮提交表单过程中将禁用提交按钮。防止在用户验证通过提交数据过程中，由于网络未响应，用户多次点击提交等原因，导致重复提交数据功能。</p> 
+<p>关闭防止表单重复提交功能：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span> 关闭提交按钮禁用功能，默认为 true</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckSubmitDisable</span><span class="pl-k">=</span><span class="pl-c1">false</span>; </pre>
+</div> 
+<h2> <a id="7-可选配置参数" class="anchor" href="#7-%E5%8F%AF%E9%80%89%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. 可选配置参数</h2> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">&lt;!--</span></span> 可选参数自定义 <span class="pl-c"><span class="pl-c">--&gt;</span></span>
+<span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span><span class="pl-k">&gt;</span>
+    <span class="pl-c"><span class="pl-c">//</span> 使用失去焦点时验证，false禁用，默认为true</span>
+    <span class="pl-smi">EasyCheck</span>.<span class="pl-smi">blurChk</span><span class="pl-k">=</span><span class="pl-c1">true</span>;    
+
+    <span class="pl-c"><span class="pl-c">//</span> 使用键盘弹起时验证，false禁用，默认为true</span>
+    <span class="pl-smi">EasyCheck</span>.<span class="pl-smi">keyupChk</span><span class="pl-k">=</span><span class="pl-c1">true</span>;  
+    
+    <span class="pl-c"><span class="pl-c">//</span>页面加载完后是否立即开启验证规则（否则仅在提交表单时验证，如果设置为false，blurChk和keyupChk无效），默认为true</span>
+    <span class="pl-smi">EasyCheck</span>.<span class="pl-smi">loadChk</span><span class="pl-k">=</span><span class="pl-c1">true</span>;   
+
+   <span class="pl-c"><span class="pl-c">//</span>  表单元素获得焦点时是否还原为默认提示,默认为 false(Bootstrap3 默认为true)</span>
+   <span class="pl-smi">EasyCheck</span>.<span class="pl-smi">resetOnFocus</span><span class="pl-k">=</span><span class="pl-c1">false</span>;
+
+   <span class="pl-c"><span class="pl-c">//</span> BootStrap3 </span>
+   <span class="pl-smi">EasyCheck</span>.<span class="pl-smi">bootstrap3</span><span class="pl-k">=</span>{
+        <span class="pl-c"><span class="pl-c">//</span> 添加图标反馈</span>
+        icon<span class="pl-k">:</span><span class="pl-c1">true</span>,
+        <span class="pl-c"><span class="pl-c">//</span> 在 required 必填表单自动显示 *</span>
+        required<span class="pl-k">:</span><span class="pl-c1">true</span>,
+        <span class="pl-c"><span class="pl-c">//</span> 显示 * 的位置：left(label 标签左边), right(label 标签右侧), after(form 表单元素之后, 仅支持 'form-horizontal', 'form-inline')</span>
+        requiredPosition<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>after<span class="pl-pds">'</span></span>,
+        <span class="pl-c"><span class="pl-c">//</span> 显示可关闭的消息反馈警告框</span>
+        alert<span class="pl-k">:</span><span class="pl-c1">true</span>,
+        <span class="pl-c"><span class="pl-c">//</span> 警告框提示内容</span>
+        alertMsg<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Validation failed!<span class="pl-pds">'</span></span>
+   };
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre>
+</div> 
+<h2> <a id="8-添加新验证器" class="anchor" href="#8-%E6%B7%BB%E5%8A%A0%E6%96%B0%E9%AA%8C%E8%AF%81%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. 添加新验证器</h2> 
+<p>使用 <code>EasyCheck.addChk</code> 函数仅需轻松一步即可加入自定义新验证器！</p> 
+<h3> <a id="81-自定义新的验证器classattribute" class="anchor" href="#81-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E9%AA%8C%E8%AF%81%E5%99%A8classattribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.1 自定义新的验证器（Class,Attribute）</h3> 
+<p>调用 <code>EasyCheck.addChk(chkName,chkFun,chkMsg)</code>函数即可实现向系统注册自定义新验证插件函数。</p> 
+<p><strong>验证器名称命名规范：</strong></p> 
+<ul> 
+ <li>注册类验证器：验证器名称必须以点 <code>.</code> 开头，如 <code>.exists</code> </li> 
+ <li>注册属性验证器：验证器名称必须使用中括号 <code>[]</code> 括起，如 <code>[theme]</code> </li> 
+</ul> 
+<p><strong>验证器定义语法：</strong></p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c">/*    </span>
+<span class="pl-c">* `checkName`    string, 注册的 [Attribute] 属性或 .Class 类验证器名称（只能使用英文字母和数字）   </span>
+<span class="pl-c">* `chkFun`       function, 验证回调函数   </span>
+<span class="pl-c">* `chkMsg`       string, 验证失败的提示消息或消息函数   </span>
+<span class="pl-c">*/</span>   
+<span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(chkName,chkFun,chkMsg);</pre>
+</div> 
+<p>注册EasyCheck类和属性验证器语法：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>,
+  <span class="pl-c"><span class="pl-c">//</span>o代表当前DOM对象</span>
+  <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+      <span class="pl-c"><span class="pl-c">//</span> 验证实现 </span>
+      <span class="pl-c"><span class="pl-c">//</span> var val=$(o).val();</span>
+      <span class="pl-c"><span class="pl-c">//</span> return $.trim(val)!=&quot;&quot;;</span>
+      <span class="pl-c"><span class="pl-c">//</span> true代表验证通过; false代表未通过，将显示chkMsg的消息</span>
+      <span class="pl-k">return</span> <span class="pl-c1">true</span>或<span class="pl-c1">false</span>;
+  }
+  ,
+  <span class="pl-s"><span class="pl-pds">&quot;</span>验证失败时的消息字符串<span class="pl-pds">&quot;</span></span>);
+
+
+<span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>,
+  <span class="pl-c"><span class="pl-c">//</span>o代表当前DOM对象</span>
+  <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+      <span class="pl-c"><span class="pl-c">//</span>验证实现 </span>
+      <span class="pl-c"><span class="pl-c">//</span> var val=$(o).val();</span>
+      <span class="pl-c"><span class="pl-c">//</span> return $.trim(val)!=&quot;&quot;;</span>
+      <span class="pl-c"><span class="pl-c">//</span> true代表验证通过; false代表未通过，将显示chkMsg的消息</span>
+      <span class="pl-k">return</span> <span class="pl-c1">true</span>或<span class="pl-c1">false</span>;
+  }
+  ,
+  <span class="pl-c"><span class="pl-c">//</span> 使用提示函数代替消息字符串  </span>
+  <span class="pl-c"><span class="pl-c">//</span> o 代表当前DOM对象</span>
+  <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+      <span class="pl-c"><span class="pl-c">//</span> var val=$(o).val();</span>
+      <span class="pl-k">return</span> 返回验证失败时的消息字符串;
+  });</pre>
+</div> 
+<p><strong>Promise 异步验证器注册:</strong></p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>,
+  <span class="pl-c"><span class="pl-c">//</span>o代表当前DOM对象</span>
+  <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+  	<span class="pl-c"><span class="pl-c">//</span> var val=$(o).val();</span>
+	<span class="pl-k">if</span>(<span class="pl-c1">window</span>.<span class="pl-smi">Promise</span>) {
+		<span class="pl-c"><span class="pl-c">//</span> 如果支持 Promise</span>
+		<span class="pl-k">var</span> p <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Promise</span>(<span class="pl-k">function</span>(<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>) {
+				<span class="pl-c"><span class="pl-c">//</span> 验证实现 </span>
+				<span class="pl-k">if</span>(condition){
+					<span class="pl-en">resolve</span>(<span class="pl-c1">true</span>); <span class="pl-c"><span class="pl-c">//</span> 验证通过</span>
+				}<span class="pl-k">else</span>{
+					<span class="pl-en">reject</span>(<span class="pl-c1">false</span>); <span class="pl-c"><span class="pl-c">//</span> 验证未通过</span>
+				}
+			});
+		});
+		<span class="pl-k">return</span> p;
+	} <span class="pl-k">else</span> {
+		<span class="pl-c"><span class="pl-c">//</span> 不支持支持 Promise， 请使用同步验证实现作为备用</span>
+	    <span class="pl-c"><span class="pl-c">//</span> true代表验证通过; false代表未通过，将显示chkMsg的消息</span>
+	    <span class="pl-k">return</span> <span class="pl-c1">true</span>或<span class="pl-c1">false</span>;
+	}
+  }
+  ,
+  <span class="pl-s"><span class="pl-pds">&quot;</span>验证失败时的消息字符串<span class="pl-pds">&quot;</span></span>);</pre>
+</div> 
+<h3> <a id="82-自定义新的组合验证器combination" class="anchor" href="#82-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E7%BB%84%E5%90%88%E9%AA%8C%E8%AF%81%E5%99%A8combination" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.2 自定义新的组合验证器（Combination）：</h3> 
+<p>EasyCheck 支持组合使用多个已注册的验证器来创建新的组合验证器。</p> 
+<p>验证器命名规范为： <code>验证器1验证器2</code></p> 
+<p>如：通过组合已有的 <code>min属性验证器</code> 和 <code>max属性验证器</code>，实现数字范围检测验证器。验证器注册名 <code>[min][max]</code>。</p> 
+<p>验证器仅在<strong>同时使用min和max属性验证器时</strong>工作。<code>[min]</code> 和 <code>[max]</code> 的独立验证器函数会被忽略，直接执行 <code>[min][max]</code> 组合验证器的验证函数。</p> 
+<h3> <a id="83-自定义新验证器实例" class="anchor" href="#83-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%B0%E9%AA%8C%E8%AF%81%E5%99%A8%E5%AE%9E%E4%BE%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.3 自定义新验证器实例</h3> 
+<p>假设页面需要一个检测进行用户名是否存在的类验证器，则可直接定义。</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span>注册新的类验证器（验证器名称，验证函数，错误消息），检测用户名是否存在</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>.exists<span class="pl-pds">&quot;</span></span>,
+  <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+      <span class="pl-k">var</span> val<span class="pl-k">=</span><span class="pl-en">$</span>(o).<span class="pl-en">val</span>();
+      <span class="pl-k">var</span> res<span class="pl-k">=</span><span class="pl-c1">false</span>; <span class="pl-c"><span class="pl-c">//</span>结果,Ajax返回检测结果</span>
+      <span class="pl-smi">dwr</span>.<span class="pl-smi">engine</span>.<span class="pl-en">setAsync</span>(<span class="pl-c1">false</span>); <span class="pl-c"><span class="pl-c">//</span>禁用DWR异步AJAX</span>
+      <span class="pl-smi">UserInfoDWR</span>.<span class="pl-en">checkEmail</span>(val,<span class="pl-k">function</span>(<span class="pl-smi">d</span>){
+           res<span class="pl-k">=</span>d;
+      });
+      <span class="pl-k">return</span> res;
+  }
+  ,
+  <span class="pl-s"><span class="pl-pds">&quot;</span>该名称已被使用！<span class="pl-pds">&quot;</span></span>);</pre>
+</div> 
+<h4> <a id="使用-easycheckmsg-列表管理消息" class="anchor" href="#%E4%BD%BF%E7%94%A8-easycheckmsg-%E5%88%97%E8%A1%A8%E7%AE%A1%E7%90%86%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用 EasyCheck.msg 列表管理消息</h4> 
+<p>为了方便对提示消息进行统一管理，可以将提示消息统一定义在 <code>EasyCheck.msg</code> 列表中。</p> 
+<p><strong>EasyCheck.msg[&quot;自定义消息名称&quot;]= &quot;消息内容, {0}, {1}……占位符&quot;;</strong></p> 
+<p>如：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span>定义验证器提示消息</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>exists<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>该名称已被使用！<span class="pl-pds">&quot;</span></span>;
+
+<span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>.exists<span class="pl-pds">&quot;</span></span>,
+	<span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+		<span class="pl-k">if</span>(<span class="pl-en">$</span>(o).<span class="pl-en">val</span>()<span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">'</span>jay<span class="pl-pds">'</span></span>){
+			<span class="pl-k">return</span> <span class="pl-c1">false</span>;
+		}
+		<span class="pl-k">return</span> <span class="pl-c1">true</span>;
+	}
+	,
+	<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>exists<span class="pl-pds">&quot;</span></span>]  <span class="pl-c"><span class="pl-c">//</span>获取消息</span>
+);</pre>
+</div> 
+<p><strong>如果消息内容含有占位符（{0}, {1}, ……），则使用消息函数处理</strong></p> 
+<p>消息通过<code>EasyCheck.formatMsg(&quot;消息内容&quot;,&quot;占位参数值1&quot;，……)</code>进行格式化，如：</p> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-c"><span class="pl-c">//</span>定义验证器提示消息</span>
+<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>exists<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>'{0}' 该名称已被使用！<span class="pl-pds">&quot;</span></span>;
+
+<span class="pl-smi">EasyCheck</span>.<span class="pl-en">addChk</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>.exists<span class="pl-pds">&quot;</span></span>,
+    <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+        <span class="pl-k">if</span>(<span class="pl-en">$</span>(o).<span class="pl-en">val</span>()<span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">'</span>jay<span class="pl-pds">'</span></span>){
+            <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+        }
+        <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+    }
+    ,
+    <span class="pl-c"><span class="pl-c">//</span> 格式化消息函数</span>
+    <span class="pl-k">function</span>(<span class="pl-smi">o</span>){
+        <span class="pl-k">return</span> <span class="pl-smi">EasyCheck</span>.<span class="pl-en">formatMsg</span>(<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msg</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>exists<span class="pl-pds">&quot;</span></span>],<span class="pl-en">$</span>(o).<span class="pl-en">val</span>());
+    }
+);</pre>
+</div> 
+<h3> <a id="84-管理验证器的验证触发事件" class="anchor" href="#84-%E7%AE%A1%E7%90%86%E9%AA%8C%E8%AF%81%E5%99%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.4 管理验证器的验证触发事件</h3> 
+<p>EasyCheck支持三种验证触发事件，默认注册的验证器会在三类事件中都触发验证：</p> 
+<ul> 
+ <li>键盘弹起onkeyup验证</li> 
+ <li>失去焦点onblur验证</li> 
+ <li>提交表单onsubmit验证</li> 
+</ul> 
+<p>EasyCheck支持对验证器和表单元素的的触发事件(键盘弹起 <code>onkeyup</code> 验证、失去焦点 <code>onblur</code> 验证)进行管理，部分验证器可根据情况禁用某些影响性能或务必要的验证触发事件。</p> 
+<h4> <a id="验证器触发事件管理" class="anchor" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>验证器触发事件管理</h4> 
+<p>如果注册的验证器只需要在提交表单时验证（如验证码，无需失去焦点或键盘弹起验证），则可注册如下代码：</p> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckIgnore</code>：指定的验证器忽略验证，设置后同时忽略失去焦点事件和键盘弹起事件的验证。</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckBlurIgnore</code>：指定的验证器忽略失去焦点事件验证</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckBlurIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckKeyupIgnore</code>：指定的验证器忽略键盘弹起事件验证</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckKeyupIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>验证器名称<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<h4> <a id="表单元素触发事件管理" class="anchor" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>表单元素触发事件管理</h4> 
+<p>指定表单元素elementId或elementName:（<strong>elementId优先</strong>）</p> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckEleIgnore</code>：指定表单元素,盘弹起和失去焦点事件忽略验证</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckEleIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素id或name<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckEleBlurIgnore</code>：指定表单元素，失去焦点事件忽略验证</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckEleBlurIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素id或name<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<ul> 
+ <li> <code>EasyCheck.easyCheckEleKeyupIgnore</code>：指定表单元素，键盘弹起事件忽略验证</li> 
+</ul> 
+<div class="highlight highlight-source-js">
+ <pre><span class="pl-smi">EasyCheck</span>.<span class="pl-smi">easyCheckEleKeyupIgnore</span>[<span class="pl-s"><span class="pl-pds">&quot;</span>表单元素id或name<span class="pl-pds">&quot;</span></span>]<span class="pl-k">=</span><span class="pl-c1">true</span>;</pre>
+</div> 
+<h2> <a id="end" class="anchor" href="#end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>End</h2> 
+<p><a href="http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo" title="Demo - 中文]">Demo - 中文</a></p> 
+<p><a href="http://www.easyproject.cn/easycheck/zh-cn/index.jsp" title="官方主页">官方主页</a></p> 
+<p><a href="http://www.easyproject.cn/easycheck/zh-cn/index.jsp#donation" title="留言评论">留言评论</a></p> 
+<p>如果您有更好意见，建议或想法，请联系我。</p> 
+<p>联系、反馈、定制 Email：<a href="mailto:inthinkcolor@gmail.com">inthinkcolor@gmail.com</a></p> 
+<p><a href="http://www.easyproject.cn" title="EasyProject Home">http://www.easyproject.cn</a></p> 
+<p><strong>支付宝钱包扫一扫捐助：</strong></p> 
+<p>我们相信，每个人的点滴贡献，都将是推动产生更多、更好免费开源产品的一大步。</p> 
+<p><strong>感谢慷慨捐助，以支持服务器运行和鼓励更多社区成员。</strong></p> 
+<p><a href="https://camo.githubusercontent.com/0079923bf4bc9ed15a8be36a117559592e024d1b/687474703a2f2f7777772e6561737970726f6a6563742e636e2f696d616765732f732e706e67" target="_blank"><img alt="支付宝钱包扫一扫捐助" src="https://camo.githubusercontent.com/0079923bf4bc9ed15a8be36a117559592e024d1b/687474703a2f2f7777772e6561737970726f6a6563742e636e2f696d616765732f732e706e67" title="支付宝钱包扫一扫捐助" height="256" width="256" data-canonical-src="http://www.easyproject.cn/images/s.png" style="max-width:100%;" /></a></p>
+</body>
+</html>

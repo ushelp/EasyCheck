@@ -3,7 +3,7 @@
 EasyCheck is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine. 
 
 
-Latest version: `5.1.1-RELEASE`
+Latest version: `5.2.0-RELEASE`
 
 ### [Official home](http://www.easyproject.cn/easycheck/en/index.jsp 'EasyCheck official home page')
 
@@ -14,27 +14,24 @@ Latest version: `5.1.1-RELEASE`
 
 **Main feature:**
 
-1. Lightweight
+1. Lightweight, No JavaScript programming
 
-2. No JavaScript programming
+2. Support class-based, based on a combination of property and validators, Built to meet the daily development of a dozen popular validator
 
-3. Support class-based, based on a combination of property and validators
- 
-4. Built to meet the daily development of a dozen popular validator
+3. Verify that the text box to automatically switch styles
 
-5. Verify that the text box to automatically switch styles
+4. By default, errors and correct three kinds of message content, custom message location
 
-6. By default, errors and correct three kinds of message content
+5. Anti-client resubmit function
 
-7. Tip custom message location
+6. Asynchronous validation support, support for `ES6 Promise` programming (validation code automatically fallback to sync verification when the environment is not supported for `Promise`)
 
-8. Anti-client resubmit function
+7. Server-side validation message, according to manually add and remove validation messages (such as the page to submit to the server check forwarding back to news, the news of the Ajax...)
 
-9. Server-side validation message, according to manually add and remove validation messages (such as the page to submit to the server check forwarding back to news, the news of the Ajax...)
+8. scalability, support for registered users to develop new validator
 
-10. scalability, support for registered users to develop new validator
+9. Engine framework extension plugins, now support plug-ins: **DIV**, **ToolTip**, **Bootstrap3** 
 
-11. Engine framework extension, support plug-ins: DIV, ToolTip, Bootstrap3 plug-in
 
 
 **Compatibility:**
@@ -63,11 +60,23 @@ Add CSS and JavaScript file templates:
  ```HTML
  <!-- EasyCheck start -->
  
- <!-- Validation plug-in required CSS ** If there is ** -->
+ <!-- Validation plug-in required CSS（div, div2, tooltip, bootstrap3） ** If there is ** -->
  <link rel="stylesheet" type="text/css" href="easycheck/plugins/XXX/easycheck-XXX.css"/>  
  
  <!-- jQuery must first -->
  <script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
+ 
+ <!-- Include easycheck framework-->
+ <!-- 1. Separate into  -->
+ <!-- easy.easycheck.min.js -->
+ <script type="text/javascript" src="easycheck/easy.easycheck.min.js"></script>
+ <!-- plugin （div, tooltip, bootstrap3） -->
+ <script type="text/javascript" src="easycheck/plugins/XXX/easy.easycheck-XXX.js"></script>
+ <!-- 2. All in one-->
+ <!-- easy.easycheck.min.js + easy.easycheck-XXX.js -->
+ <!--
+ <script type="text/javascript" src="easycheck/plugins/div/easy.easycheck-div-all.min.js"></script>
+ --> 
  
  <!-- EasyCheck engine freamwork -->
  <script type="text/javascript" src="easycheck/easy.easycheck-x.y.z.min.js"></script>
@@ -288,20 +297,27 @@ Server-side custom processing Demo (JSP):
  Sometimes validate form does not need to submit the form, can be obtained by manual validation JS specified form. 
  
  ```JS
- //Verify the selector specified form, but not submitted 
- var flag=EasyCheck.checkForm("formSelector");
- if(flag){
-     // pass
- }else{
-     // not pass
- }
+ 	// Verify the selector specified form, but not submitted 
+ 	var result=EasyCheck.checkForm("formSelector"); 
+	
+	// If asynchronized validator
+	if(window.Promise && result instanceof Promise){
+		result.then(function(data){
+			if(data){
+				// pass
+			}else{
+				// not pass
+			}
+		})
+	}else{
+		 if(result){
+		     // pass
+		 }else{
+		     // not pass
+		 }
+	}
  ```
 
- Use on `onsubmit` event，the same as`easycheck="true"`:
-
- ```
- <form action="login.action" method="post" id="regForm" onsubmit="return EasyCheck.checkForm(this)"> 
- ```
 
 
 ## 4. The prompt message management 
@@ -717,6 +733,8 @@ Call ` EasyCheck.AddChk (chkName chkFun, chkMsg) ` function can be realized to t
 - Add class validator, must start with `.`, `.exists`
 - Add attribute validator, must round with `[]`, `[theme]`
 
+**Validator definition syntax:**  
+
 ```JS
 /*    
 * `checkName`    string, Registered [Attribute] Attribute, or .Class validator names (can only use English letters and Numbers) 
@@ -725,6 +743,70 @@ Call ` EasyCheck.AddChk (chkName chkFun, chkMsg) ` function can be realized to t
 */   
 EasyCheck.addChk(chkName,chkFun,chkMsg);
 ```
+
+Register EasyCheck Class and Property Validator Syntax:
+
+```JS
+EasyCheck.addChk("ValidatorName",
+  //o is the DOM object
+  function(o){
+      // Validator implementation
+      // var val=$(o).val();
+      // return $.trim(val)!="";
+      // true is pass; false is not pass
+      return true or false;
+  }
+  ,
+  "msg show when not pass");
+
+
+EasyCheck.addChk("ValidatorName",
+  //o is the DOM object
+  function(o){
+      // Validator implementation
+      // var val=$(o).val();
+      // return $.trim(val)!="";
+      // true is pass; false is not pass
+      return true or false;
+  }
+  ,
+  // use message function
+  // o is the DOM object
+  function(o){
+      // var val=$(o).val();
+      return "msg show when not pass";
+  });
+```
+
+**Promise Asynchronous validator registration:**
+
+```JS
+EasyCheck.addChk("ValidatorName",
+  // o is the DOM object
+  function(o){
+  	// var val=$(o).val();
+	if(window.Promise) {
+		// If Promise is supported
+		var p = new Promise(function(resolve, reject) {
+				// Validator implementation 
+				if(condition){
+					resolve(true); // pass
+				}else{
+					reject(false); // not pass
+				}
+			});
+		});
+		return p;
+	} else {
+		// Do not support support for Promise, please use synchronous validation implementation to fallback
+	    // true is pass; false is not pass
+	    return true或false;
+	}
+  }
+  ,
+  "msg show when not pass");
+```
+
 
 
 ### 8.2 The custom new composite validator (Combination) : 

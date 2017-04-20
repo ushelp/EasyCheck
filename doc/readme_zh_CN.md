@@ -2,7 +2,7 @@
 
 EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。
 
-最新版本:  `5.1.1-RELEASE`
+最新版本:  `5.2.0-RELEASE`
 
 ### [官方主页](http://www.easyproject.cn/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
 
@@ -13,27 +13,23 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
 
 **主要特点：**
 
-1. 轻量级
+1. 轻量级，无需 JS 编程
 
-2. 无需 JS 编程
+2. 支持基于类、基于属性和组合验证器，内置能满足日常开发的十多种常用验证器
 
-3. 支持基于类、基于属性和组合验证器
+3. 文本框验证样式自动切换
 
-4. 内置能满足日常开发的十多种常用验证器
+4. 默认、错误和正确三种提示消息内容，提示消息位置的自定义
 
-5. 文本框验证样式自动切换
+5. 客户端防止重复提交功能
 
-6. 默认、错误和正确三种提示消息内容
+6. 异步验证支持，支持 `ES6 Promise` 编程（验证码在不支持 `Promise` 的环境时，自动回退到同步验证）
 
-7. 提示消息位置的自定义
+7. 服务器验证消息处理，手动添加和清除验证消息（如页面提交到服务器校验转发回的消息，`Ajax` 的消息...）
 
-8. 防客户端重复提交功能
-
-9. 服务器端验证消息显示，手动添加和清除验证消息（如页面提交到服务器校验转发回的消息，Ajax 的消息...）
-
-10. 扩展性，支持用户开发注册新验证器
+8. 扩展性，支持用户开发注册新验证器
  
-11. 引擎框架扩展，支持插件：DIV, ToolTip, Bootstrap3 插件
+9. 插件支持，已支持验证提示插件：**DIV**, **ToolTip**, **Bootstrap3**
 
 
 **兼容性**：
@@ -64,17 +60,20 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
  ```HTML
  <!-- EasyCheck start -->
  
- <!-- 验证插件需要的 CSS **如果存在** -->
+ <!-- 验证插件需要的 CSS（div, div2, tooltip, bootstrap3） **如果存在** -->
  <link rel="stylesheet" type="text/css" href="easycheck/plugins/XXX/easycheck-XXX.css"/>  
  
  <!-- jQuery 必须在第一位 -->
  <script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
  
- <!-- EasyCheck 引擎框架 -->
- <script type="text/javascript" src="easycheck/easy.easycheck-x.y.z.min.js"></script>
- <!-- XXX 插件 -->
+ <!-- 引入验证文件 -->
+ <!-- 1. 单独引入 -->
+ <!-- easy.easycheck.min.js -->
+ <script type="text/javascript" src="easycheck/easy.easycheck.min.js"></script>
+ <!-- plugin 插件（div, tooltip, bootstrap3） -->
  <script type="text/javascript" src="easycheck/plugins/XXX/easy.easycheck-XXX.js"></script>
- <!-- 使用 all 方式引入: 包含了引擎框架和 XXX 插件 -->
+ <!-- 2. 使用 all 方式引入 -->
+ <!-- easy.easycheck.min.js + easy.easycheck-XXX.js -->
  <!--
  <script type="text/javascript" src="easycheck/plugins/div/easy.easycheck-div-all.min.js"></script>
  -->
@@ -87,9 +86,9 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
  		// EasyCheck.formFocusCss['regForm2']="focus2";
  		// EasyCheck.formErrorCss['regForm2']="error2";
  		EasyCheck.msgs['uname']={
-    	'.required':"必须填写啊！"
-    	,
-    	'[reg]':'只允许字母数字，不能以数字开始'
+	    	'.required':"必须填写啊！"
+	    	,
+	    	'[reg]':'只允许字母数字，不能以数字开始'
  		};
  </script> 
  
@@ -289,20 +288,28 @@ EasyCheck 内置了 16 个日常开发常用的验证器。分为 3 种类型：
 
 - **手动验证 form 表单：**
 
- 有些时候验证表单并不需要提交表单，可以通过JS手动验证指定表单。
+ 有些时候验证表单并不需要提交表单，可以通过JS手动验证指定表单。EasyCheck 支持 ES6 的 Promise 编程，所以考虑到异步验证任务，应当判断结果是否是 Promise 对象，区别处理。
  
  ```JS
- //验证选择器指定的表单，但并不提交
- var flag=EasyCheck.checkForm("表单选择器");
- if(flag){
-     //验证通过
- }else{
-     //验证未通过
- }
- ```
- 配合表单元素的`onsubmit`事件，效果与`easycheck="true"`相同：
- ```
- <form action="login.action" method="post" id="regForm" onsubmit="return EasyCheck.checkForm(this)"> 
+ 	// 验证选择器指定的表单，但并不提交
+	var result=EasyCheck.checkForm("formSelector"); 
+	
+	// 如果是异步验证
+	if(window.Promise && result instanceof Promise){
+		result.then(function(data){
+			if(data){
+				// 验证通过
+			}else{
+				// 验证未通过
+			}
+		})
+	}else{
+		 if(result){
+		     // 验证通过
+		 }else{
+		     // 验证未通过
+		 }
+	}
  ```
 
 
@@ -723,6 +730,8 @@ EasyCheck.easyCheckSubmitDisable=false;
 - 注册类验证器：验证器名称必须以点 `.` 开头，如 `.exists`
 - 注册属性验证器：验证器名称必须使用中括号 `[]` 括起，如 `[theme]`
 
+**验证器定义语法：**  
+
 ```JS
 /*    
 * `checkName`    string, 注册的 [Attribute] 属性或 .Class 类验证器名称（只能使用英文字母和数字）   
@@ -764,7 +773,35 @@ EasyCheck.addChk("验证器名称",
       // var val=$(o).val();
       return 返回验证失败时的消息字符串;
   });
+```
 
+**Promise 异步验证器注册:**
+
+```JS
+EasyCheck.addChk("验证器名称",
+  //o代表当前DOM对象
+  function(o){
+  	// var val=$(o).val();
+	if(window.Promise) {
+		// 如果支持 Promise
+		var p = new Promise(function(resolve, reject) {
+				// 验证实现 
+				if(condition){
+					resolve(true); // 验证通过
+				}else{
+					reject(false); // 验证未通过
+				}
+			});
+		});
+		return p;
+	} else {
+		// 不支持支持 Promise， 请使用同步验证实现作为备用
+	    // true代表验证通过; false代表未通过，将显示chkMsg的消息
+	    return true或false;
+	}
+  }
+  ,
+  "验证失败时的消息字符串");
 ```
 
 ### 8.2 自定义新的组合验证器（Combination）：
@@ -796,7 +833,7 @@ EasyCheck.addChk(".exists",
   }
   ,
   "该名称已被使用！");
-```
+``` 
 
 #### 使用 EasyCheck.msg 列表管理消息
 

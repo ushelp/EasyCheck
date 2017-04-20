@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin - language file
  * 
- * Version 4.0.0
+ * Version 5.2.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -33,5 +33,7 @@ if(window.EasyCheck){
 			extension:"文件后缀只能为{0}",
 			vc:"输入有误"
 	}
-	EasyCheck.bootstrap3.alertMsg="验证未通过！";
+	if(EasyCheck.bootstrap3){
+		EasyCheck.bootstrap3.alertMsg="验证未通过！";
+	}
 }

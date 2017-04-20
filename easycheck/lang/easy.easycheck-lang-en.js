@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin - language file
  * 
- * Version 4.0.0
+ * Version 5.2.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -33,5 +33,8 @@ if(window.EasyCheck){
 		     extension:"Invalid extension,only {0}",
 		     vc:"Didn't match the word verification"
 	};
-	EasyCheck.bootstrap3.alertMsg="Validation failed!";
+	
+	if(EasyCheck.bootstrap3){
+		EasyCheck.bootstrap3.alertMsg="Validation failed!";
+	}
 }
