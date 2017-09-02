@@ -1,4 +1,4 @@
-# EasyCheck valication framework
+# EasyCheck validation framework
 
 ---------------
 
