@@ -2,13 +2,11 @@
 
 EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。
 
-最新版本:  `5.2.0-RELEASE`
-
 ### [官方主页](http://www.easyproject.cn/easycheck/zh-cn/index.jsp 'EasyCheck官网 HOME 主页')
 
 ### [Demo](http://www.easyproject.cn/easycheck/zh-cn/index.jsp#demo 'Demo - 中文]')
 
-
+ 
 ## 功能 
 
 **主要特点：**

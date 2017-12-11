@@ -1,12 +1,10 @@
-# EasyCheck validation framework
+# EasyCheck valication framework
 
 ---------------
 
 EasyCheck，是一个基于 jQuery 的前端 JavaScript 表单验证框架，无需编程通过 HTML 增强即可完成表单验证工作，简化前端开发工作，并保持统一验证风格，提高效率。并提供灵活的自定义接口，支持基于验证引擎的插件扩展。
 
 EasyCheck (Echeck), is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine.
-
-最新版本/latest version:  `5.2.0-RELEASE`
 
 ## Feature/功能 
 

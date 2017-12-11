@@ -3,8 +3,6 @@
 EasyCheck is a jQuery based front-end JavaScript forms authentication framework, without programming through HTML enhanced form validation work, simplifying the front-end development work, and maintain a unified style, improve efficiency. Custom interface, and provides a flexible support plug-in extension based on validation engine. 
 
 
-Latest version: `5.2.0-RELEASE`
-
 ### [Official home](http://www.easyproject.cn/easycheck/en/index.jsp 'EasyCheck official home page')
 
 ### [Demo](http://www.easyproject.cn/easycheck/en/index.jsp#demo 'Demo - English]')

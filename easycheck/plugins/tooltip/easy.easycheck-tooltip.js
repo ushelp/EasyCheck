@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Tooltip plugin file
  * 
- * Version 5.2.0
+ * Version 5.2.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -21,7 +21,7 @@ EasyCheck.chkDef={
 	            s = "[id='" + param.formId + "'] ";
 	        }
 	        // clearAllError
-	        $(s + "[id^='error_']:visible").each(function() {
+	        $(s + "[id^='error_']").each(function() {
 	            var oNameOrId = $(this).attr("id").replace("error_", "");
 	            var n = null;
 	            if ($(s + "[id='" + oNameOrId + "']").length > 0) {

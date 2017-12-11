@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin - language file
  * 
- * Version 5.2.0
+ * Version 5.2.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck

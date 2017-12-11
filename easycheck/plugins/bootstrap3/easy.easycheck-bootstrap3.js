@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Bootstrap plugin file
  * 
- * Version 5.2.0
+ * Version 5.2.1
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -37,7 +37,7 @@ EasyCheck.chkDef={
 	        }
 	        
 	        // clearAllError
-	        $(s + "[id^='error_']:visible").each(function() {
+	        $(s + "[id^='error_']").each(function() {
 	            var oNameOrId = $(this).attr("id").replace("error_", "");
 	            
 	            var controlGroup=$(this).parents(".form-group");
