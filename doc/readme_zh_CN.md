@@ -53,46 +53,6 @@ EasyCheck(Echeck)，是一个基于 jQuery 的前端 JavaScript 表单验证框�
 
 ## 1. 引入验证插件
 
-添加 CSS 和 JavaScript 文件模板： 
-
- ```HTML
- <!-- EasyCheck start -->
- 
- <!-- 验证插件需要的 CSS（div, div2, tooltip, bootstrap3） **如果存在** -->
- <link rel="stylesheet" type="text/css" href="easycheck/plugins/XXX/easycheck-XXX.css"/>  
- 
- <!-- jQuery 必须在第一位 -->
- <script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
- 
- <!-- 引入验证文件 -->
- <!-- 1. 单独引入 -->
- <!-- easy.easycheck.min.js -->
- <script type="text/javascript" src="easycheck/easy.easycheck.min.js"></script>
- <!-- plugin 插件（div, tooltip, bootstrap3） -->
- <script type="text/javascript" src="easycheck/plugins/XXX/easy.easycheck-XXX.js"></script>
- <!-- 2. 使用 all 方式引入 -->
- <!-- easy.easycheck.min.js + easy.easycheck-XXX.js -->
- <!--
- <script type="text/javascript" src="easycheck/plugins/div/easy.easycheck-div-all.min.js"></script>
- -->
- 	
- <!-- EasyCheck 语言文件: i18n 消息 --> 
- <script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-language_COUNTRY.js"></script>
- 
- <!-- 可选配置参数   -->
- <script type="text/javascript">
- 		// EasyCheck.formFocusCss['regForm2']="focus2";
- 		// EasyCheck.formErrorCss['regForm2']="error2";
- 		EasyCheck.msgs['uname']={
-	    	'.required':"必须填写啊！"
-	    	,
-	    	'[reg]':'只允许字母数字，不能以数字开始'
- 		};
- </script> 
- 
- <!-- EasyCheck end -->
- ```
-
 - **DIV 插件**
  ![DIV demo](images/div.png)
 

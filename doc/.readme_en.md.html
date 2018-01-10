@@ -676,53 +676,6 @@ function setDocumentScrollTop(ypos)
 <p><a href="images/easycheck.png" target="_blank"><img src="images/easycheck.png" alt="EasyCheck Functions" style="max-width:100%;" /></a></p> 
 <p><a href="images/easycheck-engine.png" target="_blank"><img src="images/easycheck-engine.png" alt="EasyCheck Engine" style="max-width:100%;" /></a></p> 
 <h2> <a id="1-add-the-validation-plug-in" class="anchor" href="#1-add-the-validation-plug-in" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Add the validation plug-in</h2> 
-<p>Add CSS and JavaScript file templates:</p> 
-<div class="highlight highlight-text-html-basic">
- <pre><span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck start <span class="pl-c">--&gt;</span></span>
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> Validation plug-in required CSS（div, div2, tooltip, bootstrap3） ** If there is ** <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/css<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/XXX/easycheck-XXX.css<span class="pl-pds">&quot;</span></span>/&gt;  
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> jQuery must first <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/jquery-1.12.4.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> Include easycheck framework<span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span> 1. Separate into  <span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span> easy.easycheck.min.js <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/easy.easycheck.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c"><span class="pl-c">&lt;!--</span> plugin （div, tooltip, bootstrap3） <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/XXX/easy.easycheck-XXX.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c"><span class="pl-c">&lt;!--</span> 2. All in one<span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span> easy.easycheck.min.js + easy.easycheck-XXX.js <span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span></span>
-<span class="pl-c">&lt;script type=&quot;text/javascript&quot; src=&quot;easycheck/plugins/div/easy.easycheck-div-all.min.js&quot;&gt;&lt;/script&gt;</span>
-<span class="pl-c"><span class="pl-c">--&gt;</span></span> 
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck engine freamwork <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/easy.easycheck-x.y.z.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c"><span class="pl-c">&lt;!--</span> XXX plugin <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/plugins/XXX/easy.easycheck-XXX.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c"><span class="pl-c">&lt;!--</span> Introduced using all: includes the engine framework and XXX plug-ins <span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span></span>
-<span class="pl-c">&lt;script type=&quot;text/javascript&quot; src=&quot;easycheck/plugins/div/easy.easycheck-div-all.min.js&quot;&gt;&lt;/script&gt;</span>
-<span class="pl-c"><span class="pl-c">--&gt;</span></span>
-	
-<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck language file: i18n message <span class="pl-c">--&gt;</span></span> 
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>easycheck/lang/easy.easycheck-lang-language_COUNTRY.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> Optional configuration parameters   <span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/javascript<span class="pl-pds">&quot;</span></span>&gt;<span class="pl-s1"></span>
-<span class="pl-s1">		<span class="pl-c"><span class="pl-c">//</span> EasyCheck.formFocusCss['regForm2']=&quot;focus2&quot;;</span></span>
-<span class="pl-s1">		<span class="pl-c"><span class="pl-c">//</span> EasyCheck.formErrorCss['regForm2']=&quot;error2&quot;;</span></span>
-<span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
-<span class="pl-s1">     	<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>Required ah!<span class="pl-pds">&quot;</span></span></span>
-<span class="pl-s1">     	,</span>
-<span class="pl-s1">     	<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Only allow alphanumeric, cannot begin with Numbers<span class="pl-pds">'</span></span></span>
-<span class="pl-s1">		};</span>
-<span class="pl-s1"></span><span class="pl-s1">&lt;</span>/<span class="pl-ent">script</span>&gt; 
-
-<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span></pre>
-</div> 
 <ul> 
  <li> <strong>DIV plugin</strong> <a href="images/div.png" target="_blank"><img src="images/div.png" alt="DIV demo" style="max-width:100%;" /></a> </li> 
 </ul> 
@@ -746,11 +699,11 @@ function setDocumentScrollTop(ypos)
 <span class="pl-s1">		<span class="pl-smi">EasyCheck</span>.<span class="pl-smi">msgs</span>[<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>]<span class="pl-k">=</span>{</span>
 <span class="pl-s1">       	<span class="pl-s"><span class="pl-pds">'</span>.required<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>Required ah!<span class="pl-pds">&quot;</span></span></span>
 <span class="pl-s1">       	,</span>
-<span class="pl-s1">       	<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Only allow alphanumeric, cannot begin with Numbers<span class="pl-pds">'</span><span class="pl-pds">'</span></span></span>
-<span class="pl-s1"><span class="pl-s"><span class="pl-ii"> };</span></span></span>
-<span class="pl-s1"><span class="pl-s"><span class="pl-ii">&lt;/script&gt; </span></span></span>
-<span class="pl-s1"><span class="pl-s"></span></span>
-<span class="pl-s1"><span class="pl-s"><span class="pl-ii">&lt;!-- EasyCheck end --&gt;</span></span></span></pre>
+<span class="pl-s1">       	<span class="pl-s"><span class="pl-pds">'</span>[reg]<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Only allow alphanumeric, cannot begin with Numbers<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">		};</span>
+<span class="pl-s1"></span><span class="pl-s1">&lt;</span>/<span class="pl-ent">script</span>&gt; 
+
+<span class="pl-c"><span class="pl-c">&lt;!--</span> EasyCheck end <span class="pl-c">--&gt;</span></span></pre>
 </div> 
 <ul> 
  <li> <strong>ToolTip plugin</strong> <a href="images/tooltip.png" target="_blank"><img src="images/tooltip.png" alt="DIV demo" style="max-width:100%;" /></a> </li> 

@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Tooltip plugin file
  * 
- * Version 5.2.1
+ * Version 5.2.2
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck

@@ -53,54 +53,6 @@ EasyCheck is a jQuery based front-end JavaScript forms authentication framework,
 
 ## 1. Add the validation plug-in
 
-Add CSS and JavaScript file templates:
-
- ```HTML
- <!-- EasyCheck start -->
- 
- <!-- Validation plug-in required CSS（div, div2, tooltip, bootstrap3） ** If there is ** -->
- <link rel="stylesheet" type="text/css" href="easycheck/plugins/XXX/easycheck-XXX.css"/>  
- 
- <!-- jQuery must first -->
- <script type="text/javascript" src="easycheck/jquery-1.12.4.min.js"></script>
- 
- <!-- Include easycheck framework-->
- <!-- 1. Separate into  -->
- <!-- easy.easycheck.min.js -->
- <script type="text/javascript" src="easycheck/easy.easycheck.min.js"></script>
- <!-- plugin （div, tooltip, bootstrap3） -->
- <script type="text/javascript" src="easycheck/plugins/XXX/easy.easycheck-XXX.js"></script>
- <!-- 2. All in one-->
- <!-- easy.easycheck.min.js + easy.easycheck-XXX.js -->
- <!--
- <script type="text/javascript" src="easycheck/plugins/div/easy.easycheck-div-all.min.js"></script>
- --> 
- 
- <!-- EasyCheck engine freamwork -->
- <script type="text/javascript" src="easycheck/easy.easycheck-x.y.z.min.js"></script>
- <!-- XXX plugin -->
- <script type="text/javascript" src="easycheck/plugins/XXX/easy.easycheck-XXX.js"></script>
- <!-- Introduced using all: includes the engine framework and XXX plug-ins -->
- <!--
- <script type="text/javascript" src="easycheck/plugins/div/easy.easycheck-div-all.min.js"></script>
- -->
- 	
- <!-- EasyCheck language file: i18n message --> 
- <script type="text/javascript" src="easycheck/lang/easy.easycheck-lang-language_COUNTRY.js"></script>
- 
- <!-- Optional configuration parameters   -->
- <script type="text/javascript">
- 		// EasyCheck.formFocusCss['regForm2']="focus2";
- 		// EasyCheck.formErrorCss['regForm2']="error2";
- 		EasyCheck.msgs['uname']={
-      	'.required':"Required ah!"
-      	,
-      	'[reg]':'Only allow alphanumeric, cannot begin with Numbers'
- 		};
- </script> 
- 
- <!-- EasyCheck end -->
- ```
 
 - **DIV plugin**
  ![DIV demo](images/div.png)
@@ -126,7 +78,7 @@ Add CSS and JavaScript file templates:
  		EasyCheck.msgs['uname']={
         	'.required':"Required ah!"
         	,
-        	'[reg]':'Only allow alphanumeric, cannot begin with Numbers''
+        	'[reg]':'Only allow alphanumeric, cannot begin with Numbers'
  		};
  </script> 
 

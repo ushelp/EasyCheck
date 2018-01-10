@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin
  * 
- * Version 5.2.1
+ * Version 5.2.2
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -63,7 +63,7 @@
 		      						d="false";
 		      					}
 		      					var res=d.replace(/\r\n/g, "");
-		      					if(res!="true" || res!="false"){
+		      					if(res!="true" && res!="false"){
 		      						console.error("Captcha validation result must is 'true' or 'false', but your is: ",data);
 		      					}
 		      					resolve(d=="true");
