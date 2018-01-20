@@ -829,17 +829,18 @@ Server-side custom processing Demo (JSP):
 <blockquote> 
  <p>EasyCheck is not mandatory for each form element specifies the id attribute. But if the page <code>name</code> same form element, you need to use <code>id</code> distinction. EasyCheck the internal <code>id</code> attribute values for each functional implementation reference marker - such as the need to implement the expansion of the associated with the specified element, configuration, operation, use <code>id</code> priority.</p> 
 </blockquote> 
-<h2> <a id="3-run-the-form-validation" class="anchor" href="#3-run-the-form-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Run the form validation</h2> 
-<ul> 
- <li>**Submit the form automatically validated form: **</li> 
-</ul> 
+<h2> <a id="3-initialize-and-run-the-form-validation" class="anchor" href="#3-initialize-and-run-the-form-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. initialize and run the form validation</h2> 
+<h4> <a id="initialize-form-and-auto-validation" class="anchor" href="#initialize-form-and-auto-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>initialize form and auto validation</h4> 
 <p>Must set <code>id</code> and <code>easycheck=&quot;true&quot;</code> to form。</p> 
 <div class="highlight highlight-text-html-basic">
  <pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>login.action<span class="pl-pds">&quot;</span></span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>post<span class="pl-pds">&quot;</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>regForm<span class="pl-pds">&quot;</span></span> <span class="pl-e">easycheck</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt; </pre>
 </div> 
 <ul> 
- <li>**Manual verification form form: **</li> 
+ <li> <p><strong>Auto initialize</strong></p> <p>On document ready, EasyCheck auto detect form(<code>easycheck=&quot;true&quot;</code>), initialize.</p> </li> 
+ <li> <p><strong>Dynamic from initialize</strong></p> <p>When you have a dynamic new form, can use these code(<code>easycheck=&quot;true&quot;</code> can set use or not).</p> <pre><code>EasyCheck.initEasyCheck(formId);
+</code></pre> </li> 
 </ul> 
+<h4> <a id="manual-verification-form-form" class="anchor" href="#manual-verification-form-form" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual verification form form:</h4> 
 <p>Sometimes validate form does not need to submit the form, can be obtained by manual validation JS specified form.</p> 
 <div class="highlight highlight-source-js">
  <pre>	<span class="pl-c"><span class="pl-c">//</span> Verify the selector specified form, but not submitted </span>

@@ -1,21 +1,7 @@
 /**
- * jQuery EasyCheck DIV plugin all in one file
- * 
- * Version 5.2.2
- * 
- * http://easyproject.cn
- * https://github.com/ushelp/EasyCheck
- * 
- * Author: Ray [ inthinkcolor@gmail.com ]
- * Since: 2011
- * 
- * Dependencies: jQuery
- * 
- */
-/**
  * jQuery EasyCheck Plugin
  * 
- * Version 5.2.2
+ * Version 5.3.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -317,8 +303,8 @@
 				}
 			}
 		},
-		initChk: function(chkrule) {
-			EasyCheck.chkDef.initChk(chkrule);
+		initChk: function(chkrule, formId) {
+			EasyCheck.chkDef.initChk(chkrule, formId);
 		},
 		addChk: function(vName, vFn, msgFn) {
 			var newChk = function(o, e) {
@@ -383,6 +369,63 @@
 			}
 			return false;
 		},
+		/**
+		 * EasyCheck 初始化
+		 * @Param formId 可选；初始化 formId 指定 的Form， 或自动初始化页面所有表单
+		 */
+	    initEasyCheck:function(formId){
+	    	var area="";
+			if(formId){
+				area="#"+formId+" ";
+			}
+			
+			function easyCheck() {
+				for(var i = 0; i < EasyCheck.chkList.length; i++) {
+					var chkrule = EasyCheck.chkList[i];
+					if(!EasyCheck.easyCheckIgnore[chkrule.chkName]) {
+						EasyCheck.initChk(chkrule, formId);
+					}
+				}
+			}
+			EasyCheck.loadChk ? "" : (EasyCheck.blurChk = false, EasyCheck.keyupChk = false);
+			easyCheck();
+			$(area+"[id*='correct_']").hide();
+			$(area+"[id*='error_']").hide();
+			
+			// 取消html默认验证提示
+			$(area==""?"form":area).attr("novalidate", "novalidate");
+
+			var ecs = $(area+"[easycheck='true']");
+
+			// 清除禁用
+			ecs.find(":submit").prop('disabled', false);
+
+			ecs.on("submit", function() {
+				var result = EasyCheck.checkForm(this);
+				var form=this;
+				if(window.Promise && result instanceof Promise) {
+					result.then(function(data) {
+						if(data) {
+							form.submit(); // 提交
+						}
+					})
+					return false;
+				} else {
+					return result;
+				}
+			});
+			// 自动注册重置操作
+			ecs.find(":reset").on("click", function() {
+				var form = $(this).parents("form");
+				if(form) {
+					var formId = form.attr("id");
+					if(formId) {
+						EasyCheck.restoreAll(formId);
+					}
+				}
+			});
+			$(area+":submit").attr("autocomplete", "off");
+	    },
 		// plugins 可覆盖扩展的默认检查配置
 		chkDef: {
 			// 错误消息清除管理
@@ -660,9 +703,13 @@
 	            o.addClass(EasyCheck.txtClass[oid+"_class"]);
 	    },
 	    // 初始化Chk框
-	    initChk:function(chkrule) {
+	    initChk:function(chkrule, formId) {
+	    	var area='';
+	    	if(formId){
+	    		area='#'+formId+' ';
+	    	}
             var chkElements = EasyCheck.getMatches(chkrule.chkName);
-            $(chkElements).each(function(){
+            $(area+chkElements).each(function(){
             		var o=$(this);
             		var formId = $("form").has(o).attr("id");
             		var domId=o.attr("id")||o.attr("name");
@@ -672,7 +719,7 @@
             });
            
             
-            $(chkElements).on("blur change", function(e) {
+            $(area+chkElements).on("blur change", function(e) {
                 if (!EasyCheck.easyCheckBlurIgnore[chkrule.chkName] && !EasyCheck.easyCheckEleIgnore[e.target.id || e.target.name]) {
                     if (!EasyCheck.easyCheckEleBlurIgnore[e.target.id || e.target.name]) {
                         EasyCheck.blurChk ? EasyCheck.chk(this, e, chkrule.chkFunction) :"";
@@ -728,52 +775,5 @@
 })(window);
 
 $(function() {
-	function easyCheck() {
-		for(var i = 0; i < EasyCheck.chkList.length; i++) {
-			var chkrule = EasyCheck.chkList[i];
-			if(!EasyCheck.easyCheckIgnore[chkrule.chkName]) {
-				EasyCheck.initChk(chkrule);
-			}
-		}
-	}
-
-	EasyCheck.loadChk ? "" : (EasyCheck.blurChk = false, EasyCheck.keyupChk = false);
-	easyCheck();
-
-	$("[id*='correct_']").hide();
-	$("[id*='error_']").hide();
-	// 取消html默认验证提示
-	$("form").attr("novalidate", "novalidate");
-
-	var ecs = $("[easycheck='true']");
-
-	// 清除禁用
-	ecs.find(":submit").prop('disabled', false);
-
-	ecs.on("submit", function() {
-		var result = EasyCheck.checkForm(this);
-		var form=this;
-		if(window.Promise && result instanceof Promise) {
-			result.then(function(data) {
-				if(data) {
-					form.submit(); // 提交
-				}
-			})
-			return false;
-		} else {
-			return result;
-		}
-	});
-	// 自动注册重置操作
-	ecs.find(":reset").on("click", function() {
-		var form = $(this).parents("form");
-		if(form) {
-			var formId = form.attr("id");
-			if(formId) {
-				EasyCheck.restoreAll(formId);
-			}
-		}
-	});
-	$(":submit").attr("autocomplete", "off");
-
+	EasyCheck.initEasyCheck();
 });

@@ -234,17 +234,31 @@ EasyCheck 内置了 16 个日常开发常用的验证器。分为 3 种类型：
 
 
 
-## 3. 运行表单验证
+## 3. 初始化和验证表单
 
-- **提交 form 表单时自动进行验证：**
+#### 初始化表单验证功能及自动验证
 
- 为 `form` 表单添加指定 `id属性`（必须）和 `easycheck="true"` 。
+ 为 `form` 表单添加指定 `id属性`（必须）和 `easycheck="true"`，即可完成自动验证 。
 
  ```HTML
  <form action="login.action" method="post" id="regForm" easycheck="true"> 
  ```
+ 
+ - **自动初始化**
+ 
+ 	页面加载时，EasyCheck 会自动检测页面的所有可验证表单（`easycheck="true"`），进行初始化。
+ 
+ 
+ - **动态表单初始化**
 
-- **手动验证 form 表单：**
+	对于动态创建的新表单，可以手动进行初始化(`easycheck="true"`可控制是否生效)。
+
+	```
+	EasyCheck.initEasyCheck(formId);
+	```
+
+
+#### 手动验证 form 表单
 
  有些时候验证表单并不需要提交表单，可以通过JS手动验证指定表单。EasyCheck 支持 ES6 的 Promise 编程，所以考虑到异步验证任务，应当判断结果是否是 Promise 对象，区别处理。
  

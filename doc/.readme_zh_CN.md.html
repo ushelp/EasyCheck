@@ -833,17 +833,18 @@ function setDocumentScrollTop(ypos)
 <blockquote> 
  <p>EasyCheck 并不强制要求为每个表单元素指定 id 属性。但如果页面存在 <code>name</code> 相同的表单元素，则需要使用 <code>id</code> 加以区分。EasyCheck 内部以 <code>id属性</code> 的值作为各个功能实现的参考标识——例如在需要实现与指定元素相关的扩展、配置操作时，优先使用 <code>id</code>。</p> 
 </blockquote> 
-<h2> <a id="3-运行表单验证" class="anchor" href="#3-%E8%BF%90%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 运行表单验证</h2> 
-<ul> 
- <li><strong>提交 form 表单时自动进行验证：</strong></li> 
-</ul> 
-<p>为 <code>form</code> 表单添加指定 <code>id属性</code>（必须）和 <code>easycheck=&quot;true&quot;</code> 。</p> 
+<h2> <a id="3-初始化和验证表单" class="anchor" href="#3-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%AA%8C%E8%AF%81%E8%A1%A8%E5%8D%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 初始化和验证表单</h2> 
+<h4> <a id="初始化表单验证功能及自动验证" class="anchor" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E5%8A%9F%E8%83%BD%E5%8F%8A%E8%87%AA%E5%8A%A8%E9%AA%8C%E8%AF%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>初始化表单验证功能及自动验证</h4> 
+<p>为 <code>form</code> 表单添加指定 <code>id属性</code>（必须）和 <code>easycheck=&quot;true&quot;</code>，即可完成自动验证 。</p> 
 <div class="highlight highlight-text-html-basic">
  <pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>login.action<span class="pl-pds">&quot;</span></span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>post<span class="pl-pds">&quot;</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>regForm<span class="pl-pds">&quot;</span></span> <span class="pl-e">easycheck</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt; </pre>
 </div> 
 <ul> 
- <li><strong>手动验证 form 表单：</strong></li> 
+ <li> <p><strong>自动初始化</strong></p> <p>页面加载时，EasyCheck 会自动检测页面的所有可验证表单（<code>easycheck=&quot;true&quot;</code>），进行初始化。</p> </li> 
+ <li> <p><strong>动态表单初始化</strong></p> <p>对于动态创建的新表单，可以手动进行初始化(<code>easycheck=&quot;true&quot;</code>可控制是否生效)。</p> <pre><code>EasyCheck.initEasyCheck(formId);
+</code></pre> </li> 
 </ul> 
+<h4> <a id="手动验证-form-表单" class="anchor" href="#%E6%89%8B%E5%8A%A8%E9%AA%8C%E8%AF%81-form-%E8%A1%A8%E5%8D%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>手动验证 form 表单</h4> 
 <p>有些时候验证表单并不需要提交表单，可以通过JS手动验证指定表单。EasyCheck 支持 ES6 的 Promise 编程，所以考虑到异步验证任务，应当判断结果是否是 Promise 对象，区别处理。</p> 
 <div class="highlight highlight-source-js">
  <pre>	<span class="pl-c"><span class="pl-c">//</span> 验证选择器指定的表单，但并不提交</span>

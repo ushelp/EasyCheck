@@ -232,17 +232,31 @@ Server-side custom processing Demo (JSP):
 
 
 
-## 3. Run the form validation 
+## 3. initialize and run the form validation 
 
-- **Submit the form automatically validated form: **
+
+#### initialize form and auto validation
 
  Must set `id` and `easycheck="true"` to form。
  
  ```HTML
  <form action="login.action" method="post" id="regForm" easycheck="true"> 
  ```
+ 
+ - **Auto initialize**
+ 
+ 	On document ready, EasyCheck auto detect form(`easycheck="true"`), initialize.
+ 
+ - **Dynamic from initialize**
 
-- **Manual verification form form: **
+	When you have a dynamic new form, can use these code(`easycheck="true"` can set use or not).
+
+	```
+	EasyCheck.initEasyCheck(formId);
+	```
+
+
+#### Manual verification form form: 
 
  Sometimes validate form does not need to submit the form, can be obtained by manual validation JS specified form. 
  

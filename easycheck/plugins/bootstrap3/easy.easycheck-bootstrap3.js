@@ -1,7 +1,7 @@
 /**
  * jQuery EasyCheck Plugin  - Bootstrap plugin file
  * 
- * Version 5.2.2
+ * Version 5.3.0
  * 
  * http://easyproject.cn
  * https://github.com/ushelp/EasyCheck
@@ -365,10 +365,13 @@ EasyCheck.chkDef={
 	            o.addClass(EasyCheck.txtClass[oid+"_class"]);
 	    },
 	    // 初始化Chk框
-	    initChk:function(chkrule) {
-	    	
+	    initChk:function(chkrule, formId) {
+	    	var area='';
+	    	if(formId){
+	    		area='#'+formId+' ';
+	    	}
             var chkElements = EasyCheck.getMatches(chkrule.chkName);
-            $(chkElements).each(function(){
+            $(area+chkElements).each(function(){
             		var o=$(this);
             		var nowForm=$("form").has(o);
             		var formId = nowForm.attr("id");
@@ -393,7 +396,7 @@ EasyCheck.chkDef={
             }); 
            
             
-            $(chkElements).on("blur change", function(e) {
+            $(area+chkElements).on("blur change", function(e) {
                 if (!EasyCheck.easyCheckBlurIgnore[chkrule.chkName] && !EasyCheck.easyCheckEleIgnore[e.target.id || e.target.name]) {
                     if (!EasyCheck.easyCheckEleBlurIgnore[e.target.id || e.target.name]) {
                         EasyCheck.blurChk ? EasyCheck.chk(this, e, chkrule.chkFunction) :"";
