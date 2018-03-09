@@ -66,7 +66,7 @@
 		      					if(res!="true" && res!="false"){
 		      						console.error("Captcha validation result must is 'true' or 'false', but your is: ",data);
 		      					}
-		      					resolve(d=="true");
+		      					resolve(res=="true");
 							},
 							error: function() {
 								reject(false);
